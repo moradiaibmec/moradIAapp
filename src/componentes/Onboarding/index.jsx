@@ -9,6 +9,7 @@ import {
 } from '../../analise/respostas.js';
 import { Ajuda, TituloEtapa } from './estilos.js';
 import EtapaMomento from './EtapaMomento.jsx';
+import EtapaOrcamento from './EtapaOrcamento.jsx';
 
 const Pagina = styled.div`
     min-height: 100vh;
@@ -243,7 +244,7 @@ const IconeConcluido = styled.div`
 // Etapas ainda não implementadas mostram só o título; cada tarefa seguinte registra a sua.
 const ETAPAS_INFO = {
     momento: { titulo: 'Primeiro, queremos conhecer o seu momento.', Componente: EtapaMomento },
-    orcamento: { titulo: 'Quanto você pretende gastar para viver?' },
+    orcamento: { titulo: 'Quanto você pretende gastar para viver?', Componente: EtapaOrcamento },
     onde: { titulo: 'Onde você topa morar?' },
     trabalho: { titulo: 'Sua cidade precisa acompanhar seus objetivos.' },
     clima: { titulo: 'Qual clima combina com você?' },
