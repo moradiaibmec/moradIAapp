@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 MoradIA is a front-end prototype (Portuguese, pt-BR) of a city-recommendation product: users complete an 8-step onboarding (profile, budget, location, work, lifestyle, safety, climate, priorities) and get a ranked list of Brazilian cities with a compatibility score, city detail pages with a monthly cost simulator, and side-by-side comparison of 2–3 cities. The **Figma prototype is the source of truth** for UI and flow (see README.md for the full product flow: Landing → Onboarding → Processing → Results → City details → Comparison).
 
-Currently only the Login screen is implemented; there is no backend, routing, or real data yet.
+Implemented: Login, Dashboard, Meu perfil and the analysis onboarding (6 adaptive steps). The ranking/score (results screen) and the real city dataset are not built yet — the onboarding filters run against a fixture in `src/dados/cidades.js`. The onboarding/scoring design lives in `docs/superpowers/specs/2026-10-05-onboarding-analise-design.md`.
 
 ## Commands
 
@@ -20,6 +20,7 @@ Currently only the Login screen is implemented; there is no backend, routing, or
 
 - React 19 + Vite, plain JavaScript (`.jsx`), no TypeScript, no router.
 - `src/main.jsx` mounts `App`, which currently renders `Login` directly.
+- Pure analysis logic (answers model, weight suggestions, filters) lives in `src/analise/` with Vitest tests next to each file; UI components only read `respostas` and call `alterar(secao, valor)`.
 - Components live in `src/componentes/<Nome>/index.jsx` (folder is `componentes`, Portuguese spelling).
 - Styling uses **styled-components**, defined in the same file as the component. Transient props use the `$` prefix (e.g. `$destaque`, `$valor`) so they aren't forwarded to the DOM.
 - Identifiers, component names, and UI copy are written in Portuguese (e.g. `CartaoAnalise`, `BotaoSocial`, `cidadesExemplo`) — follow that convention.

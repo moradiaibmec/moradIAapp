@@ -13,6 +13,7 @@ import EtapaOrcamento from './EtapaOrcamento.jsx';
 import EtapaOnde from './EtapaOnde.jsx';
 import EtapaTrabalho from './EtapaTrabalho.jsx';
 import EtapaClima from './EtapaClima.jsx';
+import EtapaPrioridades from './EtapaPrioridades.jsx';
 
 const Pagina = styled.div`
     min-height: 100vh;
@@ -244,14 +245,13 @@ const IconeConcluido = styled.div`
     font-size: 28px;
 `;
 
-// Etapas ainda não implementadas mostram só o título; cada tarefa seguinte registra a sua.
 const ETAPAS_INFO = {
     momento: { titulo: 'Primeiro, queremos conhecer o seu momento.', Componente: EtapaMomento },
     orcamento: { titulo: 'Quanto você pretende gastar para viver?', Componente: EtapaOrcamento },
     onde: { titulo: 'Onde você topa morar?', Componente: EtapaOnde },
     trabalho: { titulo: 'Sua cidade precisa acompanhar seus objetivos.', Componente: EtapaTrabalho },
     clima: { titulo: 'Qual clima combina com você?', Componente: EtapaClima },
-    prioridades: { titulo: 'Agora, o que realmente importa para você?' },
+    prioridades: { titulo: 'Agora, o que realmente importa para você?', Componente: EtapaPrioridades },
 };
 
 function isObjetoSimples(valor) {
