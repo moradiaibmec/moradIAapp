@@ -3,6 +3,7 @@ import { supabase } from './lib/supabase.js';
 import Login from './componentes/Login/index.jsx';
 import Dashboard from './componentes/Dashboard/index.jsx';
 import Perfil from './componentes/Perfil/index.jsx';
+import Onboarding from './componentes/Onboarding/index.jsx';
 
 
 function App(){
@@ -29,11 +30,15 @@ function App(){
   }
 
   function iniciarAnalise() {
-    // Ligar ao onboarding (etapa 1/8) quando ele for implementado.
+    navegar('onboarding');
   }
 
   if (carregando) return null;
   if (!sessao) return <Login />;
+
+  if (pagina === 'onboarding') {
+    return <Onboarding usuario={sessao.user} onSair={() => navegar('dashboard')} />;
+  }
 
   return pagina === 'perfil'
     ? <Perfil usuario={sessao.user} onNavegar={navegar} onNovaAnalise={iniciarAnalise} />
