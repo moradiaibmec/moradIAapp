@@ -10,6 +10,7 @@ import {
 import { Ajuda, TituloEtapa } from './estilos.js';
 import EtapaMomento from './EtapaMomento.jsx';
 import EtapaOrcamento from './EtapaOrcamento.jsx';
+import EtapaOnde from './EtapaOnde.jsx';
 
 const Pagina = styled.div`
     min-height: 100vh;
@@ -245,7 +246,7 @@ const IconeConcluido = styled.div`
 const ETAPAS_INFO = {
     momento: { titulo: 'Primeiro, queremos conhecer o seu momento.', Componente: EtapaMomento },
     orcamento: { titulo: 'Quanto você pretende gastar para viver?', Componente: EtapaOrcamento },
-    onde: { titulo: 'Onde você topa morar?' },
+    onde: { titulo: 'Onde você topa morar?', Componente: EtapaOnde },
     trabalho: { titulo: 'Sua cidade precisa acompanhar seus objetivos.' },
     clima: { titulo: 'Qual clima combina com você?' },
     prioridades: { titulo: 'Agora, o que realmente importa para você?' },
