@@ -147,7 +147,7 @@ Tamanho do domicílio: sozinho = 1; parceiro = 2; família = 3 (4 com filhos); a
   orcamento: { faixaRenda: 'r4a7', tetoMoradia: 2100 },
   onde: {
     regioes: ['N', 'NE', 'CO', 'SE', 'S'],
-    referencia: { cidade: 'Curitiba, PR', raioKm: 300 } | null,
+    referencia: { cidade: 'Curitiba, PR', lat: -25.43, lon: -49.27, raioKm: 300 } | null, // lat/lon null até a cidade ser escolhida
     portes: ['metropole', 'grande', 'media'],
     praia: 'indispensavel' | 'bom' | 'tantoFaz',
   },
