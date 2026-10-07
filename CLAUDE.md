@@ -14,8 +14,7 @@ Currently only the Login screen is implemented; there is no backend, routing, or
 - `npm run build` — production build to `dist/`
 - `npm run lint` — ESLint (flat config: recommended + react-hooks + react-refresh)
 - `npm run preview` — serve the built app
-
-There is no test framework configured.
+- `npm test` — Vitest (testes de lógica pura em `src/**/*.test.js`)
 
 ## Architecture & conventions
 
