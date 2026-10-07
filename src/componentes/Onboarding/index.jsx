@@ -8,6 +8,7 @@ import {
     criarRespostasIniciais, etapaAnterior, etapasVisiveis, limparEtapa, limparEtapasOcultas, proximaEtapa,
 } from '../../analise/respostas.js';
 import { Ajuda, TituloEtapa } from './estilos.js';
+import { ContadorCidades } from './elementos.jsx';
 import EtapaMomento from './EtapaMomento.jsx';
 import EtapaOrcamento from './EtapaOrcamento.jsx';
 import EtapaOnde from './EtapaOnde.jsx';
@@ -186,8 +187,17 @@ const BotaoPular = styled.button`
 
 const Acoes = styled.div`
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
     margin-left: auto;
+
+    @media (max-width: 500px) {
+        width: 100%;
+
+        button {
+            flex: 1;
+        }
+    }
 `;
 
 const Botao = styled.button`
@@ -254,6 +264,9 @@ const ETAPAS_INFO = {
     prioridades: { titulo: 'Agora, o que realmente importa para você?', Componente: EtapaPrioridades },
 };
 
+// Etapas que já mostram o contador de cidades no próprio conteúdo.
+const ETAPAS_COM_CONTADOR = ['orcamento', 'onde'];
+
 function isObjetoSimples(valor) {
     return valor !== null && typeof valor === 'object' && !Array.isArray(valor);
 }
@@ -270,11 +283,15 @@ function Onboarding({ usuario, onSair }) {
     const { titulo, Componente } = ETAPAS_INFO[etapaAtual];
     const ultimaEtapa = proximaEtapa(etapas, etapaAtual) === null;
 
+    // `valor` pode ser uma função que recebe o estado atual da seção (para atualizações assíncronas).
     function alterar(secao, valor) {
-        setRespostas((atuais) => ({
-            ...atuais,
-            [secao]: isObjetoSimples(atuais[secao]) && isObjetoSimples(valor) ? { ...atuais[secao], ...valor } : valor,
-        }));
+        setRespostas((atuais) => {
+            const novo = typeof valor === 'function' ? valor(atuais[secao]) : valor;
+            return {
+                ...atuais,
+                [secao]: isObjetoSimples(atuais[secao]) && isObjetoSimples(novo) ? { ...atuais[secao], ...novo } : novo,
+            };
+        });
     }
 
     function alterarPeso(pilar, nivel) {
@@ -371,6 +388,9 @@ function Onboarding({ usuario, onSair }) {
                                 />
                             )}
                         </Conteudo>
+                        {restantes === 0 && !ETAPAS_COM_CONTADOR.includes(etapaAtual) && (
+                            <ContadorCidades respostas={respostas} cidades={cidades} />
+                        )}
                         <Rodape>
                             <BotaoPular type="button" onClick={pular}>Pular esta etapa</BotaoPular>
                             <Acoes>

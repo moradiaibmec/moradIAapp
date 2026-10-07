@@ -20,6 +20,14 @@ const ContadorEssenciais = styled.p`
     font-weight: 700;
 `;
 
+const AvisoLimite = styled.p`
+    padding: 12px 16px;
+    border-radius: 12px;
+    background-color: #FFFBEB;
+    color: #B45309;
+    font-size: 14px;
+`;
+
 const Lista = styled.ul`
     display: flex;
     flex-direction: column;
@@ -71,6 +79,7 @@ const Motivo = styled.p`
 const Segmentado = styled.div`
     display: flex;
     flex-shrink: 0;
+    min-width: 0;
     gap: 4px;
     padding: 4px;
     border: 1px solid #E5E7EB;
@@ -105,6 +114,13 @@ const BotaoNivel = styled.button`
         opacity: 0.4;
         cursor: not-allowed;
     }
+
+    @media (max-width: 500px) {
+        min-width: 0;
+        padding: 8px 4px;
+        font-size: 12px;
+        white-space: normal;
+    }
 `;
 
 function EtapaPrioridades({ respostas, alterarPeso }) {
@@ -121,6 +137,12 @@ function EtapaPrioridades({ respostas, alterarPeso }) {
                 </Ajuda>
                 <ContadorEssenciais>Essenciais: {essenciais} de {MAXIMO_ESSENCIAIS}</ContadorEssenciais>
             </Cabecalho>
+
+            {essenciais >= MAXIMO_ESSENCIAIS && (
+                <AvisoLimite role="status">
+                    Você já marcou {MAXIMO_ESSENCIAIS} essenciais. Para marcar outro, mude um deles para Importante.
+                </AvisoLimite>
+            )}
 
             <Lista>
                 {PILARES.map(({ id, rotulo, descricao }) => (

@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { FiMapPin } from 'react-icons/fi';
 import { OPCOES_PRAIA, PORTES, RAIO_PADRAO_KM, RAIOS_KM, REGIOES, SIM_NAO } from '../../analise/opcoes.js';
 import { coordenadasDe } from '../../analise/coordenadas.js';
+import { marcarReferenciaPendente, resolverReferencia } from '../../analise/referencia.js';
 import { cidades } from '../../dados/cidades.js';
 import BuscaCidade from '../BuscaCidade/index.jsx';
 import { Ajuda, Pergunta } from './estilos.js';
@@ -19,6 +20,12 @@ const CidadeEscolhida = styled.div`
     color: var(--roxo-moradia);
     font-size: 14px;
     font-weight: 700;
+
+    span {
+        color: #6B7280;
+        font-size: 13px;
+        font-weight: 400;
+    }
 
     button {
         margin-left: auto;
@@ -46,15 +53,13 @@ function EtapaOnde({ respostas, alterar, usuario }) {
     const [erroReferencia, setErroReferencia] = useState(null);
     const cidadeDoPerfil = usuario.user_metadata?.perfil?.cidadeAtual?.trim();
 
+    // Sempre a partir do estado atual: um "Não" ou outra cidade escolhida durante o carregamento prevalece.
     async function escolherReferencia(cidade, { silencioso = false } = {}) {
-        const raioKm = referencia?.raioKm ?? RAIO_PADRAO_KM;
-        const coordenadas = await coordenadasDe(cidade).catch(() => null);
-        if (!coordenadas) {
-            if (!silencioso) setErroReferencia('Não encontramos a localização dessa cidade. Escolha outra.');
-            return;
-        }
         setErroReferencia(null);
-        alterar('onde', { referencia: { cidade, ...coordenadas, raioKm } });
+        alterar('onde', (onde) => ({ referencia: marcarReferenciaPendente(onde.referencia, cidade) }));
+        const coordenadas = await coordenadasDe(cidade).catch(() => null);
+        alterar('onde', (onde) => ({ referencia: resolverReferencia(onde.referencia, cidade, coordenadas) }));
+        if (!coordenadas && !silencioso) setErroReferencia('Não encontramos a localização dessa cidade. Escolha outra.');
     }
 
     function alternarProximidade(valor) {
@@ -95,6 +100,7 @@ function EtapaOnde({ respostas, alterar, usuario }) {
                     {referencia.cidade ? (
                         <CidadeEscolhida>
                             <FiMapPin aria-hidden="true" /> {referencia.cidade}
+                            {referencia.lat === null && <span>localizando…</span>}
                             <button
                                 type="button"
                                 onClick={() => alterar('onde', { referencia: { ...referencia, cidade: null, lat: null, lon: null } })}
