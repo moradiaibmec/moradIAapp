@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
     criarRespostasIniciais, etapaAnterior, etapasVisiveis, limparEtapa, limparEtapasOcultas,
-    pessoasNoDomicilio, proximaEtapa, tetoPadrao,
+    pessoasNoDomicilio, podeAvancar, proximaEtapa, tetoPadrao,
 } from './respostas.js';
 
 function respostasCom(mudancas) {
@@ -128,5 +128,27 @@ describe('pessoasNoDomicilio', () => {
     it('conta 1 pessoa para quem divide com amigos ou não respondeu', () => {
         expect(pessoasNoDomicilio({ moradia: 'amigos', filhosEscolares: false })).toBe(1);
         expect(pessoasNoDomicilio({ moradia: null, filhosEscolares: false })).toBe(1);
+    });
+});
+
+describe('podeAvancar', () => {
+    it('sempre deixa avançar quando há cidades', () => {
+        expect(podeAvancar('momento', 5, false)).toBe(true);
+        expect(podeAvancar('prioridades', 1, true)).toBe(true);
+    });
+
+    it('deixa avançar com 0 cidades antes das etapas de filtro, para a pessoa chegar até elas', () => {
+        expect(podeAvancar('momento', 0, false)).toBe(true);
+    });
+
+    it('bloqueia com 0 cidades nas etapas de filtro e no botão final', () => {
+        expect(podeAvancar('orcamento', 0, false)).toBe(false);
+        expect(podeAvancar('onde', 0, false)).toBe(false);
+        expect(podeAvancar('clima', 0, true)).toBe(false);
+    });
+
+    it('deixa avançar com 0 cidades nas etapas intermediárias depois dos filtros', () => {
+        expect(podeAvancar('trabalho', 0, false)).toBe(true);
+        expect(podeAvancar('clima', 0, false)).toBe(true);
     });
 });

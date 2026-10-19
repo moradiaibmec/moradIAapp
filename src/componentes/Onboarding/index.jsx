@@ -5,7 +5,7 @@ import { cidades } from '../../dados/cidades.js';
 import { aplicarFiltros } from '../../analise/filtros.js';
 import { sugerirPesos } from '../../analise/prePreenchimento.js';
 import {
-    criarRespostasIniciais, etapaAnterior, etapasVisiveis, limparEtapa, limparEtapasOcultas, proximaEtapa,
+    criarRespostasIniciais, etapaAnterior, etapasVisiveis, limparEtapa, limparEtapasOcultas, podeAvancar, proximaEtapa,
 } from '../../analise/respostas.js';
 import { Ajuda, TituloEtapa } from './estilos.js';
 import { ContadorCidades } from './elementos.jsx';
@@ -282,6 +282,7 @@ function Onboarding({ usuario, onSair }) {
     const restantes = aplicarFiltros(respostas, cidades).length;
     const { titulo, Componente } = ETAPAS_INFO[etapaAtual];
     const ultimaEtapa = proximaEtapa(etapas, etapaAtual) === null;
+    const avancoLiberado = podeAvancar(etapaAtual, restantes, ultimaEtapa);
 
     // `valor` pode ser uma função que recebe o estado atual da seção (para atualizações assíncronas).
     function alterar(secao, valor) {
@@ -398,8 +399,8 @@ function Onboarding({ usuario, onSair }) {
                                 <BotaoContinuar
                                     type="button"
                                     onClick={() => avancar(respostas)}
-                                    disabled={restantes === 0}
-                                    title={restantes === 0 ? 'Nenhuma cidade atende aos seus filtros' : undefined}
+                                    disabled={!avancoLiberado}
+                                    title={avancoLiberado ? undefined : 'Nenhuma cidade atende aos seus filtros'}
                                 >
                                     {ultimaEtapa ? 'Encontrar minha cidade' : 'Continuar'}
                                 </BotaoContinuar>

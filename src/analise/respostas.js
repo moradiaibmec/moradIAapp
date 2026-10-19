@@ -90,3 +90,13 @@ export function pessoasNoDomicilio({ moradia, filhosEscolares }) {
     if (moradia === 'familia') return filhosEscolares ? 4 : 3;
     return 1;
 }
+
+// Etapas onde a pessoa configura os filtros que podem zerar o resultado.
+const ETAPAS_DE_FILTRO = ['orcamento', 'onde'];
+
+// Com 0 cidades, só bloqueia onde dá para resolver (etapas de filtro) e no botão final.
+// Antes delas, avançar é o único caminho até o filtro que precisa ser afrouxado.
+export function podeAvancar(etapa, cidadesRestantes, ultimaEtapa) {
+    if (cidadesRestantes > 0) return true;
+    return !ultimaEtapa && !ETAPAS_DE_FILTRO.includes(etapa);
+}
