@@ -18,7 +18,8 @@ export function distanciaKm(a, b) {
 // Quem divide com amigos paga metade do aluguel de um imóvel para 2 pessoas.
 export function aluguelDoDomicilio(cidade, domicilio) {
     const { aluguel } = cidade.indicadores;
-    if (domicilio.moradia === 'amigos') return aluguel[2] === null ? null : aluguel[2] / 2;
+    if (!aluguel) return null; // município sem dado de aluguel (por exemplo, sem Censo 2010)
+    if (domicilio.moradia === 'amigos') return aluguel[2] === null || aluguel[2] === undefined ? null : aluguel[2] / 2;
     return aluguel[pessoasNoDomicilio(domicilio)] ?? null;
 }
 

@@ -146,6 +146,12 @@ describe('calcularMatch', () => {
         expect(joinville.notas.saude.dadoIndisponivel).toBe(false);
     });
 
+    it('não quebra com uma cidade sem aluguel e marca o custo como indisponível', () => {
+        const semAluguel = cidades.map((c) => (c.nome === 'Joinville' ? { ...c, indicadores: { ...c.indicadores, aluguel: null } } : c));
+        const joinville = resultadoDe(calcularMatch(respostasCom({ orcamento: { faixaRenda: 'r4a7', tetoMoradia: 1650 } }), semAluguel), 'Joinville');
+        expect(joinville.notas.custo).toMatchObject({ nota: 50, dadoIndisponivel: true });
+    });
+
     it('dá nota 50 e marca o dado como indisponível quando o indicador falta', () => {
         const semDado = cidades.map((c) => (c.nome === 'Joinville' ? { ...c, indicadores: { ...c.indicadores, homicidios100k: null } } : c));
         const joinville = resultadoDe(calcularMatch(respostasCom(), semDado), 'Joinville');

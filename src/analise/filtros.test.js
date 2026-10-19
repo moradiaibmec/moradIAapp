@@ -49,6 +49,12 @@ describe('aluguelDoDomicilio', () => {
         expect(aluguelDoDomicilio(curitiba, { moradia: 'amigos', filhosEscolares: false })).toBe(1200);
     });
 
+    it('retorna null quando a cidade não tem aluguel nenhum (município sem Censo 2010)', () => {
+        const semAluguel = { ...curitiba, indicadores: { aluguel: null } };
+        expect(aluguelDoDomicilio(semAluguel, { moradia: 'sozinho', filhosEscolares: false })).toBeNull();
+        expect(aluguelDoDomicilio(semAluguel, { moradia: 'amigos', filhosEscolares: false })).toBeNull();
+    });
+
     it('retorna null quando o dado não existe', () => {
         const semDado = { ...curitiba, indicadores: { aluguel: { 1: null, 2: null, 3: null, 4: null } } };
         expect(aluguelDoDomicilio(semDado, { moradia: 'sozinho', filhosEscolares: false })).toBeNull();
