@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { criarRespostasIniciais } from './respostas.js';
 import { aluguelDoDomicilio, aplicarFiltros, distanciaKm, filtroMaisRestritivo, porteDaCidade } from './filtros.js';
-import { cidades as fixture } from '../dados/cidades.js';
+import { cidades as fixture } from '../dados/cidadesFixture.js';
 
 const curitiba = { nome: 'Curitiba', regiao: 'S', lat: -25.43, lon: -49.27, populacao: 1773718, litoranea: false, indicadores: { aluguel: { 1: 1800, 2: 2400, 3: 3000, 4: 3500 } } };
 const salvador = { nome: 'Salvador', regiao: 'NE', lat: -12.97, lon: -38.50, populacao: 2417678, litoranea: true, indicadores: { aluguel: { 1: 1500, 2: 2000, 3: 2600, 4: 3100 } } };

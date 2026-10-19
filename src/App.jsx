@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { listarAnalises, salvarAnalise, supabase } from './lib/supabase.js';
 import { montarAnalise, paraHistorico } from './analise/analises.js';
-import { cidades, versaoDados } from './dados/cidades.js';
+import { cidades, versaoDados } from './dados/cidadesFixture.js';
 import Login from './componentes/Login/index.jsx';
 import Dashboard from './componentes/Dashboard/index.jsx';
 import Perfil from './componentes/Perfil/index.jsx';

@@ -4,7 +4,7 @@ import { FiMapPin } from 'react-icons/fi';
 import { OPCOES_PRAIA, PORTES, RAIO_PADRAO_KM, RAIOS_KM, REGIOES, SIM_NAO } from '../../analise/opcoes.js';
 import { coordenadasDe } from '../../analise/coordenadas.js';
 import { marcarReferenciaPendente, resolverReferencia } from '../../analise/referencia.js';
-import { cidades } from '../../dados/cidades.js';
+import { cidades } from '../../dados/cidadesFixture.js';
 import BuscaCidade from '../BuscaCidade/index.jsx';
 import { Ajuda, Pergunta } from './estilos.js';
 import { ContadorCidades, GrupoOpcoes } from './elementos.jsx';

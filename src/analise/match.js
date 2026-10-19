@@ -23,6 +23,18 @@ const FAIXAS_TEMPERATURA = {
     frio: { indicador: 'tempMesFrio', minimo: -Infinity, maximo: 15 },
 };
 
+// Indicadores que alimentam cada pilar: um pilar é "estimado" se algum deles estiver em cidade.estimados.
+export const INDICADORES_DO_PILAR = {
+    custo: ['aluguel'],
+    seguranca: ['homicidios100k'],
+    clima: ['tempMedia', 'tempMesFrio', 'tempMesQuente', 'diasChuvaAno'],
+    trabalho: ['empregoPerCapita', 'crescimentoEmprego', 'empregoSetor'],
+    saude: ['leitos1k', 'medicos1k'],
+    educacao: ['idebIniciais', 'idebFinais', 'vagasSuperior10k'],
+    lazer: ['lazer10k'],
+    natureza: ['parques10k', 'litoranea'],
+};
+
 const ausente = (valor) => valor === null || valor === undefined;
 
 // Fração (0–100) das outras cidades com valor menor; empates contam pela metade.
@@ -103,7 +115,7 @@ function criarAvaliadores(respostas, universo) {
         trabalho(cidade) {
             const geral = media([
                 percentilDe(indicador('empregoPerCapita'), cidade),
-                percentilDe(indicador('saldoEmprego12m'), cidade),
+                percentilDe(indicador('crescimentoEmprego'), cidade),
             ]);
             if (geral === null) return null;
             const doSetor = media(setores.map((setor) => percentilDe((c) => c.indicadores.empregoSetor?.[setor], cidade)));
@@ -128,10 +140,10 @@ function criarAvaliadores(respostas, universo) {
             return nota === null ? null : { nota, bruto: cidade.indicadores.lazer10k };
         },
         natureza(cidade) {
-            const parques = percentilDe(indicador('parquesM2Hab'), cidade);
+            const parques = percentilDe(indicador('parques10k'), cidade);
             if (parques === null) return null;
             const bonus = respostas.onde.praia === 'bom' && cidade.litoranea ? BONUS_PRAIA : 0;
-            return { nota: Math.min(100, parques + bonus), bruto: cidade.indicadores.parquesM2Hab };
+            return { nota: Math.min(100, parques + bonus), bruto: cidade.indicadores.parques10k };
         },
     };
 }
@@ -150,11 +162,13 @@ export function calcularMatch(respostas, cidades) {
 
     const resultados = aplicarFiltros(respostas, cidades).map((cidade) => {
         const notas = {};
+        const estimados = cidade.estimados ?? [];
         for (const { id } of PILARES) {
             const avaliacao = avaliadores[id](cidade);
+            const estimado = INDICADORES_DO_PILAR[id].some((nome) => estimados.includes(nome));
             notas[id] = avaliacao
-                ? { nota: Math.round(avaliacao.nota), peso: pesos[id], bruto: avaliacao.bruto, dadoIndisponivel: false }
-                : { nota: NOTA_NEUTRA, peso: pesos[id], bruto: null, dadoIndisponivel: true };
+                ? { nota: Math.round(avaliacao.nota), peso: pesos[id], bruto: avaliacao.bruto, dadoIndisponivel: false, estimado }
+                : { nota: NOTA_NEUTRA, peso: pesos[id], bruto: null, dadoIndisponivel: true, estimado };
         }
 
         const somaPesos = PILARES.reduce((total, { id }) => total + valores[id], 0);

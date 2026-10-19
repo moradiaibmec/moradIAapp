@@ -3,7 +3,7 @@ import { PILARES } from './opcoes.js';
 import { criarRespostasIniciais } from './respostas.js';
 import { pesosPadrao } from './prePreenchimento.js';
 import { calcularMatch, notaCusto, notaTemperatura, percentil } from './match.js';
-import { cidades } from '../dados/cidades.js';
+import { cidades } from '../dados/cidadesFixture.js';
 
 const todosOsPilares = (nivel) => Object.fromEntries(PILARES.map(({ id }) => [id, nivel]));
 
@@ -130,6 +130,13 @@ describe('calcularMatch', () => {
                 }
             }
         }
+    });
+
+    it('marca como estimada a nota de um pilar cujo indicador está em cidade.estimados', () => {
+        const comEstimativa = cidades.map((c) => (c.nome === 'Maringá' ? { ...c, estimados: ['aluguel'] } : c));
+        const maringa = resultadoDe(calcularMatch(respostasCom(), comEstimativa), 'Maringá');
+        expect(maringa.notas.custo.estimado).toBe(true);
+        expect(maringa.notas.seguranca.estimado).toBe(false);
     });
 
     it('dá nota 50 e marca o dado como indisponível quando o indicador falta', () => {

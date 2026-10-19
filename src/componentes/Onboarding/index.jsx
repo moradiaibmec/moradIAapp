@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from "styled-components"
 import { FiClock, FiCompass, FiX } from 'react-icons/fi';
-import { cidades } from '../../dados/cidades.js';
+import { cidades } from '../../dados/cidadesFixture.js';
 import { calcularMatch } from '../../analise/match.js';
 import { aplicarFiltros } from '../../analise/filtros.js';
 import { sugerirPesos } from '../../analise/prePreenchimento.js';

@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { FAIXAS_RENDA, PASSO_TETO, TETO_MAXIMO, TETO_MINIMO } from '../../analise/opcoes.js';
 import { pontoMedioRenda, tetoPadrao } from '../../analise/respostas.js';
 import { formatarReais } from '../../analise/formatacao.js';
-import { cidades } from '../../dados/cidades.js';
+import { cidades } from '../../dados/cidadesFixture.js';
 import { Ajuda, Pergunta } from './estilos.js';
 import { ContadorCidades, GrupoOpcoes } from './elementos.jsx';
 
