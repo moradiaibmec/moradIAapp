@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { criarRespostasIniciais } from './respostas.js';
-import { fraseDoPilar, lemaDaCidade, listar, porQueCombina, qualificarNota } from './explicacao.js';
+import { comoFoiEstimado, fonteDoPilar, fraseDoPilar, lemaDaCidade, listar, porQueCombina, qualificarNota } from './explicacao.js';
 
 const avaliacao = (nota, bruto, extra = {}) => ({ nota, peso: 'importante', bruto, dadoIndisponivel: false, ...extra });
 
@@ -32,8 +32,8 @@ describe('fraseDoPilar', () => {
         expect(fraseDoPilar('clima', avaliacao(100, 17.9), respostas)).toBe('Temperatura média de 18 °C');
         expect(fraseDoPilar('trabalho', avaliacao(70, 0.48), respostas)).toBe('48 empregos formais a cada 100 habitantes');
         expect(fraseDoPilar('saude', avaliacao(70, 4.1), respostas)).toBe('4,1 médicos por mil habitantes');
-        expect(fraseDoPilar('lazer', avaliacao(70, 39), respostas)).toBe('39 restaurantes, bares e espaços culturais por 10 mil habitantes');
-        expect(fraseDoPilar('natureza', avaliacao(70, 51), respostas)).toBe('51 m² de parques por habitante');
+        expect(fraseDoPilar('lazer', avaliacao(70, 38.4), respostas)).toBe('38 empregos em bares, restaurantes, hospedagem e cultura por mil habitantes');
+        expect(fraseDoPilar('natureza', avaliacao(70, 51.97), respostas)).toBe('52% das casas com 5 ou mais árvores na rua');
     });
 
     it('fala do custo em relação à renda quando ela foi informada', () => {
@@ -69,5 +69,36 @@ describe('textos da cidade', () => {
             .toBe('Curitiba se destaca em segurança, que pesou no seu match. Os pontos de atenção são custo de vida e clima.');
         expect(porQueCombina(resultado([], [])))
             .toBe('Curitiba tem desempenho equilibrado nos critérios que você escolheu. Nenhum deles ficou abaixo do esperado.');
+    });
+});
+
+describe('fonteDoPilar', () => {
+    const cempre = { nome: 'IBGE, Cadastro Central de Empresas', periodo: '2022–2024', url: 'u' };
+    const fontes = {
+        empregoPerCapita: cempre,
+        crescimentoEmprego: cempre,
+        empregoSetor: cempre,
+        arborizacao: { nome: 'IBGE, Censo 2022 (entorno dos domicílios)', periodo: '2022', url: 'u' },
+        litoranea: { nome: 'IBGE, municípios defrontantes com o mar', periodo: '2024', url: 'u' },
+    };
+
+    it('cita cada fonte uma vez só', () => {
+        expect(fonteDoPilar('trabalho', fontes)).toBe('Fonte: IBGE, Cadastro Central de Empresas, 2022–2024');
+    });
+
+    it('junta fontes diferentes do mesmo pilar', () => {
+        expect(fonteDoPilar('natureza', fontes)).toBe('Fonte: IBGE, Censo 2022 (entorno dos domicílios), 2022; IBGE, municípios defrontantes com o mar, 2024');
+    });
+
+    it('ignora indicadores sem fonte e devolve vazio sem nenhuma', () => {
+        expect(fonteDoPilar('saude', fontes)).toBe('');
+    });
+});
+
+describe('comoFoiEstimado', () => {
+    it('explica a estimativa a partir da fonte do pilar', () => {
+        const fontes = { aluguel: { nome: 'FipeZap', periodo: 'set/2026', comoEstimado: 'Calculado pelo MoradIA a partir do Censo 2010 e do FipeZap' } };
+        expect(comoFoiEstimado('custo', fontes)).toBe('Calculado pelo MoradIA a partir do Censo 2010 e do FipeZap');
+        expect(comoFoiEstimado('seguranca', fontes)).toBe('Valor estimado pelo MoradIA');
     });
 });

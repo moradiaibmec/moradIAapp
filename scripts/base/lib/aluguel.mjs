@@ -1,4 +1,4 @@
-// Estimativa do aluguel (spec "Estimativa do aluguel"): mediana do Censo 2010 calibrada pelo FipeZap atual.
+// Estimativa do aluguel (spec "Estimativa do aluguel"): mediana do Censo 2010 levada ao nível atual do FipeZap.
 
 export const SALARIO_MINIMO_2010 = 510;
 
@@ -24,23 +24,20 @@ export function medianaAluguel2010(contagens) {
     return null;
 }
 
-// Mínimos quadrados de ln y = a + b · ln x.
-export function ajustarRegressao(pares) {
-    const pontos = pares.map(({ x, y }) => ({ x: Math.log(x), y: Math.log(y) }));
-    const n = pontos.length;
-    const mediaX = pontos.reduce((s, p) => s + p.x, 0) / n;
-    const mediaY = pontos.reduce((s, p) => s + p.y, 0) / n;
-    const sxy = pontos.reduce((s, p) => s + (p.x - mediaX) * (p.y - mediaY), 0);
-    const sxx = pontos.reduce((s, p) => s + (p.x - mediaX) ** 2, 0);
-    const b = sxy / sxx;
-    const a = mediaY - b * mediaX;
-    const residuos = pontos.reduce((s, p) => s + (p.y - (a + b * p.x)) ** 2, 0);
-    const totalQuadrados = pontos.reduce((s, p) => s + (p.y - mediaY) ** 2, 0);
-    return { a, b, r2: 1 - residuos / totalQuadrados, n };
+// Área de referência para comparar o aluguel atual (R$/m² do FipeZap) com a mediana de 2010 (aluguel inteiro).
+export const AREA_REFERENCIA = 55;
+
+// Fator único que leva a mediana de 2010 ao nível atual: mediana das razões nas cidades com FipeZap.
+// Decisão de 2026-10-19: uma regressão explicava só 2% da variação e deixava as cidades estimadas quase iguais.
+export function calibrarFator(pares) {
+    const razoes = pares.map(({ mediana, m2 }) => (m2 * AREA_REFERENCIA) / mediana).sort((a, b) => a - b);
+    const meio = Math.floor(razoes.length / 2);
+    return razoes.length % 2 ? razoes[meio] : (razoes[meio - 1] + razoes[meio]) / 2;
 }
 
-export function preverM2({ a, b }, mediana) {
-    return Math.exp(a + b * Math.log(mediana));
+// R$/m² estimado: a mediana de 2010 trazida ao nível atual, mantendo a ordem do Censo entre as cidades.
+export function estimarM2(fator, mediana) {
+    return (mediana * fator) / AREA_REFERENCIA;
 }
 
 export function aluguelPorTamanho(m2) {

@@ -11,6 +11,12 @@ export const SECOES_DOS_SETORES = {
     agronegocio: ['A'],
 };
 
+// Lazer & cultura: empregos em alojamento e alimentação (I) e em artes, cultura, esporte e recreação (R) por mil habitantes.
+export function lazerPorMil(porSecao, populacao) {
+    if (porSecao.I === undefined && porSecao.R === undefined) return null;
+    return Math.round((((porSecao.I ?? 0) + (porSecao.R ?? 0)) * 10000) / populacao) / 10;
+}
+
 export function indicadoresEmprego({ total2022, total2024, porSecao }, populacao) {
     const empregoSetor = Object.fromEntries(Object.entries(SECOES_DOS_SETORES).map(([setor, secoes]) => [
         setor,

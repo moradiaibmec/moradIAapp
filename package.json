@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "base:gerar": "node scripts/base/gerar.mjs",
+    "base:gerar": "node --use-system-ca scripts/base/gerar.mjs",
     "base:validar": "node scripts/base/validar.mjs"
   },
   "dependencies": {

@@ -41,6 +41,16 @@ describe('baixar', () => {
         expect(fetch.mock.calls[0][1].headers['User-Agent']).toBe('MoradIA-base/1.0 (prototipo academico)');
     });
 
+    it('tenta de novo uma vez quando a conexão falha', async () => {
+        const fetch = vi.fn()
+            .mockRejectedValueOnce(new TypeError('fetch failed'))
+            .mockResolvedValueOnce(resposta(200, 'segunda'));
+        vi.stubGlobal('fetch', fetch);
+        const dados = await baixar('https://x', { arquivoCache: 'rede.txt', fonte: 'Teste', esperaRepeticaoMs: 0 });
+        expect(fetch).toHaveBeenCalledTimes(2);
+        expect(dados.toString()).toBe('segunda');
+    });
+
     it('falha com o nome da fonte e a URL quando a resposta não é 2xx', async () => {
         vi.stubGlobal('fetch', vi.fn(async () => resposta(404)));
         await expect(baixar('https://x', { arquivoCache: 'erro.txt', fonte: 'FipeZap' }))

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ajustarRegressao, aluguelPorTamanho, medianaAluguel2010, preverM2 } from './aluguel.mjs';
+import { aluguelPorTamanho, calibrarFator, estimarM2, medianaAluguel2010 } from './aluguel.mjs';
 
 describe('medianaAluguel2010', () => {
     it('interpola a mediana dentro da faixa (dados reais de Curitiba, Censo 2010)', () => {
@@ -11,15 +11,16 @@ describe('medianaAluguel2010', () => {
     });
 });
 
-describe('ajustarRegressao e preverM2', () => {
-    it('recupera a reta em escala log', () => {
-        const pares = [100, 400, 900].map((x) => ({ x, y: Math.exp(1 + 0.5 * Math.log(x)) }));
-        const regressao = ajustarRegressao(pares);
-        expect(regressao.a).toBeCloseTo(1, 6);
-        expect(regressao.b).toBeCloseTo(0.5, 6);
-        expect(regressao.r2).toBeCloseTo(1, 6);
-        expect(regressao.n).toBe(3);
-        expect(preverM2(regressao, 400)).toBeCloseTo(Math.exp(1) * 20, 6);
+describe('calibrarFator e estimarM2', () => {
+    it('usa a mediana das razões entre o aluguel atual de 55 m² e a mediana de 2010', () => {
+        const pares = [{ mediana: 100, m2: 20 }, { mediana: 200, m2: 30 }, { mediana: 400, m2: 40 }];
+        // razões m2 × 55 ÷ mediana: 11; 8,25; 5,5 → mediana 8,25
+        expect(calibrarFator(pares)).toBeCloseTo(8.25, 6);
+    });
+
+    it('preserva a ordem do Censo 2010 entre as cidades estimadas', () => {
+        expect(estimarM2(8.25, 200)).toBeCloseTo(30, 6);
+        expect(estimarM2(8.25, 100)).toBeLessThan(estimarM2(8.25, 200));
     });
 });
 

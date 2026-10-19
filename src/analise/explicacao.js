@@ -1,6 +1,7 @@
 // Textos da tela de resultados, montados só a partir dos dados do match (sem LLM).
 import { formatarReais } from './formatacao.js';
 import { pontoMedioRenda } from './respostas.js';
+import { INDICADORES_DO_PILAR } from './match.js';
 
 const NOMES_NO_TEXTO = {
     custo: 'custo de vida',
@@ -48,9 +49,9 @@ export function fraseDoPilar(pilar, { bruto, dadoIndisponivel }, respostas) {
                 ? `${Math.round(bruto)} vagas no ensino superior por 10 mil habitantes`
                 : `Ideb médio de ${decimal(bruto)}`;
         case 'lazer':
-            return `${Math.round(bruto)} restaurantes, bares e espaços culturais por 10 mil habitantes`;
+            return `${Math.round(bruto)} empregos em bares, restaurantes, hospedagem e cultura por mil habitantes`;
         case 'natureza':
-            return `${Math.round(bruto)} m² de parques por habitante`;
+            return `${Math.round(bruto)}% das casas com 5 ou mais árvores na rua`;
         default:
             return '';
     }
@@ -73,4 +74,20 @@ export function porQueCombina({ cidade, pontosFortes, pontosAtencao }) {
     if (pontosAtencao.length === 1) atencao = ` O ponto de atenção é ${nomesNoTexto(pontosAtencao)[0]}.`;
     if (pontosAtencao.length > 1) atencao = ` Os pontos de atenção são ${listar(nomesNoTexto(pontosAtencao))}.`;
     return destaque + atencao;
+}
+
+// "Fonte: <nome>, <período>" das fontes dos indicadores do pilar, sem repetir; vazio se nenhuma for conhecida.
+export function fonteDoPilar(pilar, fontes = {}) {
+    const citacoes = INDICADORES_DO_PILAR[pilar]
+        .map((indicador) => fontes[indicador])
+        .filter(Boolean)
+        .map(({ nome, periodo }) => `${nome}, ${periodo}`);
+    const unicas = [...new Set(citacoes)];
+    return unicas.length ? `Fonte: ${unicas.join('; ')}` : '';
+}
+
+// Texto de ajuda do selo "Estimado": a explicação registrada na fonte de algum indicador do pilar.
+export function comoFoiEstimado(pilar, fontes = {}) {
+    const fonte = INDICADORES_DO_PILAR[pilar].map((indicador) => fontes[indicador]).find((f) => f?.comoEstimado);
+    return fonte?.comoEstimado ?? 'Valor estimado pelo MoradIA';
 }

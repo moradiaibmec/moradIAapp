@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { indicadoresEmprego } from './emprego.mjs';
+import { indicadoresEmprego, lazerPorMil } from './emprego.mjs';
 
 describe('indicadoresEmprego', () => {
     it('calcula emprego por habitante, crescimento e participação dos setores', () => {
@@ -10,5 +10,12 @@ describe('indicadoresEmprego', () => {
         expect(r.empregoSetor.servicos).toBeCloseTo(0.2727, 4);
         expect(r.empregoSetor.industria).toBeCloseTo(0.1818, 4);
         expect(r.empregoSetor.agronegocio).toBe(0);
+    });
+});
+
+describe('lazerPorMil', () => {
+    it('soma alimentação e hospedagem (I) com artes, cultura e recreação (R) por mil habitantes', () => {
+        expect(lazerPorMil({ I: 30, R: 8, C: 100 }, 1000)).toBe(38);
+        expect(lazerPorMil({}, 1000)).toBeNull();
     });
 });

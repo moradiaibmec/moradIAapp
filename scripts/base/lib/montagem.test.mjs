@@ -10,6 +10,10 @@ describe('aplicarFaixas', () => {
         expect(foraDaFaixa).toEqual(['tempMedia', 'leitos1k']);
     });
 
+    it('aceita Ideb acima de 9, como o de Sobral (9,6)', () => {
+        expect(aplicarFaixas({ idebIniciais: 9.6 }).indicadores.idebIniciais).toBe(9.6);
+    });
+
     it('aceita crescimento de emprego negativo', () => {
         expect(aplicarFaixas({ crescimentoEmprego: -3.2 }).indicadores.crescimentoEmprego).toBe(-3.2);
     });
@@ -17,7 +21,7 @@ describe('aplicarFaixas', () => {
 
 describe('montarCidade', () => {
     it('monta a cidade mesmo sem os dados de uma fonte, deixando os campos como null', () => {
-        const cidade = montarCidade(identidade, [{ homicidios100k: 10 }, { lazer10k: 30 }], []);
+        const cidade = montarCidade(identidade, [{ homicidios100k: 10 }, { lazer1k: 30 }], []);
         expect(cidade.indicadores.tempMedia).toBeNull();
         expect(cidade.indicadores.medicos1k).toBeNull();
         expect(cidade.indicadores.homicidios100k).toBe(10);

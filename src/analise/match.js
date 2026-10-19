@@ -31,8 +31,8 @@ export const INDICADORES_DO_PILAR = {
     trabalho: ['empregoPerCapita', 'crescimentoEmprego', 'empregoSetor'],
     saude: ['leitos1k', 'medicos1k'],
     educacao: ['idebIniciais', 'idebFinais', 'vagasSuperior10k'],
-    lazer: ['lazer10k'],
-    natureza: ['parques10k', 'litoranea'],
+    lazer: ['lazer1k'],
+    natureza: ['arborizacao', 'litoranea'],
 };
 
 const ausente = (valor) => valor === null || valor === undefined;
@@ -136,14 +136,14 @@ function criarAvaliadores(respostas, universo) {
             return nota === null ? null : { nota, bruto: ideb(cidade) };
         },
         lazer(cidade) {
-            const nota = percentilDe(indicador('lazer10k'), cidade);
-            return nota === null ? null : { nota, bruto: cidade.indicadores.lazer10k };
+            const nota = percentilDe(indicador('lazer1k'), cidade);
+            return nota === null ? null : { nota, bruto: cidade.indicadores.lazer1k };
         },
         natureza(cidade) {
-            const parques = percentilDe(indicador('parques10k'), cidade);
-            if (parques === null) return null;
+            const arvores = percentilDe(indicador('arborizacao'), cidade);
+            if (arvores === null) return null;
             const bonus = respostas.onde.praia === 'bom' && cidade.litoranea ? BONUS_PRAIA : 0;
-            return { nota: Math.min(100, parques + bonus), bruto: cidade.indicadores.parques10k };
+            return { nota: Math.min(100, arvores + bonus), bruto: cidade.indicadores.arborizacao };
         },
     };
 }

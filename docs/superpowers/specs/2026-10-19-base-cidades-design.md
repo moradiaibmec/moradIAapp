@@ -28,7 +28,7 @@ Hoje o ranking roda sobre 16 cidades com valores fictícios (`src/dados/cidades.
 
 ## Decisões do dono do produto
 
-- **Aluguel:** medido onde houver FipeZap (50 cidades) e **estimado** para as demais, marcado como tal.
+- **Aluguel:** medido onde houver FipeZap (36 cidades com valor publicado) e **estimado** para as demais, marcado como tal.
 - **Transparência:** a tela mostra a fonte de cada indicador e marca o que é estimado.
 
 ## Decisões do assistente (revisáveis)
@@ -50,22 +50,26 @@ Todas as fontes abaixo foram verificadas em 2026-10-19 (respondem sem chave e tr
 | `litoranea` | IBGE, relação de municípios defrontantes com o mar | Verdadeiro se o município está na lista. Ver "Deixado ao construtor" |
 | `aluguel` (1–4 pessoas) | FipeZap (`https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx`), seção Locação, coluna "Preço médio (R$/m²) Total", último mês com valor; e IBGE SIDRA Censo 2010, agregado 3511 (variável 1549, classificação 511) | Ver "Estimativa do aluguel" |
 | `homicidios100k` | Ipeadata, série `AVIOL12_HOMIC` (número de homicídios, fonte DataSUS), nível Municípios | Média dos homicídios de 2020–2022 ÷ população × 100.000. **Não** usar a série de taxa pronta (`AVIOL12_THOMIC`), que tem erros |
-| `tempMedia`, `tempMesFrio`, `tempMesQuente`, `diasChuvaAno` | Open-Meteo Historical Weather API (`archive-api.open-meteo.com`), diário de 2015-01-01 a 2024-12-31, nas coordenadas da cidade | Média anual; média do mês civil mais frio e do mais quente (média dos 10 anos); dias com chuva ≥ 1 mm por ano |
+| `tempMedia`, `tempMesFrio`, `tempMesQuente`, `diasChuvaAno` | NASA POWER (`power.larc.nasa.gov`, reanálise MERRA-2), diário de 2015-01-01 a 2024-12-31, nas coordenadas da cidade. *Troca de 2026-10-19: o plano gratuito do Open-Meteo não comporta 10 anos para ~320 cidades* | Média anual; média do mês civil mais frio e do mais quente (média dos 10 anos); dias com chuva ≥ 1 mm por ano |
 | `empregoPerCapita`, `crescimentoEmprego`, `empregoSetor` | IBGE SIDRA, Cadastro Central de Empresas, agregado 9510 (2022–2024, nível N6, por seção CNAE) | Pessoal ocupado assalariado 2024 ÷ população; crescimento % de 2022 a 2024; participação de cada seção no total |
 | `leitos1k` | Ministério da Saúde, Leitos (CNES), arquivo do ano mais recente em `s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/Leitos_SUS/` | Leitos existentes (SUS e não SUS) do mês mais recente ÷ população × 1.000 |
 | `idebIniciais`, `idebFinais` | INEP, Ideb 2023 por município (`download.inep.gov.br/ideb/resultados/`) | Ideb da rede pública municipal + estadual (a linha "Pública" do arquivo) |
 | `vagasSuperior10k` | INEP, microdados do Censo da Educação Superior 2023 | Soma das vagas totais oferecidas pelos cursos do município ÷ população × 10.000 |
-| `lazer10k` | OpenStreetMap via Overpass (`overpass-api.de`), área pela tag `IBGE:GEOCODIGO` | Contagem de `amenity` restaurant, bar, cafe, pub, theatre, cinema, arts_centre ÷ população × 10.000 |
-| `parques10k` | OpenStreetMap via Overpass | Contagem de `leisure=park` ÷ população × 10.000 |
+| `lazer1k` | IBGE SIDRA, Cadastro Central de Empresas, agregado 9510, seções CNAE I (alojamento e alimentação) e R (artes, cultura, esporte e recreação) | Pessoal ocupado assalariado em I + R em 2024 ÷ população × 1.000 |
+| `arborizacao` | IBGE SIDRA, Censo 2022, Pesquisa Urbanística do Entorno dos Domicílios, agregado 9585 (variável 1009599, característica 72281) | % dos domicílios com 5 ou mais árvores na face de quadra |
+
+*Troca de 2026-10-19 (aprovada pelo dono do produto):* lazer e natureza vinham do OpenStreetMap (contagem de lugares e de parques). O Overpass levaria 6 a 8 horas para as ~320 cidades e tem cobertura desigual; as duas fontes do IBGE cobrem todas as cidades do mesmo jeito.
 
 **Mapa de setores para seções CNAE:** tecnologia → J; finanças → K; saúde → Q; educação → P; indústria → C; comércio → G; serviços → I, L, M, N e S somadas; agronegócio → A.
 
 ### Estimativa do aluguel
 
 1. Para cada município, calcular a **mediana do aluguel de 2010** (Censo 2010, agregado 3511) por interpolação linear dentro das faixas de salário mínimo (SM de 2010 = R$ 510). A faixa aberta "mais de 5 SM" usa 7,5 SM como limite superior.
-2. Nas cidades que têm FipeZap e Censo 2010, ajustar uma regressão `ln(R$/m² atual) = a + b · ln(mediana 2010)` por mínimos quadrados. Registrar `a`, `b`, o R² e o número de cidades no log da geração.
-3. Para cidades sem FipeZap, `R$/m²` = valor previsto pela regressão, e o aluguel é marcado como estimado.
+2. Calibrar um **fator único** nas cidades com FipeZap: a mediana, entre essas cidades, de (R$/m² atual × 55 m²) ÷ mediana de 2010. Registrar o fator e o número de cidades no log.
+3. Para cidades sem FipeZap, `R$/m²` = mediana de 2010 × fator ÷ 55, e o aluguel é marcado como estimado. Isso preserva entre as cidades estimadas a ordem real medida pelo Censo.
 4. Converter `R$/m²` em aluguel mensal por tamanho de domicílio: 1 pessoa → 40 m²; 2 → 55 m²; 3 → 70 m²; 4 → 85 m². *(Decisão do assistente.)*
+
+*Decisão de 2026-10-19 (aprovada pelo dono do produto):* a spec previa uma regressão `ln(R$/m²) = a + b · ln(mediana 2010)`. Com os dados reais ela explicou só 2% da variação (r² = 0,02) e deixava as 283 cidades estimadas quase com o mesmo aluguel, o que esvaziava o pilar Custo. O fator único tem erro mediano de ~26% nas 36 cidades medidas, mas mantém as diferenças entre cidades. O FipeZap publica aluguel para 36 cidades, não 50: 20 abas têm a seção de locação sem valores.
 
 ## Formato gerado
 
@@ -89,14 +93,14 @@ Arquivo `src/dados/cidades.json`, carregado pelo app no lugar da fixture. Muda e
       empregoPerCapita, crescimentoEmprego, empregoSetor: { tecnologia, ... },
       leitos1k, medicos1k: null,
       idebIniciais, idebFinais, vagasSuperior10k,
-      lazer10k, parques10k,
+      lazer1k, arborizacao,
     },
     estimados: ['aluguel'],               // indicadores estimados nesta cidade (vazio se nenhum)
   }],
 }
 ```
 
-Renomeações no motor de score (`src/analise/match.js`): `saldoEmprego12m` → `crescimentoEmprego`; `parquesM2Hab` → `parques10k`. `custoBasico` sai do formato, porque o motor não usa mais.
+Renomeações no motor de score (`src/analise/match.js`): `saldoEmprego12m` → `crescimentoEmprego`; `parquesM2Hab` → `arborizacao`; `lazer10k` → `lazer1k`. `custoBasico` sai do formato, porque o motor não usa mais.
 
 ## Mudanças no app
 
@@ -110,7 +114,7 @@ Renomeações no motor de score (`src/analise/match.js`): `saldoEmprego12m` → 
 
 - Scripts Node em `scripts/base/`, um por fonte, e um script que junta tudo e grava `cidades.json`. Comando: `npm run base:gerar`.
 - Downloads brutos ficam em cache em `scripts/base/.cache/` (fora do git), para regerar sem baixar tudo de novo.
-- Overpass e Open-Meteo: uma requisição por cidade, com pausa entre elas e User-Agent identificando o projeto. O Overpass recusa requisições sem User-Agent (HTTP 406).
+- NASA POWER: uma requisição por cidade, com pausa entre elas e User-Agent identificando o projeto.
 - Uma falha de uma fonte numa cidade grava `null` naquele indicador e segue. O log final lista as falhas.
 
 ## Validação
@@ -118,7 +122,7 @@ Renomeações no motor de score (`src/analise/match.js`): `saldoEmprego12m` → 
 Um script `npm run base:validar` roda depois da geração e falha se:
 
 - o número de cidades estiver fora de 290–340;
-- algum valor numérico for `NaN`, negativo ou fora de faixas plausíveis (temperatura média 10–30 °C; homicídios 0–150 por 100 mil; leitos 0–20 por mil; Ideb 2–9);
+- algum valor numérico for `NaN`, negativo ou fora de faixas plausíveis (temperatura média 10–30 °C; homicídios 0–150 por 100 mil; leitos 0–20 por mil; Ideb 0–10, a escala do índice);
 - mais de 10% das cidades tiverem um mesmo indicador `null`;
 - falharem estas checagens de coerência, ligadas ao "isso não faz sentido":
   - Curitiba e Porto Alegre têm `tempMesFrio` menor que Fortaleza e Salvador, e ambas têm `tempMesFrio` ≤ 15 °C;
@@ -131,8 +135,6 @@ Também há um teste automatizado (Vitest) do motor rodando sobre a base real, n
 
 - A estimativa do aluguel vem de dados de 2010 e pode errar em cidades que mudaram muito desde então. Mitigação: o selo "Estimado" e o R² registrado no log.
 - Os homicídios mais recentes são de 2022.
-- O OpenStreetMap é menos completo em cidades médias, o que pode subestimar Lazer e Natureza nelas.
-- Open-Meteo é gratuito para uso não comercial. Rever se o produto for monetizado.
 - Arquivos do INEP e do Ministério da Saúde são grandes (dezenas de MB) e mudam de nome entre anos. Os scripts devem falhar com mensagem clara se a URL mudar.
 
 ## Deixado ao construtor

@@ -3,7 +3,7 @@
 export const CAMPOS_INDICADORES = [
     'aluguel', 'homicidios100k', 'tempMedia', 'tempMesFrio', 'tempMesQuente', 'diasChuvaAno',
     'empregoPerCapita', 'crescimentoEmprego', 'empregoSetor', 'leitos1k', 'medicos1k',
-    'idebIniciais', 'idebFinais', 'vagasSuperior10k', 'lazer10k', 'parques10k',
+    'idebIniciais', 'idebFinais', 'vagasSuperior10k', 'lazer1k', 'arborizacao',
 ];
 
 // Fora destas faixas o valor é tratado como erro da fonte e vira null.
@@ -11,8 +11,9 @@ export const FAIXAS = {
     tempMedia: [10, 30],
     homicidios100k: [0, 150],
     leitos1k: [0, 20],
-    idebIniciais: [2, 9],
-    idebFinais: [2, 9],
+    idebIniciais: [0, 10],
+    idebFinais: [0, 10],
+    arborizacao: [0, 100],
 };
 
 // Indicadores que podem ser negativos.
