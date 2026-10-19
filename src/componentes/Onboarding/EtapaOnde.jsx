@@ -4,7 +4,6 @@ import { FiMapPin } from 'react-icons/fi';
 import { OPCOES_PRAIA, PORTES, RAIO_PADRAO_KM, RAIOS_KM, REGIOES, SIM_NAO } from '../../analise/opcoes.js';
 import { coordenadasDe } from '../../analise/coordenadas.js';
 import { marcarReferenciaPendente, resolverReferencia } from '../../analise/referencia.js';
-import { cidades } from '../../dados/cidadesFixture.js';
 import BuscaCidade from '../BuscaCidade/index.jsx';
 import { Ajuda, Pergunta } from './estilos.js';
 import { ContadorCidades, GrupoOpcoes } from './elementos.jsx';
@@ -48,7 +47,7 @@ const Erro = styled.p`
 
 const opcoesRaio = RAIOS_KM.map((km) => ({ id: String(km), rotulo: `Até ${km} km` }));
 
-function EtapaOnde({ respostas, alterar, usuario }) {
+function EtapaOnde({ respostas, alterar, usuario, cidades }) {
     const { regioes, referencia, portes, praia } = respostas.onde;
     const [erroReferencia, setErroReferencia] = useState(null);
     const cidadeDoPerfil = usuario.user_metadata?.perfil?.cidadeAtual?.trim();

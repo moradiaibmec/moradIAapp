@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { listarAnalises, salvarAnalise, supabase } from './lib/supabase.js';
 import { montarAnalise, paraHistorico } from './analise/analises.js';
-import { cidades, versaoDados } from './dados/cidadesFixture.js';
+import { carregarBase } from './dados/base.js';
 import Login from './componentes/Login/index.jsx';
 import Dashboard from './componentes/Dashboard/index.jsx';
 import Perfil from './componentes/Perfil/index.jsx';
 import Onboarding from './componentes/Onboarding/index.jsx';
 import Processamento from './componentes/Processamento/index.jsx';
 import Resultados from './componentes/Resultados/index.jsx';
+import CarregandoBase from './componentes/CarregandoBase/index.jsx';
 
 
 function App(){
@@ -18,6 +19,9 @@ function App(){
   // Análise recém-concluída: { respostas, resultados } e o estado do salvamento no histórico.
   const [analiseAtual, setAnaliseAtual] = useState(null);
   const [salvamento, setSalvamento] = useState(null);
+  // Base de cidades: carregada só quando a pessoa começa uma análise.
+  const [base, setBase] = useState(null);
+  const [erroBase, setErroBase] = useState(false);
   const idUsuario = sessao?.user?.id;
 
   useEffect(() => {
@@ -48,13 +52,19 @@ function App(){
     window.scrollTo(0, 0);
   }
 
+  function prepararBase() {
+    setErroBase(false);
+    carregarBase().then(setBase).catch(() => setErroBase(true));
+  }
+
   function iniciarAnalise() {
+    if (!base) prepararBase();
     navegar('onboarding');
   }
 
   async function salvar({ respostas, resultados }) {
     setSalvamento('salvando');
-    const { error } = await salvarAnalise(montarAnalise(respostas, resultados, versaoDados));
+    const { error } = await salvarAnalise(montarAnalise(respostas, resultados, base.versaoDados));
     setSalvamento(error ? 'erro' : 'salva');
     if (!error) carregarAnalises();
   }
@@ -69,12 +79,16 @@ function App(){
   if (carregando) return null;
   if (!sessao) return <Login />;
 
+  if (pagina === 'onboarding' && !base) {
+    return <CarregandoBase erro={erroBase} onTentarDeNovo={prepararBase} onSair={() => navegar('dashboard')} />;
+  }
+
   if (pagina === 'onboarding') {
-    return <Onboarding usuario={sessao.user} onSair={() => navegar('dashboard')} onConcluir={concluirAnalise} />;
+    return <Onboarding usuario={sessao.user} cidades={base.cidades} onSair={() => navegar('dashboard')} onConcluir={concluirAnalise} />;
   }
 
   if (pagina === 'processando') {
-    return <Processamento totalCidades={cidades.length} onConcluido={() => navegar('resultados')} />;
+    return <Processamento totalCidades={base.cidades.length} onConcluido={() => navegar('resultados')} />;
   }
 
   if (pagina === 'resultados' && analiseAtual) {
@@ -85,6 +99,7 @@ function App(){
         onNovaAnalise={iniciarAnalise}
         respostas={analiseAtual.respostas}
         resultados={analiseAtual.resultados}
+        fontes={base.fontes}
         salvamento={salvamento}
         onTentarSalvar={() => salvar(analiseAtual)}
       />

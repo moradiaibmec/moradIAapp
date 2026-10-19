@@ -31,7 +31,7 @@ describe('fraseDoPilar', () => {
         expect(fraseDoPilar('seguranca', avaliacao(84, 14.2), respostas)).toBe('14 homicídios por 100 mil habitantes');
         expect(fraseDoPilar('clima', avaliacao(100, 17.9), respostas)).toBe('Temperatura média de 18 °C');
         expect(fraseDoPilar('trabalho', avaliacao(70, 0.48), respostas)).toBe('48 empregos formais a cada 100 habitantes');
-        expect(fraseDoPilar('saude', avaliacao(70, 4.1), respostas)).toBe('4,1 médicos por mil habitantes');
+        expect(fraseDoPilar('saude', avaliacao(70, 3.5), respostas)).toBe('3,5 leitos por mil habitantes');
         expect(fraseDoPilar('lazer', avaliacao(70, 38.4), respostas)).toBe('38 empregos em bares, restaurantes, hospedagem e cultura por mil habitantes');
         expect(fraseDoPilar('natureza', avaliacao(70, 51.97), respostas)).toBe('52% das casas com 5 ou mais árvores na rua');
     });
@@ -46,6 +46,10 @@ describe('fraseDoPilar', () => {
         const estudante = { ...respostas, trabalho: { setores: [], ensinoSuperior: true } };
         expect(fraseDoPilar('educacao', avaliacao(70, 410), estudante)).toBe('410 vagas no ensino superior por 10 mil habitantes');
         expect(fraseDoPilar('educacao', avaliacao(70, 6.25), respostas)).toBe('Ideb médio de 6,3');
+    });
+
+    it('não quebra quando a nota existe mas o dado bruto não', () => {
+        expect(fraseDoPilar('educacao', avaliacao(60, null), respostas)).toBe('');
     });
 
     it('avisa quando o dado não existe', () => {

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import styled from "styled-components"
 import { FiClock, FiCompass, FiX } from 'react-icons/fi';
-import { cidades } from '../../dados/cidadesFixture.js';
 import { calcularMatch } from '../../analise/match.js';
 import { aplicarFiltros } from '../../analise/filtros.js';
 import { sugerirPesos } from '../../analise/prePreenchimento.js';
@@ -248,7 +247,7 @@ function isObjetoSimples(valor) {
     return valor !== null && typeof valor === 'object' && !Array.isArray(valor);
 }
 
-function Onboarding({ usuario, onSair, onConcluir }) {
+function Onboarding({ usuario, cidades, onSair, onConcluir }) {
     const [respostas, setRespostas] = useState(criarRespostasIniciais);
     const [etapaAtual, setEtapaAtual] = useState('momento');
     const [pesosAjustados, setPesosAjustados] = useState(false);
@@ -346,6 +345,7 @@ function Onboarding({ usuario, onSair, onConcluir }) {
                             alterar={alterar}
                             alterarPeso={alterarPeso}
                             usuario={usuario}
+                            cidades={cidades}
                         />
                     )}
                 </Conteudo>

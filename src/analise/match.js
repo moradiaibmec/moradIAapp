@@ -123,7 +123,8 @@ function criarAvaliadores(respostas, universo) {
         },
         saude(cidade) {
             const nota = media([percentilDe(indicador('medicos1k'), cidade), percentilDe(indicador('leitos1k'), cidade)]);
-            return nota === null ? null : { nota, bruto: cidade.indicadores.medicos1k };
+            // A base real ainda não tem médicos por mil; o dado mostrado é o de leitos, que sempre existe.
+            return nota === null ? null : { nota, bruto: cidade.indicadores.leitos1k };
         },
         educacao(cidade) {
             const notaIdeb = percentilDe(ideb, cidade);

@@ -31,6 +31,7 @@ export function listar(itens) {
 
 export function fraseDoPilar(pilar, { bruto, dadoIndisponivel }, respostas) {
     if (dadoIndisponivel) return 'Dado indisponível para esta cidade';
+    if (bruto === null || bruto === undefined) return '';
     switch (pilar) {
         case 'custo':
             return pontoMedioRenda(respostas.orcamento.faixaRenda) === null
@@ -43,7 +44,7 @@ export function fraseDoPilar(pilar, { bruto, dadoIndisponivel }, respostas) {
         case 'trabalho':
             return `${Math.round(bruto * 100)} empregos formais a cada 100 habitantes`;
         case 'saude':
-            return `${decimal(bruto)} médicos por mil habitantes`;
+            return `${decimal(bruto)} leitos por mil habitantes`;
         case 'educacao':
             return respostas.trabalho.ensinoSuperior && !respostas.domicilio.filhosEscolares
                 ? `${Math.round(bruto)} vagas no ensino superior por 10 mil habitantes`

@@ -139,6 +139,13 @@ describe('calcularMatch', () => {
         expect(maringa.notas.seguranca.estimado).toBe(false);
     });
 
+    it('mostra os leitos como dado de saúde quando não há médicos (base real)', () => {
+        const semMedicos = cidades.map((c) => ({ ...c, indicadores: { ...c.indicadores, medicos1k: null } }));
+        const joinville = resultadoDe(calcularMatch(respostasCom(), semMedicos), 'Joinville');
+        expect(joinville.notas.saude.bruto).toBe(2.4);
+        expect(joinville.notas.saude.dadoIndisponivel).toBe(false);
+    });
+
     it('dá nota 50 e marca o dado como indisponível quando o indicador falta', () => {
         const semDado = cidades.map((c) => (c.nome === 'Joinville' ? { ...c, indicadores: { ...c.indicadores, homicidios100k: null } } : c));
         const joinville = resultadoDe(calcularMatch(respostasCom(), semDado), 'Joinville');

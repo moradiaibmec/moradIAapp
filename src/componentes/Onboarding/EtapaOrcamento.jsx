@@ -2,7 +2,6 @@ import styled from "styled-components"
 import { FAIXAS_RENDA, PASSO_TETO, TETO_MAXIMO, TETO_MINIMO } from '../../analise/opcoes.js';
 import { pontoMedioRenda, tetoPadrao } from '../../analise/respostas.js';
 import { formatarReais } from '../../analise/formatacao.js';
-import { cidades } from '../../dados/cidadesFixture.js';
 import { Ajuda, Pergunta } from './estilos.js';
 import { ContadorCidades, GrupoOpcoes } from './elementos.jsx';
 
@@ -119,7 +118,7 @@ const LinhaRenda = styled.div`
     }
 `;
 
-function EtapaOrcamento({ respostas, alterar }) {
+function EtapaOrcamento({ respostas, alterar, cidades }) {
     const { faixaRenda, tetoMoradia } = respostas.orcamento;
     const renda = pontoMedioRenda(faixaRenda);
     const preenchimento = tetoMoradia === null ? 0 : ((tetoMoradia - TETO_MINIMO) / (TETO_MAXIMO - TETO_MINIMO)) * 100;
