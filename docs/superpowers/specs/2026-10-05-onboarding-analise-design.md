@@ -191,8 +191,10 @@ Indicador ausente = `null`. Os percentis são calculados pelo motor, não gravad
    - **Percentil** entre as ~320 cidades do universo (não só as filtradas, para que a nota não mude conforme os filtros): Segurança (invertido), Saúde (média de médicos e leitos), Lazer, Natureza.
    - **Trabalho:** percentil da média entre emprego per capita e saldo. Com setor informado: 60% geral + 40% percentil da participação do setor (média entre os setores escolhidos).
    - **Custo:**
-     - comprometimento = (aluguel do domicílio + custo básico × pessoas) ÷ renda;
-     - ≤ 25% vale 100, ≥ 60% vale 0, linear entre os dois.
+     - comprometimento = aluguel do domicílio ÷ renda (só moradia, a régua conhecida do "até 30% da renda");
+     - ≤ 25% vale 100, ≥ 60% vale 0, linear entre os dois;
+     - sem renda informada: percentil invertido do aluguel do domicílio.
+     - *Decisão de 2026-10-19:* a versão anterior somava o custo básico de todos ao aluguel com os mesmos limites, o que dava nota 0 a quase toda família. `custoBasico` fica na base para o simulador financeiro.
    - **Clima:**
      - Faixas e o indicador que cada uma usa: Calor = `tempMedia` ≥ 24 °C; Ameno = `tempMedia` entre 18 e 24 °C; Frio = `tempMesFrio` ≤ 15 °C.
      - Dentro da faixa vale 100, com −15 pontos por °C de distância até o limite da faixa (mínimo 0).

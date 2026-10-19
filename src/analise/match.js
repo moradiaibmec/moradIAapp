@@ -3,7 +3,7 @@
 import { PILARES } from './opcoes.js';
 import { aluguelDoDomicilio, aplicarFiltros } from './filtros.js';
 import { sugerirPesos } from './prePreenchimento.js';
-import { pessoasNoDomicilio, pontoMedioRenda } from './respostas.js';
+import { pontoMedioRenda } from './respostas.js';
 
 const VALOR_PESO = { essencial: 3, importante: 1, tantoFaz: 0 };
 const NOTA_NEUTRA = 50;
@@ -64,13 +64,9 @@ function criarAvaliadores(respostas, universo) {
     };
     const indicador = (nome) => (cidade) => cidade.indicadores[nome];
 
+    // Custo = só o aluguel do tamanho do domicílio, a régua conhecida do "até 30% da renda com moradia".
     const renda = pontoMedioRenda(respostas.orcamento.faixaRenda);
-    const pessoas = pessoasNoDomicilio(respostas.domicilio);
-    const custoMensal = (cidade) => {
-        const aluguel = aluguelDoDomicilio(cidade, respostas.domicilio);
-        const basico = cidade.indicadores.custoBasico;
-        return ausente(aluguel) || ausente(basico) ? null : aluguel + basico * pessoas;
-    };
+    const aluguel = (cidade) => aluguelDoDomicilio(cidade, respostas.domicilio);
 
     const { temperatura, chuvaIncomoda } = respostas.clima;
     const setores = respostas.trabalho.setores.filter((setor) => setor !== 'outro');
@@ -83,11 +79,11 @@ function criarAvaliadores(respostas, universo) {
 
     return {
         custo(cidade) {
-            const custo = custoMensal(cidade);
-            if (ausente(custo)) return null;
-            // Sem renda informada, compara o custo do domicílio entre as cidades.
-            if (renda === null) return { nota: percentilDe(custoMensal, cidade, true), bruto: custo };
-            const comprometimento = custo / renda;
+            const valor = aluguel(cidade);
+            if (ausente(valor)) return null;
+            // Sem renda informada, compara o aluguel entre as cidades.
+            if (renda === null) return { nota: percentilDe(aluguel, cidade, true), bruto: valor };
+            const comprometimento = valor / renda;
             return { nota: notaCusto(comprometimento), bruto: comprometimento };
         },
         seguranca(cidade) {

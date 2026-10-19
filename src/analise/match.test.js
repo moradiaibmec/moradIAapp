@@ -157,7 +157,15 @@ describe('calcularMatch', () => {
     it('avalia o custo pela renda: mais renda, nota de custo maior na mesma cidade', () => {
         const nota = (faixaRenda) => resultadoDe(calcularMatch(respostasCom({ orcamento: { faixaRenda, tetoMoradia: null } }), cidades), 'Curitiba').notas.custo;
         expect(nota('r12a20').nota).toBeGreaterThan(nota('r4a7').nota);
-        expect(nota('r4a7').bruto).toBeCloseTo((1800 + 1450) / 5500, 3);
+        // Só o aluguel conta: Curitiba, 1 pessoa, R$ 1.800 sobre R$ 5.500.
+        expect(nota('r4a7').bruto).toBeCloseTo(1800 / 5500, 3);
+    });
+
+    it('compara o aluguel do tamanho do domicílio com a renda', () => {
+        const r = respostasCom({ domicilio: { moradia: 'familia', filhosEscolares: true }, orcamento: { faixaRenda: 'r7a12', tetoMoradia: null } });
+        const maringa = resultadoDe(calcularMatch(r, cidades), 'Maringá').notas.custo;
+        expect(maringa.bruto).toBeCloseTo(2600 / 9500, 3);
+        expect(maringa.nota).toBe(Math.round((100 * (0.6 - 2600 / 9500)) / 0.35));
     });
 
     it('sem renda informada, a cidade mais barata tem a melhor nota de custo', () => {
