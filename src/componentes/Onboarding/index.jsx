@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import styled from "styled-components"
 import { FiCheck, FiClock, FiCompass, FiX } from 'react-icons/fi';
-import { cidades } from '../../dados/cidades.js';
+import { cidades, versaoDados } from '../../dados/cidades.js';
+import { salvarAnalise } from '../../lib/supabase.js';
+import { montarAnalise } from '../../analise/analises.js';
+import { calcularMatch } from '../../analise/match.js';
 import { aplicarFiltros } from '../../analise/filtros.js';
 import { sugerirPesos } from '../../analise/prePreenchimento.js';
 import {
@@ -243,6 +246,12 @@ const Concluido = styled.div`
     }
 `;
 
+const StatusSalvamento = styled.p`
+    font-size: 13px;
+    font-weight: 600;
+    color: ${({ $erro }) => ($erro ? '#DC2626' : '#10B981')};
+`;
+
 const IconeConcluido = styled.div`
     display: flex;
     align-items: center;
@@ -271,11 +280,13 @@ function isObjetoSimples(valor) {
     return valor !== null && typeof valor === 'object' && !Array.isArray(valor);
 }
 
-function Onboarding({ usuario, onSair }) {
+function Onboarding({ usuario, onSair, onAnaliseSalva }) {
     const [respostas, setRespostas] = useState(criarRespostasIniciais);
     const [etapaAtual, setEtapaAtual] = useState('momento');
     const [pesosAjustados, setPesosAjustados] = useState(false);
-    const [concluido, setConcluido] = useState(false);
+    // null enquanto responde; depois { status: 'salvando' | 'salva' | 'erro', respostas, resultados }.
+    const [conclusao, setConclusao] = useState(null);
+    const concluido = conclusao !== null;
 
     const etapas = etapasVisiveis(respostas);
     const posicao = etapas.indexOf(etapaAtual) + 1;
@@ -311,13 +322,20 @@ function Onboarding({ usuario, onSair }) {
         const proxima = proximaEtapa(etapasVisiveis(limpas), etapaAtual);
         if (!proxima) {
             setRespostas(limpas);
-            setConcluido(true);
+            salvar(limpas, calcularMatch(limpas, cidades));
             window.scrollTo(0, 0);
             return;
         }
         const sugerir = proxima === 'prioridades' && !pesosAjustados;
         setRespostas(sugerir ? { ...limpas, pesos: sugerirPesos(limpas).pesos } : limpas);
         irPara(proxima);
+    }
+
+    async function salvar(final, resultados) {
+        setConclusao({ status: 'salvando', respostas: final, resultados });
+        const { error } = await salvarAnalise(montarAnalise(final, resultados, versaoDados));
+        setConclusao({ status: error ? 'erro' : 'salva', respostas: final, resultados });
+        if (!error) onAnaliseSalva?.();
     }
 
     function voltar() {
@@ -371,10 +389,24 @@ function Onboarding({ usuario, onSair }) {
                         <IconeConcluido><FiCheck /></IconeConcluido>
                         <TituloEtapa>Tudo pronto!</TituloEtapa>
                         <Ajuda>
-                            {restantes} {restantes === 1 ? 'cidade atende' : 'cidades atendem'} aos seus critérios.
-                            O ranking com o seu percentual de match chega na próxima versão.
+                            Sua cidade com mais match é <strong>{conclusao.resultados[0].cidade}</strong>,
+                            com {conclusao.resultados[0].match}%. {conclusao.resultados.length}{' '}
+                            {conclusao.resultados.length === 1 ? 'cidade atende' : 'cidades atendem'} aos seus critérios.
                         </Ajuda>
-                        <BotaoContinuar type="button" onClick={onSair}>Voltar ao dashboard</BotaoContinuar>
+                        <StatusSalvamento $erro={conclusao.status === 'erro'} role="status">
+                            {conclusao.status === 'salvando' && 'Salvando sua análise…'}
+                            {conclusao.status === 'salva' && 'Análise salva no seu histórico.'}
+                            {conclusao.status === 'erro' && 'Não foi possível salvar a análise.'}
+                        </StatusSalvamento>
+                        {conclusao.status === 'erro' ? (
+                            <BotaoContinuar type="button" onClick={() => salvar(conclusao.respostas, conclusao.resultados)}>
+                                Tentar de novo
+                            </BotaoContinuar>
+                        ) : (
+                            <BotaoContinuar type="button" onClick={onSair} disabled={conclusao.status === 'salvando'}>
+                                Voltar ao dashboard
+                            </BotaoContinuar>
+                        )}
                     </Concluido>
                 ) : (
                     <>

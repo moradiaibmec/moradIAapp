@@ -19,3 +19,12 @@ export function entrarCom(provedor) {
 export function sair() {
     return supabase.auth.signOut();
 }
+
+// Tabela criada por supabase/migrations/20261019_analises.sql.
+export function salvarAnalise(analise) {
+    return supabase.from('analises').insert(analise).select('id').single();
+}
+
+export function listarAnalises() {
+    return supabase.from('analises').select('id, criada_em, resultados').order('criada_em', { ascending: false });
+}
