@@ -1,16 +1,14 @@
 import { useState } from 'react';
 import styled from "styled-components"
-import { FiCheck, FiClock, FiCompass, FiX } from 'react-icons/fi';
-import { cidades, versaoDados } from '../../dados/cidades.js';
-import { salvarAnalise } from '../../lib/supabase.js';
-import { montarAnalise } from '../../analise/analises.js';
+import { FiClock, FiCompass, FiX } from 'react-icons/fi';
+import { cidades } from '../../dados/cidades.js';
 import { calcularMatch } from '../../analise/match.js';
 import { aplicarFiltros } from '../../analise/filtros.js';
 import { sugerirPesos } from '../../analise/prePreenchimento.js';
 import {
     criarRespostasIniciais, etapaAnterior, etapasVisiveis, limparEtapa, limparEtapasOcultas, podeAvancar, proximaEtapa,
 } from '../../analise/respostas.js';
-import { Ajuda, TituloEtapa } from './estilos.js';
+import { TituloEtapa } from './estilos.js';
 import { ContadorCidades } from './elementos.jsx';
 import EtapaMomento from './EtapaMomento.jsx';
 import EtapaOrcamento from './EtapaOrcamento.jsx';
@@ -234,36 +232,6 @@ const BotaoContinuar = styled(Botao)`
     }
 `;
 
-const Concluido = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    text-align: center;
-
-    p {
-        max-width: 520px;
-    }
-`;
-
-const StatusSalvamento = styled.p`
-    font-size: 13px;
-    font-weight: 600;
-    color: ${({ $erro }) => ($erro ? '#DC2626' : '#10B981')};
-`;
-
-const IconeConcluido = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
-    background-color: #ECFDF5;
-    color: #10B981;
-    font-size: 28px;
-`;
-
 const ETAPAS_INFO = {
     momento: { titulo: 'Primeiro, queremos conhecer o seu momento.', Componente: EtapaMomento },
     orcamento: { titulo: 'Quanto você pretende gastar para viver?', Componente: EtapaOrcamento },
@@ -280,13 +248,10 @@ function isObjetoSimples(valor) {
     return valor !== null && typeof valor === 'object' && !Array.isArray(valor);
 }
 
-function Onboarding({ usuario, onSair, onAnaliseSalva }) {
+function Onboarding({ usuario, onSair, onConcluir }) {
     const [respostas, setRespostas] = useState(criarRespostasIniciais);
     const [etapaAtual, setEtapaAtual] = useState('momento');
     const [pesosAjustados, setPesosAjustados] = useState(false);
-    // null enquanto responde; depois { status: 'salvando' | 'salva' | 'erro', respostas, resultados }.
-    const [conclusao, setConclusao] = useState(null);
-    const concluido = conclusao !== null;
 
     const etapas = etapasVisiveis(respostas);
     const posicao = etapas.indexOf(etapaAtual) + 1;
@@ -321,21 +286,12 @@ function Onboarding({ usuario, onSair, onAnaliseSalva }) {
         const limpas = limparEtapasOcultas(base);
         const proxima = proximaEtapa(etapasVisiveis(limpas), etapaAtual);
         if (!proxima) {
-            setRespostas(limpas);
-            salvar(limpas, calcularMatch(limpas, cidades));
-            window.scrollTo(0, 0);
+            onConcluir(limpas, calcularMatch(limpas, cidades));
             return;
         }
         const sugerir = proxima === 'prioridades' && !pesosAjustados;
         setRespostas(sugerir ? { ...limpas, pesos: sugerirPesos(limpas).pesos } : limpas);
         irPara(proxima);
-    }
-
-    async function salvar(final, resultados) {
-        setConclusao({ status: 'salvando', respostas: final, resultados });
-        const { error } = await salvarAnalise(montarAnalise(final, resultados, versaoDados));
-        setConclusao({ status: error ? 'erro' : 'salva', respostas: final, resultados });
-        if (!error) onAnaliseSalva?.();
     }
 
     function voltar() {
@@ -361,21 +317,19 @@ function Onboarding({ usuario, onSair, onAnaliseSalva }) {
                     <p>Morad<span>IA</span></p>
                 </Logo>
                 <LadoDireito>
-                    {!concluido && (
-                        <Progresso>
-                            Etapa {posicao} de {etapas.length}
-                            <TrilhaProgresso
-                                $valor={(posicao / etapas.length) * 100}
-                                role="progressbar"
-                                aria-valuemin={1}
-                                aria-valuemax={etapas.length}
-                                aria-valuenow={posicao}
-                                aria-label="Progresso da análise"
-                            >
-                                <div />
-                            </TrilhaProgresso>
-                        </Progresso>
-                    )}
+                    <Progresso>
+                        Etapa {posicao} de {etapas.length}
+                        <TrilhaProgresso
+                            $valor={(posicao / etapas.length) * 100}
+                            role="progressbar"
+                            aria-valuemin={1}
+                            aria-valuemax={etapas.length}
+                            aria-valuenow={posicao}
+                            aria-label="Progresso da análise"
+                        >
+                            <div />
+                        </TrilhaProgresso>
+                    </Progresso>
                     <Tempo><FiClock aria-hidden="true" /> ~3 min</Tempo>
                     <BotaoSair type="button" onClick={onSair} title="Sair da análise" aria-label="Sair da análise">
                         <FiX />
@@ -384,62 +338,34 @@ function Onboarding({ usuario, onSair, onAnaliseSalva }) {
             </Topo>
 
             <Cartao>
-                {concluido ? (
-                    <Concluido>
-                        <IconeConcluido><FiCheck /></IconeConcluido>
-                        <TituloEtapa>Tudo pronto!</TituloEtapa>
-                        <Ajuda>
-                            Sua cidade com mais match é <strong>{conclusao.resultados[0].cidade}</strong>,
-                            com {conclusao.resultados[0].match}%. {conclusao.resultados.length}{' '}
-                            {conclusao.resultados.length === 1 ? 'cidade atende' : 'cidades atendem'} aos seus critérios.
-                        </Ajuda>
-                        <StatusSalvamento $erro={conclusao.status === 'erro'} role="status">
-                            {conclusao.status === 'salvando' && 'Salvando sua análise…'}
-                            {conclusao.status === 'salva' && 'Análise salva no seu histórico.'}
-                            {conclusao.status === 'erro' && 'Não foi possível salvar a análise.'}
-                        </StatusSalvamento>
-                        {conclusao.status === 'erro' ? (
-                            <BotaoContinuar type="button" onClick={() => salvar(conclusao.respostas, conclusao.resultados)}>
-                                Tentar de novo
-                            </BotaoContinuar>
-                        ) : (
-                            <BotaoContinuar type="button" onClick={onSair} disabled={conclusao.status === 'salvando'}>
-                                Voltar ao dashboard
-                            </BotaoContinuar>
-                        )}
-                    </Concluido>
-                ) : (
-                    <>
-                        <TituloEtapa>{titulo}</TituloEtapa>
-                        <Conteudo>
-                            {Componente && (
-                                <Componente
-                                    respostas={respostas}
-                                    alterar={alterar}
-                                    alterarPeso={alterarPeso}
-                                    usuario={usuario}
-                                />
-                            )}
-                        </Conteudo>
-                        {restantes === 0 && !ETAPAS_COM_CONTADOR.includes(etapaAtual) && (
-                            <ContadorCidades respostas={respostas} cidades={cidades} />
-                        )}
-                        <Rodape>
-                            <BotaoPular type="button" onClick={pular}>Pular esta etapa</BotaoPular>
-                            <Acoes>
-                                <BotaoVoltar type="button" onClick={voltar}>Voltar</BotaoVoltar>
-                                <BotaoContinuar
-                                    type="button"
-                                    onClick={() => avancar(respostas)}
-                                    disabled={!avancoLiberado}
-                                    title={avancoLiberado ? undefined : 'Nenhuma cidade atende aos seus filtros'}
-                                >
-                                    {ultimaEtapa ? 'Encontrar minha cidade' : 'Continuar'}
-                                </BotaoContinuar>
-                            </Acoes>
-                        </Rodape>
-                    </>
+                <TituloEtapa>{titulo}</TituloEtapa>
+                <Conteudo>
+                    {Componente && (
+                        <Componente
+                            respostas={respostas}
+                            alterar={alterar}
+                            alterarPeso={alterarPeso}
+                            usuario={usuario}
+                        />
+                    )}
+                </Conteudo>
+                {restantes === 0 && !ETAPAS_COM_CONTADOR.includes(etapaAtual) && (
+                    <ContadorCidades respostas={respostas} cidades={cidades} />
                 )}
+                <Rodape>
+                    <BotaoPular type="button" onClick={pular}>Pular esta etapa</BotaoPular>
+                    <Acoes>
+                        <BotaoVoltar type="button" onClick={voltar}>Voltar</BotaoVoltar>
+                        <BotaoContinuar
+                            type="button"
+                            onClick={() => avancar(respostas)}
+                            disabled={!avancoLiberado}
+                            title={avancoLiberado ? undefined : 'Nenhuma cidade atende aos seus filtros'}
+                        >
+                            {ultimaEtapa ? 'Encontrar minha cidade' : 'Continuar'}
+                        </BotaoContinuar>
+                    </Acoes>
+                </Rodape>
             </Cartao>
         </Pagina>
     );

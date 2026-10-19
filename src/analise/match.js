@@ -94,7 +94,7 @@ function criarAvaliadores(respostas, universo) {
             const chuva = percentilDe(indicador('diasChuvaAno'), cidade, true);
             if (temperatura === 'tantoFaz') {
                 if (!chuvaIncomoda) return { nota: NOTA_NEUTRA, bruto: cidade.indicadores.tempMedia };
-                return chuva === null ? null : { nota: chuva, bruto: cidade.indicadores.diasChuvaAno };
+                return chuva === null ? null : { nota: chuva, bruto: cidade.indicadores.tempMedia };
             }
             const nota = notaTemperatura(temperatura, cidade);
             if (nota === null || (chuvaIncomoda && chuva === null)) return null;
