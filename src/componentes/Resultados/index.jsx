@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { FiAlertCircle, FiCheck } from 'react-icons/fi';
 import CabecalhoApp from '../CabecalhoApp/index.jsx';
 import { PILARES } from '../../analise/opcoes.js';
-import { fraseDoPilar, lemaDaCidade, porQueCombina, qualificarNota } from '../../analise/explicacao.js';
+import { comoFoiEstimado, fonteDoPilar, fraseDoPilar, lemaDaCidade, porQueCombina, qualificarNota } from '../../analise/explicacao.js';
 
 const OUTRAS_CIDADES = 4;
 
@@ -218,6 +218,31 @@ const ValorIndicador = styled.p`
     color: #111827;
 `;
 
+const TopoIndicador = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+`;
+
+const SeloEstimado = styled.span`
+    flex-shrink: 0;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background-color: #FFFBEB;
+    color: #B45309;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: help;
+`;
+
+const FonteIndicador = styled.p`
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #9CA3AF;
+`;
+
 const DetalheIndicador = styled.p`
     font-size: 12px;
     line-height: 1.4;
@@ -391,7 +416,7 @@ function AnelMatch({ match }) {
 const nomeDaCidade = (cidade) => cidade.slice(0, cidade.lastIndexOf(', '));
 const rotuloDoPilar = (id) => PILARES.find((pilar) => pilar.id === id).rotulo;
 
-function Resultados({ usuario, onNavegar, onNovaAnalise, respostas, resultados, salvamento, onTentarSalvar }) {
+function Resultados({ usuario, onNavegar, onNovaAnalise, respostas, resultados, fontes, salvamento, onTentarSalvar }) {
     const [selecionada, setSelecionada] = useState(0);
     const destaque = resultados[selecionada];
     const nome = nomeDaCidade(destaque.cidade);
@@ -442,7 +467,14 @@ function Resultados({ usuario, onNavegar, onNovaAnalise, respostas, resultados, 
                                 const semPeso = avaliacao.peso === 'tantoFaz';
                                 return (
                                     <Indicador key={id} $semPeso={semPeso}>
-                                        <RotuloIndicador>{rotulo}</RotuloIndicador>
+                                        <TopoIndicador>
+                                            <RotuloIndicador>{rotulo}</RotuloIndicador>
+                                            {avaliacao.estimado && (
+                                                <SeloEstimado title={comoFoiEstimado(id, fontes)} aria-label={`Estimado: ${comoFoiEstimado(id, fontes)}`}>
+                                                    Estimado
+                                                </SeloEstimado>
+                                            )}
+                                        </TopoIndicador>
                                         <ValorIndicador>
                                             {avaliacao.dadoIndisponivel ? 'Sem dado' : `${qualificarNota(avaliacao.nota)} (${avaliacao.nota}%)`}
                                         </ValorIndicador>
@@ -450,6 +482,7 @@ function Resultados({ usuario, onNavegar, onNovaAnalise, respostas, resultados, 
                                             {fraseDoPilar(id, avaliacao, respostas)}
                                             {semPeso && ' · Não pesou no seu match'}
                                         </DetalheIndicador>
+                                        {fonteDoPilar(id, fontes) && <FonteIndicador>{fonteDoPilar(id, fontes)}</FonteIndicador>}
                                     </Indicador>
                                 );
                             })}
