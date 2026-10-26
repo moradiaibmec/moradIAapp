@@ -8,6 +8,7 @@ import Perfil from './componentes/Perfil/index.jsx';
 import Onboarding from './componentes/Onboarding/index.jsx';
 import Processamento from './componentes/Processamento/index.jsx';
 import Resultados from './componentes/Resultados/index.jsx';
+import ExplorarCidade from './componentes/ExplorarCidade/index.jsx';
 import CarregandoBase from './componentes/CarregandoBase/index.jsx';
 
 
@@ -18,6 +19,8 @@ function App(){
   const [analises, setAnalises] = useState([]);
   // Análise recém-concluída: { respostas, resultados } e o estado do salvamento no histórico.
   const [analiseAtual, setAnaliseAtual] = useState(null);
+  // Posição no ranking da cidade em destaque nos resultados (e aberta em "Explorar").
+  const [cidadeSelecionada, setCidadeSelecionada] = useState(0);
   const [salvamento, setSalvamento] = useState(null);
   // Base de cidades: carregada só quando a pessoa começa uma análise.
   const [base, setBase] = useState(null);
@@ -72,6 +75,7 @@ function App(){
   function concluirAnalise(respostas, resultados) {
     const analise = { respostas, resultados };
     setAnaliseAtual(analise);
+    setCidadeSelecionada(0);
     navegar('processando');
     salvar(analise);
   }
@@ -99,9 +103,30 @@ function App(){
         onNovaAnalise={iniciarAnalise}
         respostas={analiseAtual.respostas}
         resultados={analiseAtual.resultados}
+        cidades={base.cidades}
         fontes={base.fontes}
         salvamento={salvamento}
         onTentarSalvar={() => salvar(analiseAtual)}
+        selecionada={cidadeSelecionada}
+        onSelecionar={setCidadeSelecionada}
+        onExplorar={() => navegar('explorar')}
+      />
+    );
+  }
+
+  if (pagina === 'explorar' && analiseAtual) {
+    const resultado = analiseAtual.resultados[cidadeSelecionada];
+    return (
+      <ExplorarCidade
+        usuario={sessao.user}
+        onNavegar={navegar}
+        onNovaAnalise={iniciarAnalise}
+        onVoltar={() => navegar('resultados')}
+        resultado={resultado}
+        posicao={cidadeSelecionada}
+        cidade={base.cidades.find(({ ibge }) => ibge === resultado.ibge)}
+        respostas={analiseAtual.respostas}
+        fontes={base.fontes}
       />
     );
   }

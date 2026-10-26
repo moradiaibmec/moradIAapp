@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { criarRespostasIniciais } from './respostas.js';
-import { comoFoiEstimado, fonteDoPilar, fraseDoPilar, lemaDaCidade, listar, porQueCombina, qualificarNota } from './explicacao.js';
+import { comoFoiEstimado, fonteDoPilar, fraseDoPilar, lemaDaCidade, listar, mediaDasNotas, melhorQue, porQueCombina, qualificarMatch, qualificarNota } from './explicacao.js';
 
 const avaliacao = (nota, bruto, extra = {}) => ({ nota, peso: 'importante', bruto, dadoIndisponivel: false, ...extra });
 
@@ -104,5 +104,48 @@ describe('comoFoiEstimado', () => {
         const fontes = { aluguel: { nome: 'FipeZap', periodo: 'set/2026', comoEstimado: 'Calculado pelo MoradIA a partir do Censo 2010 e do FipeZap' } };
         expect(comoFoiEstimado('custo', fontes)).toBe('Calculado pelo MoradIA a partir do Censo 2010 e do FipeZap');
         expect(comoFoiEstimado('seguranca', fontes)).toBe('Valor estimado pelo MoradIA');
+    });
+});
+
+describe('qualificarMatch', () => {
+    it('descreve a compatibilidade pela faixa do match', () => {
+        expect(qualificarMatch(94)).toBe('Compatibilidade excepcional');
+        expect(qualificarMatch(80)).toBe('Compatibilidade alta');
+        expect(qualificarMatch(65)).toBe('Compatibilidade boa');
+        expect(qualificarMatch(40)).toBe('Compatibilidade moderada');
+    });
+});
+
+describe('melhorQue', () => {
+    const resultados = [{ match: 94 }, { match: 90 }, { match: 90 }, { match: 70 }, { match: 50 }];
+
+    it('é a porcentagem das outras cidades analisadas com match menor', () => {
+        expect(melhorQue(resultados, 0)).toBe(100);
+        expect(melhorQue(resultados, 1)).toBe(50);
+        expect(melhorQue(resultados, 4)).toBe(0);
+    });
+
+    it('é null quando só há uma cidade', () => {
+        expect(melhorQue([{ match: 80 }], 0)).toBeNull();
+    });
+});
+
+describe('mediaDasNotas', () => {
+    it('faz a média só dos pilares que pesaram e têm dado', () => {
+        const notas = {
+            custo: { nota: 90, peso: 'essencial', dadoIndisponivel: false },
+            clima: { nota: 70, peso: 'importante', dadoIndisponivel: false },
+            lazer: { nota: 10, peso: 'tantoFaz', dadoIndisponivel: false },
+            saude: { nota: 50, peso: 'importante', dadoIndisponivel: true },
+        };
+        expect(mediaDasNotas(notas)).toBe(80);
+    });
+
+    it('usa todos os pilares com dado quando nenhum pesou', () => {
+        const notas = {
+            custo: { nota: 90, peso: 'tantoFaz', dadoIndisponivel: false },
+            clima: { nota: 60, peso: 'tantoFaz', dadoIndisponivel: false },
+        };
+        expect(mediaDasNotas(notas)).toBe(75);
     });
 });

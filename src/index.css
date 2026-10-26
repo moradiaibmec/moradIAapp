@@ -1,5 +1,6 @@
 :root {
     --fonte-moradia: 'Inter', sans-serif;
+    --fonte-titulo: 'Plus Jakarta Sans', var(--fonte-moradia);
     --roxo-moradia: #4F46E5;
 }
 

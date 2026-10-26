@@ -17,6 +17,7 @@ Implemented: Login, Dashboard, Meu perfil and the analysis onboarding (6 adaptiv
 - `npm test` — Vitest (testes de lógica pura em `src/**/*.test.js` e `scripts/**/*.test.mjs`)
 - `npm run base:gerar` — baixa as fontes públicas e regenera `src/dados/cidades.json` (só grava se a validação passar; cache em `scripts/base/.cache/`)
 - `npm run base:validar` — valida o `cidades.json` atual
+- `npm run base:fotos` — busca no Wikidata/Wikimedia Commons a foto e o crédito (autor e licença) de cada cidade e grava `src/dados/fotos.json` (cache em `scripts/base/.cache/`)
 
 ## Architecture & conventions
 

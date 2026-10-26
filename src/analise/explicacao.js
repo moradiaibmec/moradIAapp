@@ -24,6 +24,30 @@ export function qualificarNota(nota) {
     return 'Fraco';
 }
 
+export function qualificarMatch(match) {
+    if (match >= 90) return 'Compatibilidade excepcional';
+    if (match >= 75) return 'Compatibilidade alta';
+    if (match >= 60) return 'Compatibilidade boa';
+    return 'Compatibilidade moderada';
+}
+
+// Porcentagem das outras cidades do ranking com match menor que o da cidade em `indice`.
+export function melhorQue(resultados, indice) {
+    if (resultados.length <= 1) return null;
+    const { match } = resultados[indice];
+    const menores = resultados.filter((resultado) => resultado.match < match).length;
+    return Math.round((100 * menores) / (resultados.length - 1));
+}
+
+// Média das notas que pesaram no match; se nenhuma pesou, de todas as que têm dado.
+export function mediaDasNotas(notas) {
+    const comDado = Object.values(notas).filter((avaliacao) => !avaliacao.dadoIndisponivel);
+    const comPeso = comDado.filter((avaliacao) => avaliacao.peso !== 'tantoFaz');
+    const consideradas = comPeso.length ? comPeso : comDado;
+    if (!consideradas.length) return null;
+    return Math.round(consideradas.reduce((total, { nota }) => total + nota, 0) / consideradas.length);
+}
+
 export function listar(itens) {
     if (itens.length <= 1) return itens.join('');
     return `${itens.slice(0, -1).join(', ')} e ${itens[itens.length - 1]}`;
@@ -58,7 +82,7 @@ export function fraseDoPilar(pilar, { bruto, dadoIndisponivel }, respostas) {
     }
 }
 
-const nomeDaCidade = (cidade) => cidade.slice(0, cidade.lastIndexOf(', '));
+export const nomeDaCidade = (cidade) => cidade.slice(0, cidade.lastIndexOf(', '));
 const nomesNoTexto = (pilares) => pilares.map((pilar) => NOMES_NO_TEXTO[pilar]);
 
 export function lemaDaCidade({ pontosFortes }) {

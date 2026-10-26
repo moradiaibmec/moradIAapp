@@ -1,0 +1,2545 @@
+{
+  "geradoEm": "2026-10-26",
+  "fonte": {
+    "nome": "Wikidata e Wikimedia Commons",
+    "url": "https://commons.wikimedia.org"
+  },
+  "fotos": {
+    "1100122": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Ji-Parana_005.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Ji-Parana_005.jpg/500px-Ji-Parana_005.jpg",
+      "autor": "Braulio Gerhardt",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Ji-Parana_005.jpg"
+    },
+    "1100205": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Porto_Velho_RO.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Porto_Velho_RO.jpg/500px-Porto_Velho_RO.jpg",
+      "autor": "Heitor Carvalho Jorge",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Porto_Velho_RO.jpg"
+    },
+    "1200401": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/RioBrancoMontagem.jpg",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/7/7f/RioBrancoMontagem.jpg",
+      "autor": "Sérgio Vale / Secom - Guilherme Noronha/ Secom",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:RioBrancoMontagem.jpg"
+    },
+    "1301902": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Itacoatiara%2C_Amazonas.jpg/1280px-Itacoatiara%2C_Amazonas.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Itacoatiara%2C_Amazonas.jpg/500px-Itacoatiara%2C_Amazonas.jpg",
+      "autor": "TV Em Tempo Online",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Itacoatiara,_Amazonas.jpg"
+    },
+    "1302504": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Lago_do_Ubim_-_Balsa_de_Banho_-_panoramio.jpg/1280px-Lago_do_Ubim_-_Balsa_de_Banho_-_panoramio.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Lago_do_Ubim_-_Balsa_de_Banho_-_panoramio.jpg/500px-Lago_do_Ubim_-_Balsa_de_Banho_-_panoramio.jpg",
+      "autor": "Ayres Netto",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Lago_do_Ubim_-_Balsa_de_Banho_-_panoramio.jpg"
+    },
+    "1302603": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Collage_Manaus.png",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Collage_Manaus.png/500px-Collage_Manaus.png",
+      "autor": "See above. Compilation: Heitor Carvalho Jorge",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Collage_Manaus.png"
+    },
+    "1400100": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Montagem_Boa_Vista%2C_Roraima.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Montagem_Boa_Vista%2C_Roraima.jpg/500px-Montagem_Boa_Vista%2C_Roraima.jpg",
+      "autor": "Allice Hunter (compilation)",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Montagem_Boa_Vista,_Roraima.jpg"
+    },
+    "1500107": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Abaetetuba-PA.jpg/1280px-Abaetetuba-PA.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Abaetetuba-PA.jpg/500px-Abaetetuba-PA.jpg",
+      "autor": "Wladixrj",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Abaetetuba-PA.jpg"
+    },
+    "1500602": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Altamira_Par%C3%A1.JPG/1280px-Altamira_Par%C3%A1.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Altamira_Par%C3%A1.JPG/500px-Altamira_Par%C3%A1.JPG",
+      "autor": "Igor Cavallini",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Altamira_Par%C3%A1.JPG"
+    },
+    "1500800": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/BR-316_em_Ananindeua.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/BR-316_em_Ananindeua.JPG/500px-BR-316_em_Ananindeua.JPG",
+      "autor": "Hallel",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:BR-316_em_Ananindeua.JPG"
+    },
+    "1501303": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Igreja_de_Nossa_Senhora_das_Dores_-_Barcarena_-_20230924131237.JPG/1280px-Igreja_de_Nossa_Senhora_das_Dores_-_Barcarena_-_20230924131237.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Igreja_de_Nossa_Senhora_das_Dores_-_Barcarena_-_20230924131237.JPG/500px-Igreja_de_Nossa_Senhora_das_Dores_-_Barcarena_-_20230924131237.JPG",
+      "autor": "Túllio F",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Igreja_de_Nossa_Senhora_das_Dores_-_Barcarena_-_20230924131237.JPG"
+    },
+    "1501402": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Montagem_Bel%C3%A9m.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Montagem_Bel%C3%A9m.jpg/500px-Montagem_Bel%C3%A9m.jpg",
+      "autor": "Heitor Carvalho Jorge",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Montagem_Bel%C3%A9m.jpg"
+    },
+    "1501709": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Obelisco_e_Catedral_Bragan%C3%A7a.JPG/1280px-Obelisco_e_Catedral_Bragan%C3%A7a.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Obelisco_e_Catedral_Bragan%C3%A7a.JPG/500px-Obelisco_e_Catedral_Bragan%C3%A7a.JPG",
+      "autor": "Tiago de Jesus Neves",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Obelisco_e_Catedral_Bragan%C3%A7a.JPG"
+    },
+    "1501808": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/2024._Breves%2C_Par%C3%A1%2C_Brazil_03.jpg/1280px-2024._Breves%2C_Par%C3%A1%2C_Brazil_03.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/2024._Breves%2C_Par%C3%A1%2C_Brazil_03.jpg/500px-2024._Breves%2C_Par%C3%A1%2C_Brazil_03.jpg",
+      "autor": "Ridiculopathy",
+      "licenca": "CC0",
+      "urlLicenca": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:2024._Breves,_Par%C3%A1,_Brazil_03.jpg"
+    },
+    "1502103": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Camet%C3%A1.jpg/1280px-Camet%C3%A1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Camet%C3%A1.jpg/500px-Camet%C3%A1.jpg",
+      "autor": "Celso Abreu",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Camet%C3%A1.jpg"
+    },
+    "1502400": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Saudade_I%2C_Castanhal_-_PA%2C_Brazil_-_panoramio.jpg/1280px-Saudade_I%2C_Castanhal_-_PA%2C_Brazil_-_panoramio.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Saudade_I%2C_Castanhal_-_PA%2C_Brazil_-_panoramio.jpg/500px-Saudade_I%2C_Castanhal_-_PA%2C_Brazil_-_panoramio.jpg",
+      "autor": "Levy Godoi",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Saudade_I,_Castanhal_-_PA,_Brazil_-_panoramio.jpg"
+    },
+    "1503606": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Itaituba.JPG/1280px-Itaituba.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Itaituba.JPG/500px-Itaituba.JPG",
+      "autor": "Amit Evron",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Itaituba.JPG"
+    },
+    "1504208": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Vista_panor%C3%A2mica_da_Nova_Marab%C3%A1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Vista_panor%C3%A2mica_da_Nova_Marab%C3%A1.jpg/500px-Vista_panor%C3%A2mica_da_Nova_Marab%C3%A1.jpg",
+      "autor": "Hallel",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_panor%C3%A2mica_da_Nova_Marab%C3%A1.jpg"
+    },
+    "1504422": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Rodovia_BR-316_Marituba.jpg/1280px-Rodovia_BR-316_Marituba.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Rodovia_BR-316_Marituba.jpg/500px-Rodovia_BR-316_Marituba.jpg",
+      "autor": "FlopFlip",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Rodovia_BR-316_Marituba.jpg"
+    },
+    "1505502": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Foto_Lago_verde_no_natal.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Foto_Lago_verde_no_natal.jpg/500px-Foto_Lago_verde_no_natal.jpg",
+      "autor": "Warcraftjr",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Foto_Lago_verde_no_natal.jpg"
+    },
+    "1505536": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Entrada_da_cidade_de_Parauapebas.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Entrada_da_cidade_de_Parauapebas.jpg/500px-Entrada_da_cidade_de_Parauapebas.jpg",
+      "autor": "Hallel",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Entrada_da_cidade_de_Parauapebas.jpg"
+    },
+    "1506807": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Catedral_Metropolitana_de_Santar%C3%A9m%2C_Santar%C3%A9m%2C_Par%C3%A1%2C_2007.jpg/1280px-Catedral_Metropolitana_de_Santar%C3%A9m%2C_Santar%C3%A9m%2C_Par%C3%A1%2C_2007.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Catedral_Metropolitana_de_Santar%C3%A9m%2C_Santar%C3%A9m%2C_Par%C3%A1%2C_2007.jpg/500px-Catedral_Metropolitana_de_Santar%C3%A9m%2C_Santar%C3%A9m%2C_Par%C3%A1%2C_2007.jpg",
+      "autor": "Lopmed",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Catedral_Metropolitana_de_Santar%C3%A9m,_Santar%C3%A9m,_Par%C3%A1,_2007.jpg"
+    },
+    "1600303": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Macap%C3%A1_Montage_%282021%29_2.jpg/1280px-Macap%C3%A1_Montage_%282021%29_2.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Macap%C3%A1_Montage_%282021%29_2.jpg/500px-Macap%C3%A1_Montage_%282021%29_2.jpg",
+      "autor": "Allice Hunter",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Macap%C3%A1_Montage_(2021)_2.jpg"
+    },
+    "1600600": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Porto_de_Santana%2C_Amap%C3%A1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Porto_de_Santana%2C_Amap%C3%A1.jpg/500px-Porto_de_Santana%2C_Amap%C3%A1.jpg",
+      "autor": "Bunks",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Porto_de_Santana,_Amap%C3%A1.jpg"
+    },
+    "1702109": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/BR-153_em_Aragua%C3%ADna.jpg/1280px-BR-153_em_Aragua%C3%ADna.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/BR-153_em_Aragua%C3%ADna.jpg/500px-BR-153_em_Aragua%C3%ADna.jpg",
+      "autor": "Agência CNT de Notícias",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:BR-153_em_Aragua%C3%ADna.jpg"
+    },
+    "1721000": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Palmas_TO_-_40212596765.jpg/1280px-Palmas_TO_-_40212596765.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Palmas_TO_-_40212596765.jpg/500px-Palmas_TO_-_40212596765.jpg",
+      "autor": "MTur Destinos",
+      "licenca": "Attribution",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Palmas_TO_-_40212596765.jpg"
+    },
+    "2100055": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Acailandia_2.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Acailandia_2.jpg/500px-Acailandia_2.jpg",
+      "autor": "Nando cunha",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Acailandia_2.jpg"
+    },
+    "2101202": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Bacabal_4.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Bacabal_4.jpg/500px-Bacabal_4.jpg",
+      "autor": "Nando cunha",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Bacabal_4.jpg"
+    },
+    "2101400": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Balsas.jpg/1280px-Balsas.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Balsas.jpg/500px-Balsas.jpg",
+      "autor": "Flikr user deltafrut (uploaded by User:cidade de balsas)",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Balsas.jpg"
+    },
+    "2103000": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Caxias_3.JPG/1280px-Caxias_3.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Caxias_3.JPG/500px-Caxias_3.JPG",
+      "autor": "Nando1462 - Fernando Santos Cunha Filho",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Caxias_3.JPG"
+    },
+    "2103307": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Igreja_de_S%C3%A3o_Sebasti%C3%A3o%2C_Cod%C3%B3%2C_Maranh%C3%A3o.jpg/1280px-Igreja_de_S%C3%A3o_Sebasti%C3%A3o%2C_Cod%C3%B3%2C_Maranh%C3%A3o.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Igreja_de_S%C3%A3o_Sebasti%C3%A3o%2C_Cod%C3%B3%2C_Maranh%C3%A3o.jpg/500px-Igreja_de_S%C3%A3o_Sebasti%C3%A3o%2C_Cod%C3%B3%2C_Maranh%C3%A3o.jpg",
+      "autor": "Michel Marques",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Igreja_de_S%C3%A3o_Sebasti%C3%A3o,_Cod%C3%B3,_Maranh%C3%A3o.jpg"
+    },
+    "2105302": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Imperatriz_1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Imperatriz_1.jpg/500px-Imperatriz_1.jpg",
+      "autor": "Fernando Santos Cunha Filho",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Imperatriz_1.jpg"
+    },
+    "2111201": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Church_of_S%C3%A3o_Jos%C3%A9_de_Ribamar.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Church_of_S%C3%A3o_Jos%C3%A9_de_Ribamar.jpg/500px-Church_of_S%C3%A3o_Jos%C3%A9_de_Ribamar.jpg",
+      "autor": "Sara Wengberg Kullan84",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Church_of_S%C3%A3o_Jos%C3%A9_de_Ribamar.jpg"
+    },
+    "2111300": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/SaoLuis-Street2.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/SaoLuis-Street2.jpg/500px-SaoLuis-Street2.jpg",
+      "autor": "Marcus Guimarães from Nova Friburgo, Brazil",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:SaoLuis-Street2.jpg"
+    },
+    "2112209": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Timon2.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Timon2.jpg/500px-Timon2.jpg",
+      "autor": "Everto1253678",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Timon2.jpg"
+    },
+    "2207702": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Por_do_sol_na_Pedra_do_Sal%2C_Parnaiba.jpg/1280px-Por_do_sol_na_Pedra_do_Sal%2C_Parnaiba.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Por_do_sol_na_Pedra_do_Sal%2C_Parnaiba.jpg/500px-Por_do_sol_na_Pedra_do_Sal%2C_Parnaiba.jpg",
+      "autor": "Robertooaraujo",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Por_do_sol_na_Pedra_do_Sal,_Parnaiba.jpg"
+    },
+    "2211001": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Teresina_Rio_Poti.JPG/1280px-Teresina_Rio_Poti.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Teresina_Rio_Poti.JPG/500px-Teresina_Rio_Poti.JPG",
+      "autor": "Olavomm",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Teresina_Rio_Poti.JPG"
+    },
+    "2303709": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Kitecumbuco2.jpg/1280px-Kitecumbuco2.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Kitecumbuco2.jpg/500px-Kitecumbuco2.jpg",
+      "autor": "Elissonm",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Kitecumbuco2.jpg"
+    },
+    "2304202": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Centro_de_Crato_ao_entardecer.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Centro_de_Crato_ao_entardecer.jpg/500px-Centro_de_Crato_ao_entardecer.jpg",
+      "autor": "No machine-readable author provided. Aristides Tavares de Figueiredo~commonswiki assumed (based on copyright claims).",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Centro_de_Crato_ao_entardecer.jpg"
+    },
+    "2304400": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Praia_do_Mucuripe.jpg/1280px-Praia_do_Mucuripe.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Praia_do_Mucuripe.jpg/500px-Praia_do_Mucuripe.jpg",
+      "autor": "Rafael Ramos e David Andrade",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Praia_do_Mucuripe.jpg"
+    },
+    "2306405": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Centro_parcial_de_itapipoca.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Centro_parcial_de_itapipoca.jpg/500px-Centro_parcial_de_itapipoca.jpg",
+      "autor": "Felipe367",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Centro_parcial_de_itapipoca.jpg"
+    },
+    "2307304": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Juazeiro_do_Norte%2C_Cear%C3%A1%2C_Brasil.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Juazeiro_do_Norte%2C_Cear%C3%A1%2C_Brasil.jpg/500px-Juazeiro_do_Norte%2C_Cear%C3%A1%2C_Brasil.jpg",
+      "autor": "Allan Patrick",
+      "licenca": "CC BY-SA 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Juazeiro_do_Norte,_Cear%C3%A1,_Brasil.jpg"
+    },
+    "2307650": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Composi%C3%A7%C3%A3o_Maracana%C3%BA.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Composi%C3%A7%C3%A3o_Maracana%C3%BA.jpg/500px-Composi%C3%A7%C3%A3o_Maracana%C3%BA.jpg",
+      "autor": "Joelkaula",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Composi%C3%A7%C3%A3o_Maracana%C3%BA.jpg"
+    },
+    "2307700": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Pra%C3%A7a_Capistrano_de_Abreu.jpg/1280px-Pra%C3%A7a_Capistrano_de_Abreu.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Pra%C3%A7a_Capistrano_de_Abreu.jpg/500px-Pra%C3%A7a_Capistrano_de_Abreu.jpg",
+      "autor": "Lauriston de Sousa Trindade",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Pra%C3%A7a_Capistrano_de_Abreu.jpg"
+    },
+    "2312908": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/MARGEM_ESQUERDA.jpg/1280px-MARGEM_ESQUERDA.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/MARGEM_ESQUERDA.jpg/500px-MARGEM_ESQUERDA.jpg",
+      "autor": "darlanblue",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:MARGEM_ESQUERDA.jpg"
+    },
+    "2403251": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Praia1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Praia1.jpg/500px-Praia1.jpg",
+      "autor": "Danilo(Roxette)",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Praia1.jpg"
+    },
+    "2408003": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Centro_de_Mossor%C3%B3_%28RN%29.jpg/1280px-Centro_de_Mossor%C3%B3_%28RN%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Centro_de_Mossor%C3%B3_%28RN%29.jpg/500px-Centro_de_Mossor%C3%B3_%28RN%29.jpg",
+      "autor": "Marcos Elias de Oliveira Júnior",
+      "licenca": "CC0",
+      "urlLicenca": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Centro_de_Mossor%C3%B3_(RN).jpg"
+    },
+    "2408102": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Natal%2C_capital_do_Rio_Grande_do_Norte%2C_Brasil.jpg/1280px-Natal%2C_capital_do_Rio_Grande_do_Norte%2C_Brasil.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Natal%2C_capital_do_Rio_Grande_do_Norte%2C_Brasil.jpg/500px-Natal%2C_capital_do_Rio_Grande_do_Norte%2C_Brasil.jpg",
+      "autor": "Ney Douglas/MTur Destinos",
+      "licenca": "Attribution",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Natal,_capital_do_Rio_Grande_do_Norte,_Brasil.jpg"
+    },
+    "2412005": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Capela_dos_Martires_de_Cunha%C3%BA_e_Urua%C3%A7u..jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Capela_dos_Martires_de_Cunha%C3%BA_e_Urua%C3%A7u..jpg/500px-Capela_dos_Martires_de_Cunha%C3%BA_e_Urua%C3%A7u..jpg",
+      "autor": "Carla Salgueiro",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Capela_dos_Martires_de_Cunha%C3%BA_e_Urua%C3%A7u..jpg"
+    },
+    "2504009": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/A%C3%A7ude_Velho_Campina_Grande_PB_-_40175999034.jpg/1280px-A%C3%A7ude_Velho_Campina_Grande_PB_-_40175999034.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/A%C3%A7ude_Velho_Campina_Grande_PB_-_40175999034.jpg/500px-A%C3%A7ude_Velho_Campina_Grande_PB_-_40175999034.jpg",
+      "autor": "MTur Destinos",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:A%C3%A7ude_Velho_Campina_Grande_PB_-_40175999034.jpg"
+    },
+    "2507507": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Jo%C3%A3o_Pessoa_%28Para%C3%ADba%29.jpg/1280px-Jo%C3%A3o_Pessoa_%28Para%C3%ADba%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Jo%C3%A3o_Pessoa_%28Para%C3%ADba%29.jpg/500px-Jo%C3%A3o_Pessoa_%28Para%C3%ADba%29.jpg",
+      "autor": "Marcos Elias de Oliveira Júnior",
+      "licenca": "CC0",
+      "urlLicenca": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Jo%C3%A3o_Pessoa_(Para%C3%ADba).jpg"
+    },
+    "2510808": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Patos%2CPB_701.JPG/1280px-Patos%2CPB_701.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Patos%2CPB_701.JPG/500px-Patos%2CPB_701.JPG",
+      "autor": "JOSÉ RILDO DA NOBREGA ALENCAR",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Patos,PB_701.JPG"
+    },
+    "2513703": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Passengerferry-cabedelo-paraiba-brazil.jpg/1280px-Passengerferry-cabedelo-paraiba-brazil.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Passengerferry-cabedelo-paraiba-brazil.jpg/500px-Passengerferry-cabedelo-paraiba-brazil.jpg",
+      "autor": "User:Stigmj (no:Bruker:Stigmj)",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Passengerferry-cabedelo-paraiba-brazil.jpg"
+    },
+    "2602902": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Praia_de_Suape_-_PE.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Praia_de_Suape_-_PE.jpg/500px-Praia_de_Suape_-_PE.jpg",
+      "autor": "Gabriela CM",
+      "licenca": "CC BY-SA 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Praia_de_Suape_-_PE.jpg"
+    },
+    "2603454": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Pra%C3%A7a_de_Maria_Amazonas.jpg",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Pra%C3%A7a_de_Maria_Amazonas.jpg",
+      "autor": "Anderson.mec",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Pra%C3%A7a_de_Maria_Amazonas.jpg"
+    },
+    "2604106": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Montagem_Caruaru.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Montagem_Caruaru.jpg/500px-Montagem_Caruaru.jpg",
+      "autor": "Juniorpetjua (compilation)",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Montagem_Caruaru.jpg"
+    },
+    "2606002": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Montagem_Garanhuns.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Montagem_Garanhuns.jpg/500px-Montagem_Garanhuns.jpg",
+      "autor": "Juniorpetjua (compilation)",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Montagem_Garanhuns.jpg"
+    },
+    "2606804": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Igreja_Matriz_dos_Santos_Cosme_e_Dami%C3%A3o_-_Igarassu%2C_Pernambuco%2C_Brasil.jpg",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Igreja_Matriz_dos_Santos_Cosme_e_Dami%C3%A3o_-_Igarassu%2C_Pernambuco%2C_Brasil.jpg",
+      "autor": "Sitio histórico de Igarassu.jpg: Fernando Fernandes de Melo derivative work: Juniorpetjua",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Igreja_Matriz_dos_Santos_Cosme_e_Dami%C3%A3o_-_Igarassu,_Pernambuco,_Brasil.jpg"
+    },
+    "2607901": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Igreja_Nossa_Senhora_dos_Prazeres.jpg/1280px-Igreja_Nossa_Senhora_dos_Prazeres.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Igreja_Nossa_Senhora_dos_Prazeres.jpg/500px-Igreja_Nossa_Senhora_dos_Prazeres.jpg",
+      "autor": "Josuel21",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Igreja_Nossa_Senhora_dos_Prazeres.jpg"
+    },
+    "2609600": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Montagem_Olinda_2021.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Montagem_Olinda_2021.jpg/500px-Montagem_Olinda_2021.jpg",
+      "autor": "Allice Hunter",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Montagem_Olinda_2021.jpg"
+    },
+    "2610707": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Centro-paulista-pe.jpg/1280px-Centro-paulista-pe.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Centro-paulista-pe.jpg/500px-Centro-paulista-pe.jpg",
+      "autor": "blog.euvoupassar.com.br",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Centro-paulista-pe.jpg"
+    },
+    "2611101": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Montagem_Petrolina%283%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Montagem_Petrolina%283%29.jpg/500px-Montagem_Petrolina%283%29.jpg",
+      "autor": "Juniorpetjua (compilation)",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Montagem_Petrolina(3).jpg"
+    },
+    "2611606": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Recife_-_In%C3%ADcio_da_Avenida_Boa_Viagem.jpg/1280px-Recife_-_In%C3%ADcio_da_Avenida_Boa_Viagem.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Recife_-_In%C3%ADcio_da_Avenida_Boa_Viagem.jpg/500px-Recife_-_In%C3%ADcio_da_Avenida_Boa_Viagem.jpg",
+      "autor": "Portal da Copa/ME",
+      "licenca": "CC BY 3.0 br",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0/br/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Recife_-_In%C3%ADcio_da_Avenida_Boa_Viagem.jpg"
+    },
+    "2613701": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Itaipava_Arena_Pernambuco_-_Recife%2C_Pernambuco%2C_Brasil%283%29.jpg/1280px-Itaipava_Arena_Pernambuco_-_Recife%2C_Pernambuco%2C_Brasil%283%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Itaipava_Arena_Pernambuco_-_Recife%2C_Pernambuco%2C_Brasil%283%29.jpg/500px-Itaipava_Arena_Pernambuco_-_Recife%2C_Pernambuco%2C_Brasil%283%29.jpg",
+      "autor": "Portal da Copa/ME",
+      "licenca": "CC BY 3.0 br",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0/br/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Itaipava_Arena_Pernambuco_-_Recife,_Pernambuco,_Brasil(3).jpg"
+    },
+    "2616407": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Vitoria_de_Santo_Antao.jpg/1280px-Vitoria_de_Santo_Antao.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Vitoria_de_Santo_Antao.jpg/500px-Vitoria_de_Santo_Antao.jpg",
+      "autor": "LeRoc",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vitoria_de_Santo_Antao.jpg"
+    },
+    "2700300": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Arapiraca392.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Arapiraca392.jpg/500px-Arapiraca392.jpg",
+      "autor": "Teotonio",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Arapiraca392.jpg"
+    },
+    "2704302": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Macei%C3%B3%2C_estado_Alagoas.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Macei%C3%B3%2C_estado_Alagoas.jpg/500px-Macei%C3%B3%2C_estado_Alagoas.jpg",
+      "autor": "Galeria do Bem",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Macei%C3%B3,_estado_Alagoas.jpg"
+    },
+    "2800308": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Curva_da_Avenida_Beira_Mar_Aracaju.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Curva_da_Avenida_Beira_Mar_Aracaju.jpg/500px-Curva_da_Avenida_Beira_Mar_Aracaju.jpg",
+      "autor": "E-Sergipe",
+      "licenca": "CC BY-SA 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Curva_da_Avenida_Beira_Mar_Aracaju.jpg"
+    },
+    "2802908": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Igreja_Nossa_senhora_do_Bom_Parto.jpg",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Igreja_Nossa_senhora_do_Bom_Parto.jpg",
+      "autor": "Jadsongeo",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Igreja_Nossa_senhora_do_Bom_Parto.jpg"
+    },
+    "2803500": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Barret%C3%A3o-2020-Inaugurado.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Barret%C3%A3o-2020-Inaugurado.jpg/500px-Barret%C3%A3o-2020-Inaugurado.jpg",
+      "autor": "MarcosVini20",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Barret%C3%A3o-2020-Inaugurado.jpg"
+    },
+    "2804805": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Nossa-senhora-do-socorro-descubra-a-historia-desse-municipio-de-sergipe.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Nossa-senhora-do-socorro-descubra-a-historia-desse-municipio-de-sergipe.jpg/500px-Nossa-senhora-do-socorro-descubra-a-historia-desse-municipio-de-sergipe.jpg",
+      "autor": "zconti",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Nossa-senhora-do-socorro-descubra-a-historia-desse-municipio-de-sergipe.jpg"
+    },
+    "2900702": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Centro_de_Alagoinhas.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Centro_de_Alagoinhas.jpg/500px-Centro_de_Alagoinhas.jpg",
+      "autor": "Peter Storm Banner",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Centro_de_Alagoinhas.jpg"
+    },
+    "2903201": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Bahia_Brazil_Barreiras_em_2017.jpg/1280px-Bahia_Brazil_Barreiras_em_2017.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Bahia_Brazil_Barreiras_em_2017.jpg/500px-Bahia_Brazil_Barreiras_em_2017.jpg",
+      "autor": "Wesley Melo",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Bahia_Brazil_Barreiras_em_2017.jpg"
+    },
+    "2905701": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Camacari.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Camacari.jpg/500px-Camacari.jpg",
+      "autor": "Gilclei",
+      "licenca": "Copyrighted free use",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Camacari.jpg"
+    },
+    "2910727": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Eunapolis-1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Eunapolis-1.jpg/500px-Eunapolis-1.jpg",
+      "autor": "Jeff Ahbb",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Eunapolis-1.jpg"
+    },
+    "2910800": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Feiradesantanamosaico.png",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/9/96/Feiradesantanamosaico.png",
+      "autor": "Paulomedford",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Feiradesantanamosaico.png"
+    },
+    "2913606": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Catedral_de_S%C3%A3o_Sebasti%C3%A3o_e_arredores_Ilh%C3%A9us_1988.jpg/1280px-Catedral_de_S%C3%A3o_Sebasti%C3%A3o_e_arredores_Ilh%C3%A9us_1988.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Catedral_de_S%C3%A3o_Sebasti%C3%A3o_e_arredores_Ilh%C3%A9us_1988.jpg/500px-Catedral_de_S%C3%A3o_Sebasti%C3%A3o_e_arredores_Ilh%C3%A9us_1988.jpg",
+      "autor": "Bunks",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Catedral_de_S%C3%A3o_Sebasti%C3%A3o_e_arredores_Ilh%C3%A9us_1988.jpg"
+    },
+    "2914802": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/ITABUNA_SKYLINE.jpg/1280px-ITABUNA_SKYLINE.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/ITABUNA_SKYLINE.jpg/500px-ITABUNA_SKYLINE.jpg",
+      "autor": "Timdress",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:ITABUNA_SKYLINE.jpg"
+    },
+    "2918001": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Centro_de_Jequi%C3%A9.jpg/1280px-Centro_de_Jequi%C3%A9.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Centro_de_Jequi%C3%A9.jpg/500px-Centro_de_Jequi%C3%A9.jpg",
+      "autor": "Ivo Leandro",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Centro_de_Jequi%C3%A9.jpg"
+    },
+    "2918407": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Juazeiro%2C_State_of_Bahia%2C_Brazil.jpg/1280px-Juazeiro%2C_State_of_Bahia%2C_Brazil.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Juazeiro%2C_State_of_Bahia%2C_Brazil.jpg/500px-Juazeiro%2C_State_of_Bahia%2C_Brazil.jpg",
+      "autor": "ricardobc",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Juazeiro,_State_of_Bahia,_Brazil.jpg"
+    },
+    "2919207": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Estrada_do_Coco_%28km_6%29_durante_sa%C3%ADda_de_Salvador_para_o_Ano_Novo.jpg/1280px-Estrada_do_Coco_%28km_6%29_durante_sa%C3%ADda_de_Salvador_para_o_Ano_Novo.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Estrada_do_Coco_%28km_6%29_durante_sa%C3%ADda_de_Salvador_para_o_Ano_Novo.jpg/500px-Estrada_do_Coco_%28km_6%29_durante_sa%C3%ADda_de_Salvador_para_o_Ano_Novo.jpg",
+      "autor": "Fotos GOVBA from Bahia/Brasil",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Estrada_do_Coco_(km_6)_durante_sa%C3%ADda_de_Salvador_para_o_Ano_Novo.jpg"
+    },
+    "2919553": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/LEM_BA_-_panoramio.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/LEM_BA_-_panoramio.jpg/500px-LEM_BA_-_panoramio.jpg",
+      "autor": "Roberto de vasconcel…",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:LEM_BA_-_panoramio.jpg"
+    },
+    "2924009": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Cachoeira_de_Paulo_Afonso.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Cachoeira_de_Paulo_Afonso.jpg/500px-Cachoeira_de_Paulo_Afonso.jpg",
+      "autor": "Maria Hsu",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Cachoeira_de_Paulo_Afonso.jpg"
+    },
+    "2925303": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Vista_%C3%A1rea_de_Porto_Seguro_01.jpg/1280px-Vista_%C3%A1rea_de_Porto_Seguro_01.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Vista_%C3%A1rea_de_Porto_Seguro_01.jpg/500px-Vista_%C3%A1rea_de_Porto_Seguro_01.jpg",
+      "autor": "Fotos GOVBA from Bahia/Brasil",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_%C3%A1rea_de_Porto_Seguro_01.jpg"
+    },
+    "2927408": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/SalvadorDaBahiaPalacioRioBranco.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/SalvadorDaBahiaPalacioRioBranco.jpg/500px-SalvadorDaBahiaPalacioRioBranco.jpg",
+      "autor": "Autor desconhecido",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:SalvadorDaBahiaPalacioRioBranco.jpg"
+    },
+    "2928703": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Santo_Antonio_de_Jesus.jpg",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Santo_Antonio_de_Jesus.jpg",
+      "autor": "Sangroncito",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Santo_Antonio_de_Jesus.jpg"
+    },
+    "2930709": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/VIA_DE_PENETRA%C3%87%C3%83O_IV_CIA_SUL%2CN%C2%BA_453_%E2%80%93_SIM%C3%95ES_FILHO_-_panoramio_%286%29.jpg/1280px-VIA_DE_PENETRA%C3%87%C3%83O_IV_CIA_SUL%2CN%C2%BA_453_%E2%80%93_SIM%C3%95ES_FILHO_-_panoramio_%286%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/VIA_DE_PENETRA%C3%87%C3%83O_IV_CIA_SUL%2CN%C2%BA_453_%E2%80%93_SIM%C3%95ES_FILHO_-_panoramio_%286%29.jpg/500px-VIA_DE_PENETRA%C3%87%C3%83O_IV_CIA_SUL%2CN%C2%BA_453_%E2%80%93_SIM%C3%95ES_FILHO_-_panoramio_%286%29.jpg",
+      "autor": "TERRASAT RASTREAMENT…",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:VIA_DE_PENETRA%C3%87%C3%83O_IV_CIA_SUL,N%C2%BA_453_%E2%80%93_SIM%C3%95ES_FILHO_-_panoramio_(6).jpg"
+    },
+    "2931350": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Esta%C3%A7%C3%A3o_Rodovi%C3%A1ria_de_Teixeira_de_Freitas.jpg/1280px-Esta%C3%A7%C3%A3o_Rodovi%C3%A1ria_de_Teixeira_de_Freitas.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Esta%C3%A7%C3%A3o_Rodovi%C3%A1ria_de_Teixeira_de_Freitas.jpg/500px-Esta%C3%A7%C3%A3o_Rodovi%C3%A1ria_de_Teixeira_de_Freitas.jpg",
+      "autor": "TFLF",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Esta%C3%A7%C3%A3o_Rodovi%C3%A1ria_de_Teixeira_de_Freitas.jpg"
+    },
+    "2933307": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/VDC_parcial.jpg",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/6/66/VDC_parcial.jpg",
+      "autor": "VDC",
+      "licenca": "GPL",
+      "urlLicenca": "http://www.gnu.org/licenses/gpl.html",
+      "pagina": "https://commons.wikimedia.org/wiki/File:VDC_parcial.jpg"
+    },
+    "3103504": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Prefeitura_de_Araguari.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Prefeitura_de_Araguari.jpg/500px-Prefeitura_de_Araguari.jpg",
+      "autor": "Camillovs",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Prefeitura_de_Araguari.jpg"
+    },
+    "3104007": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Cristo-redentor-arax%C3%A1-brazil-minas-7069248.jpg/1280px-Cristo-redentor-arax%C3%A1-brazil-minas-7069248.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Cristo-redentor-arax%C3%A1-brazil-minas-7069248.jpg/500px-Cristo-redentor-arax%C3%A1-brazil-minas-7069248.jpg",
+      "autor": "Mani Amistad",
+      "licenca": "CC0",
+      "urlLicenca": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Cristo-redentor-arax%C3%A1-brazil-minas-7069248.jpg"
+    },
+    "3105608": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Pra%C3%A7a_dos_Andradas_com_igreja.jpg/1280px-Pra%C3%A7a_dos_Andradas_com_igreja.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Pra%C3%A7a_dos_Andradas_com_igreja.jpg/500px-Pra%C3%A7a_dos_Andradas_com_igreja.jpg",
+      "autor": "João",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Pra%C3%A7a_dos_Andradas_com_igreja.jpg"
+    },
+    "3106200": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Belo_Horizonte%2C_Brasil_horizon_view.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Belo_Horizonte%2C_Brasil_horizon_view.jpg/500px-Belo_Horizonte%2C_Brasil_horizon_view.jpg",
+      "autor": "copagov",
+      "licenca": "CC BY-SA 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Belo_Horizonte,_Brasil_horizon_view.jpg"
+    },
+    "3106705": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Betim_vista_do_alto.jpg/1280px-Betim_vista_do_alto.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Betim_vista_do_alto.jpg/500px-Betim_vista_do_alto.jpg",
+      "autor": "Helder Felipe",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Betim_vista_do_alto.jpg"
+    },
+    "3118304": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Conselheiro_Lafaiete_MG.jpg/1280px-Conselheiro_Lafaiete_MG.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Conselheiro_Lafaiete_MG.jpg/500px-Conselheiro_Lafaiete_MG.jpg",
+      "autor": "Jhony Alves",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Conselheiro_Lafaiete_MG.jpg"
+    },
+    "3118601": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/27.06.2024_-_Cerim%C3%B4nia_sobre_investimentos_do_Governo_Federal_em_Contagem_%28MG%29_%2853820719123%29.jpg/1280px-27.06.2024_-_Cerim%C3%B4nia_sobre_investimentos_do_Governo_Federal_em_Contagem_%28MG%29_%2853820719123%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/27.06.2024_-_Cerim%C3%B4nia_sobre_investimentos_do_Governo_Federal_em_Contagem_%28MG%29_%2853820719123%29.jpg/500px-27.06.2024_-_Cerim%C3%B4nia_sobre_investimentos_do_Governo_Federal_em_Contagem_%28MG%29_%2853820719123%29.jpg",
+      "autor": "Lula Oficial",
+      "licenca": "CC BY-SA 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:27.06.2024_-_Cerim%C3%B4nia_sobre_investimentos_do_Governo_Federal_em_Contagem_(MG)_(53820719123).jpg"
+    },
+    "3119401": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Vista_parcial_de_Coronel_Fabriciano_MG_a_partir_de_Tim%C3%B3teo2.JPG/1280px-Vista_parcial_de_Coronel_Fabriciano_MG_a_partir_de_Tim%C3%B3teo2.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Vista_parcial_de_Coronel_Fabriciano_MG_a_partir_de_Tim%C3%B3teo2.JPG/500px-Vista_parcial_de_Coronel_Fabriciano_MG_a_partir_de_Tim%C3%B3teo2.JPG",
+      "autor": "HVL",
+      "licenca": "CC BY 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_parcial_de_Coronel_Fabriciano_MG_a_partir_de_Tim%C3%B3teo2.JPG"
+    },
+    "3122306": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Divinopolis.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Divinopolis.jpg/500px-Divinopolis.jpg",
+      "autor": "No machine-readable author provided. Edmourao assumed (based on copyright claims).",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Divinopolis.jpg"
+    },
+    "3127701": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/PicoIbituruna-GovernadorValadares.jpg/1280px-PicoIbituruna-GovernadorValadares.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/PicoIbituruna-GovernadorValadares.jpg/500px-PicoIbituruna-GovernadorValadares.jpg",
+      "autor": "Adilson Fagundes",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:PicoIbituruna-GovernadorValadares.jpg"
+    },
+    "3129806": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Pra%C3%A7a_do_For%C3%BAm_de_Ibirit%C3%A9%2C_MG.jpg/1280px-Pra%C3%A7a_do_For%C3%BAm_de_Ibirit%C3%A9%2C_MG.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Pra%C3%A7a_do_For%C3%BAm_de_Ibirit%C3%A9%2C_MG.jpg/500px-Pra%C3%A7a_do_For%C3%BAm_de_Ibirit%C3%A9%2C_MG.jpg",
+      "autor": "Kacamata",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Pra%C3%A7a_do_For%C3%BAm_de_Ibirit%C3%A9,_MG.jpg"
+    },
+    "3131307": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Vista_parcial_de_Ipatinga_MG_a_partir_do_Morro_do_C3.JPG/1280px-Vista_parcial_de_Ipatinga_MG_a_partir_do_Morro_do_C3.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Vista_parcial_de_Ipatinga_MG_a_partir_do_Morro_do_C3.JPG/500px-Vista_parcial_de_Ipatinga_MG_a_partir_do_Morro_do_C3.JPG",
+      "autor": "HVL",
+      "licenca": "CC BY 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_parcial_de_Ipatinga_MG_a_partir_do_Morro_do_C3.JPG"
+    },
+    "3131703": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Itabira_MG_Brasil_-_Vista_a%C3%A9rea_-_panoramio_%281%29.jpg/1280px-Itabira_MG_Brasil_-_Vista_a%C3%A9rea_-_panoramio_%281%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Itabira_MG_Brasil_-_Vista_a%C3%A9rea_-_panoramio_%281%29.jpg/500px-Itabira_MG_Brasil_-_Vista_a%C3%A9rea_-_panoramio_%281%29.jpg",
+      "autor": "Josue Marinho",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Itabira_MG_Brasil_-_Vista_a%C3%A9rea_-_panoramio_(1).jpg"
+    },
+    "3134202": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Leo_Tijucano_Drone_-_Ituiutaba_MG.jpg/1280px-Leo_Tijucano_Drone_-_Ituiutaba_MG.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Leo_Tijucano_Drone_-_Ituiutaba_MG.jpg/500px-Leo_Tijucano_Drone_-_Ituiutaba_MG.jpg",
+      "autor": "Leo Tijucano Drone",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Leo_Tijucano_Drone_-_Ituiutaba_MG.jpg"
+    },
+    "3136702": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Vista_do_centro_de_Juiz_de_Fora-MG.JPG/1280px-Vista_do_centro_de_Juiz_de_Fora-MG.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Vista_do_centro_de_Juiz_de_Fora-MG.JPG/500px-Vista_do_centro_de_Juiz_de_Fora-MG.JPG",
+      "autor": "Rcandre",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_do_centro_de_Juiz_de_Fora-MG.JPG"
+    },
+    "3138203": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Vista_Parcial_Regi%C3%A3o_central.JPG/1280px-Vista_Parcial_Regi%C3%A3o_central.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Vista_Parcial_Regi%C3%A3o_central.JPG/500px-Vista_Parcial_Regi%C3%A3o_central.JPG",
+      "autor": "Dennis 96",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_Parcial_Regi%C3%A3o_central.JPG"
+    },
+    "3143302": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Vista_parcial_de_Montes_Claros_MG.JPG",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/3/31/Vista_parcial_de_Montes_Claros_MG.JPG",
+      "autor": "Michael David",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_parcial_de_Montes_Claros_MG.JPG"
+    },
+    "3143906": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Muria%C3%A9_MG_Brasil_-_Vista_parcial_-_panoramio.jpg/1280px-Muria%C3%A9_MG_Brasil_-_Vista_parcial_-_panoramio.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Muria%C3%A9_MG_Brasil_-_Vista_parcial_-_panoramio.jpg/500px-Muria%C3%A9_MG_Brasil_-_Vista_parcial_-_panoramio.jpg",
+      "autor": "Josue Marinho",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Muria%C3%A9_MG_Brasil_-_Vista_parcial_-_panoramio.jpg"
+    },
+    "3144805": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Nova_Lima_%28MG%29_-_Bairro_dos_Ingleses.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Nova_Lima_%28MG%29_-_Bairro_dos_Ingleses.jpg/500px-Nova_Lima_%28MG%29_-_Bairro_dos_Ingleses.jpg",
+      "autor": "Tatiana Dias from Nova Lima, Brasil",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Nova_Lima_(MG)_-_Bairro_dos_Ingleses.jpg"
+    },
+    "3147907": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Passos-mg.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Passos-mg.JPG/500px-Passos-mg.JPG",
+      "autor": "MS Enio",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Passos-mg.JPG"
+    },
+    "3148004": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Patos-de-Minas-MG.jpg/1280px-Patos-de-Minas-MG.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Patos-de-Minas-MG.jpg/500px-Patos-de-Minas-MG.jpg",
+      "autor": "@VooSuavecomSom",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Patos-de-Minas-MG.jpg"
+    },
+    "3151800": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Po%C3%A7os_de_caldas1.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Po%C3%A7os_de_caldas1.JPG/500px-Po%C3%A7os_de_caldas1.JPG",
+      "autor": "FlaviaC",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Po%C3%A7os_de_caldas1.JPG"
+    },
+    "3152501": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Pouso_Alegre_%281%29.jpg/1280px-Pouso_Alegre_%281%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Pouso_Alegre_%281%29.jpg/500px-Pouso_Alegre_%281%29.jpg",
+      "autor": "LuckMotoTrip",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Pouso_Alegre_(1).jpg"
+    },
+    "3154606": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/San_Marino%2C_Ribeir%C3%A3o_das_Neves.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/San_Marino%2C_Ribeir%C3%A3o_das_Neves.JPG/500px-San_Marino%2C_Ribeir%C3%A3o_das_Neves.JPG",
+      "autor": "Fronteira",
+      "licenca": "CC0",
+      "urlLicenca": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:San_Marino,_Ribeir%C3%A3o_das_Neves.JPG"
+    },
+    "3156700": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Vista_parcial_do_centro_hist%C3%B3rico_de_Sabar%C3%A1.jpg/1280px-Vista_parcial_do_centro_hist%C3%B3rico_de_Sabar%C3%A1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Vista_parcial_do_centro_hist%C3%B3rico_de_Sabar%C3%A1.jpg/500px-Vista_parcial_do_centro_hist%C3%B3rico_de_Sabar%C3%A1.jpg",
+      "autor": "Wladmiraaraujo",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_parcial_do_centro_hist%C3%B3rico_de_Sabar%C3%A1.jpg"
+    },
+    "3157807": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Montagem_cidade_Santa_Luzia_MG.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Montagem_cidade_Santa_Luzia_MG.jpg/500px-Montagem_cidade_Santa_Luzia_MG.jpg",
+      "autor": "Isaac daniel",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Montagem_cidade_Santa_Luzia_MG.jpg"
+    },
+    "3167202": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Sete_lagoas_lagoa_paulino-01.JPG/1280px-Sete_lagoas_lagoa_paulino-01.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Sete_lagoas_lagoa_paulino-01.JPG/500px-Sete_lagoas_lagoa_paulino-01.JPG",
+      "autor": "Rsabbatini",
+      "licenca": "CC BY-SA 2.5",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.5",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Sete_lagoas_lagoa_paulino-01.JPG"
+    },
+    "3168606": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Cidade_de_Teofilo_Otoni.jpg/1280px-Cidade_de_Teofilo_Otoni.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Cidade_de_Teofilo_Otoni.jpg/500px-Cidade_de_Teofilo_Otoni.jpg",
+      "autor": "Vlad Radu Poenaru",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Cidade_de_Teofilo_Otoni.jpg"
+    },
+    "3169901": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Vista_noturna_de_Ub%C3%A1.jpg/1280px-Vista_noturna_de_Ub%C3%A1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Vista_noturna_de_Ub%C3%A1.jpg/500px-Vista_noturna_de_Ub%C3%A1.jpg",
+      "autor": "Laureano (http://www.laureanojg.blogspot.com/)",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_noturna_de_Ub%C3%A1.jpg"
+    },
+    "3170107": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Skyline_de_Uberaba.png",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Skyline_de_Uberaba.png/500px-Skyline_de_Uberaba.png",
+      "autor": "Pedroepaulo",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Skyline_de_Uberaba.png"
+    },
+    "3170206": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Centraludi.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Centraludi.jpg/500px-Centraludi.jpg",
+      "autor": "will7",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Centraludi.jpg"
+    },
+    "3170701": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Vista_de_Varginha_-_panoramio.jpg/1280px-Vista_de_Varginha_-_panoramio.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Vista_de_Varginha_-_panoramio.jpg/500px-Vista_de_Varginha_-_panoramio.jpg",
+      "autor": "Felipe Trombini",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_de_Varginha_-_panoramio.jpg"
+    },
+    "3171204": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/P%C3%A7aigrejansalourdesvespasiano.jpg/1280px-P%C3%A7aigrejansalourdesvespasiano.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/P%C3%A7aigrejansalourdesvespasiano.jpg/500px-P%C3%A7aigrejansalourdesvespasiano.jpg",
+      "autor": "Alexandrezambelli",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:P%C3%A7aigrejansalourdesvespasiano.jpg"
+    },
+    "3201209": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Cachoeiro_de_Itapemirim-ES.jpg/1280px-Cachoeiro_de_Itapemirim-ES.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Cachoeiro_de_Itapemirim-ES.jpg/500px-Cachoeiro_de_Itapemirim-ES.jpg",
+      "autor": "compilation by Renan C. Nunes",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Cachoeiro_de_Itapemirim-ES.jpg"
+    },
+    "3201308": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Vista_parcial_da_sede_de_Cariacica_ES_com_o_Monte_Mochuara_ao_fundo.JPG/1280px-Vista_parcial_da_sede_de_Cariacica_ES_com_o_Monte_Mochuara_ao_fundo.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Vista_parcial_da_sede_de_Cariacica_ES_com_o_Monte_Mochuara_ao_fundo.JPG/500px-Vista_parcial_da_sede_de_Cariacica_ES_com_o_Monte_Mochuara_ao_fundo.JPG",
+      "autor": "HVL",
+      "licenca": "CC BY 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_parcial_da_sede_de_Cariacica_ES_com_o_Monte_Mochuara_ao_fundo.JPG"
+    },
+    "3201506": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Vista_parcial_de_Colatina_ES.JPG/1280px-Vista_parcial_de_Colatina_ES.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Vista_parcial_de_Colatina_ES.JPG/500px-Vista_parcial_de_Colatina_ES.JPG",
+      "autor": "HVL",
+      "licenca": "CC BY 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_parcial_de_Colatina_ES.JPG"
+    },
+    "3202405": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Guarapari_-_ES._Aerial_view_of_the_city_of_Guarapari_and_its_beaches%2C_in_Esp%C3%ADrito_Santo%2C_Brazil.jpg/1280px-Guarapari_-_ES._Aerial_view_of_the_city_of_Guarapari_and_its_beaches%2C_in_Esp%C3%ADrito_Santo%2C_Brazil.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Guarapari_-_ES._Aerial_view_of_the_city_of_Guarapari_and_its_beaches%2C_in_Esp%C3%ADrito_Santo%2C_Brazil.jpg/500px-Guarapari_-_ES._Aerial_view_of_the_city_of_Guarapari_and_its_beaches%2C_in_Esp%C3%ADrito_Santo%2C_Brazil.jpg",
+      "autor": "Rosanetur",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Guarapari_-_ES._Aerial_view_of_the_city_of_Guarapari_and_its_beaches,_in_Esp%C3%ADrito_Santo,_Brazil.jpg"
+    },
+    "3203205": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/GustavoLouzada_Praca22agosto_Linhares_ES_%2825991327297%29.jpg/1280px-GustavoLouzada_Praca22agosto_Linhares_ES_%2825991327297%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/GustavoLouzada_Praca22agosto_Linhares_ES_%2825991327297%29.jpg/500px-GustavoLouzada_Praca22agosto_Linhares_ES_%2825991327297%29.jpg",
+      "autor": "MTur Destinos",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:GustavoLouzada_Praca22agosto_Linhares_ES_(25991327297).jpg"
+    },
+    "3204906": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Diversas_imagens_sobre_S%C3%A3o_Mateus.png",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Diversas_imagens_sobre_S%C3%A3o_Mateus.png",
+      "autor": "See above. Compilation: Moeção",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Diversas_imagens_sobre_S%C3%A3o_Mateus.png"
+    },
+    "3205002": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Vista_de_Serra_%28Tims%29.jpg/1280px-Vista_de_Serra_%28Tims%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Vista_de_Serra_%28Tims%29.jpg/500px-Vista_de_Serra_%28Tims%29.jpg",
+      "autor": "Guigag1",
+      "licenca": "CC0",
+      "urlLicenca": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_de_Serra_(Tims).jpg"
+    },
+    "3205200": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Vila_Velha_ES_a_partir_do_Convento_da_Penha.JPG/1280px-Vila_Velha_ES_a_partir_do_Convento_da_Penha.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Vila_Velha_ES_a_partir_do_Convento_da_Penha.JPG/500px-Vila_Velha_ES_a_partir_do_Convento_da_Penha.JPG",
+      "autor": "HVL",
+      "licenca": "CC BY 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vila_Velha_ES_a_partir_do_Convento_da_Penha.JPG"
+    },
+    "3205309": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Vista_da_cidade_de_Vit%C3%B3ria_ES_a_partir_da_Pedra_dos_Dois_Olhos_1.jpg/1280px-Vista_da_cidade_de_Vit%C3%B3ria_ES_a_partir_da_Pedra_dos_Dois_Olhos_1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Vista_da_cidade_de_Vit%C3%B3ria_ES_a_partir_da_Pedra_dos_Dois_Olhos_1.jpg/500px-Vista_da_cidade_de_Vit%C3%B3ria_ES_a_partir_da_Pedra_dos_Dois_Olhos_1.jpg",
+      "autor": "Rafael Deminicis",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_da_cidade_de_Vit%C3%B3ria_ES_a_partir_da_Pedra_dos_Dois_Olhos_1.jpg"
+    },
+    "3300100": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/1_angra_dos_reis_panorama_2010.jpg/1280px-1_angra_dos_reis_panorama_2010.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/1_angra_dos_reis_panorama_2010.jpg/500px-1_angra_dos_reis_panorama_2010.jpg",
+      "autor": "chensiyuan",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:1_angra_dos_reis_panorama_2010.jpg"
+    },
+    "3300209": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Praia_Seca_RJ_1.jpg/1280px-Praia_Seca_RJ_1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Praia_Seca_RJ_1.jpg/500px-Praia_Seca_RJ_1.jpg",
+      "autor": "Gladstone Pexoto Moraes,",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Praia_Seca_RJ_1.jpg"
+    },
+    "3300407": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Rio_Para%C3%ADba_em_Barra_Mansa.jpg/1280px-Rio_Para%C3%ADba_em_Barra_Mansa.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Rio_Para%C3%ADba_em_Barra_Mansa.jpg/500px-Rio_Para%C3%ADba_em_Barra_Mansa.jpg",
+      "autor": "HenriqueBarraMansa",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Rio_Para%C3%ADba_em_Barra_Mansa.jpg"
+    },
+    "3300456": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Novo_Portico_Belford_Roxo.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Novo_Portico_Belford_Roxo.jpg/500px-Novo_Portico_Belford_Roxo.jpg",
+      "autor": "Sir Velpertex di Crantx",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Novo_Portico_Belford_Roxo.jpg"
+    },
+    "3300704": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/CaboFrio1.jpg/1280px-CaboFrio1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/CaboFrio1.jpg/500px-CaboFrio1.jpg",
+      "autor": "Fulviusbsas",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:CaboFrio1.jpg"
+    },
+    "3301009": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Campos_RJ.jpg/1280px-Campos_RJ.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Campos_RJ.jpg/500px-Campos_RJ.jpg",
+      "autor": "Vladhillrj",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Campos_RJ.jpg"
+    },
+    "3301702": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Novas_Palmeiras_no_centro_de_Duque_de_Caxias_na_gest%C3%A3o_do_Prefeito_Zito._-_panoramio.jpg/1280px-Novas_Palmeiras_no_centro_de_Duque_de_Caxias_na_gest%C3%A3o_do_Prefeito_Zito._-_panoramio.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Novas_Palmeiras_no_centro_de_Duque_de_Caxias_na_gest%C3%A3o_do_Prefeito_Zito._-_panoramio.jpg/500px-Novas_Palmeiras_no_centro_de_Duque_de_Caxias_na_gest%C3%A3o_do_Prefeito_Zito._-_panoramio.jpg",
+      "autor": "Luiz Antonio Silva",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Novas_Palmeiras_no_centro_de_Duque_de_Caxias_na_gest%C3%A3o_do_Prefeito_Zito._-_panoramio.jpg"
+    },
+    "3301900": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Vista_parcial_de_Itabora%C3%AD_RJ.JPG/1280px-Vista_parcial_de_Itabora%C3%AD_RJ.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Vista_parcial_de_Itabora%C3%AD_RJ.JPG/500px-Vista_parcial_de_Itabora%C3%AD_RJ.JPG",
+      "autor": "HVL",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_parcial_de_Itabora%C3%AD_RJ.JPG"
+    },
+    "3302007": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Itagua%C3%AD.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Itagua%C3%AD.jpg/500px-Itagua%C3%AD.jpg",
+      "autor": "Rcandre",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Itagua%C3%AD.jpg"
+    },
+    "3302205": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Itaperuna-10.jpg/1280px-Itaperuna-10.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Itaperuna-10.jpg/500px-Itaperuna-10.jpg",
+      "autor": "Carlospimenteltinoco",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Itaperuna-10.jpg"
+    },
+    "3302403": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/MacaeCity.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/MacaeCity.jpg/500px-MacaeCity.jpg",
+      "autor": "Gladstone at Portuguese Wikipedia",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:MacaeCity.jpg"
+    },
+    "3302502": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Igreja_Nossa_Sra._da_Piedade_-_Mag%C3%A9.jpg/1280px-Igreja_Nossa_Sra._da_Piedade_-_Mag%C3%A9.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Igreja_Nossa_Sra._da_Piedade_-_Mag%C3%A9.jpg/500px-Igreja_Nossa_Sra._da_Piedade_-_Mag%C3%A9.jpg",
+      "autor": "Itsmartins",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Igreja_Nossa_Sra._da_Piedade_-_Mag%C3%A9.jpg"
+    },
+    "3302700": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/%22V%C3%A9u%22_em_Praia_de_Ponta_Negra.JPG/1280px-%22V%C3%A9u%22_em_Praia_de_Ponta_Negra.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/%22V%C3%A9u%22_em_Praia_de_Ponta_Negra.JPG/500px-%22V%C3%A9u%22_em_Praia_de_Ponta_Negra.JPG",
+      "autor": "Filipo tardim",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:%22V%C3%A9u%22_em_Praia_de_Ponta_Negra.JPG"
+    },
+    "3302858": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Vista_do_centro_de_Mesquita.JPG/1280px-Vista_do_centro_de_Mesquita.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Vista_do_centro_de_Mesquita.JPG/500px-Vista_do_centro_de_Mesquita.JPG",
+      "autor": "Junius",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_do_centro_de_Mesquita.JPG"
+    },
+    "3303203": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Vista_de_Nil%C3%B3polis.JPG/1280px-Vista_de_Nil%C3%B3polis.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Vista_de_Nil%C3%B3polis.JPG/500px-Vista_de_Nil%C3%B3polis.JPG",
+      "autor": "Junius",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_de_Nil%C3%B3polis.JPG"
+    },
+    "3303302": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Boa_Viagem_Niter%C3%B3i.JPG/1280px-Boa_Viagem_Niter%C3%B3i.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Boa_Viagem_Niter%C3%B3i.JPG/500px-Boa_Viagem_Niter%C3%B3i.JPG",
+      "autor": "DiMonteiro",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Boa_Viagem_Niter%C3%B3i.JPG"
+    },
+    "3303401": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Vista_de_Nova_Friburgo_RJ_a_partir_do_telef%C3%A9rico_do_Suspiro.JPG/1280px-Vista_de_Nova_Friburgo_RJ_a_partir_do_telef%C3%A9rico_do_Suspiro.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Vista_de_Nova_Friburgo_RJ_a_partir_do_telef%C3%A9rico_do_Suspiro.JPG/500px-Vista_de_Nova_Friburgo_RJ_a_partir_do_telef%C3%A9rico_do_Suspiro.JPG",
+      "autor": "Vitorperrut555",
+      "licenca": "CC0",
+      "urlLicenca": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_de_Nova_Friburgo_RJ_a_partir_do_telef%C3%A9rico_do_Suspiro.JPG"
+    },
+    "3303500": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Novaiguacu_fotonova.jpg",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Novaiguacu_fotonova.jpg",
+      "autor": "Autor desconhecido",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Novaiguacu_fotonova.jpg"
+    },
+    "3303906": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Museu_Imperial_Petropolis.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Museu_Imperial_Petropolis.jpg/500px-Museu_Imperial_Petropolis.jpg",
+      "autor": "Autor desconhecido",
+      "licenca": "CC BY-SA 2.5",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.5",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Museu_Imperial_Petropolis.jpg"
+    },
+    "3304144": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/PcaNSaConceicao.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/PcaNSaConceicao.jpg/500px-PcaNSaConceicao.jpg",
+      "autor": "RuhFernandes",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:PcaNSaConceicao.jpg"
+    },
+    "3304201": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Resende_-_av_Marechal_Castelo_Branco.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Resende_-_av_Marechal_Castelo_Branco.JPG/500px-Resende_-_av_Marechal_Castelo_Branco.JPG",
+      "autor": "Joao Xavier",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Resende_-_av_Marechal_Castelo_Branco.JPG"
+    },
+    "3304524": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Orla_de_Rio_das_Ostras.JPG/1280px-Orla_de_Rio_das_Ostras.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Orla_de_Rio_das_Ostras.JPG/500px-Orla_de_Rio_das_Ostras.JPG",
+      "autor": "No machine-readable author provided. Pedrop.rio assumed (based on copyright claims).",
+      "licenca": "CC BY-SA 2.5",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.5",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Orla_de_Rio_das_Ostras.JPG"
+    },
+    "3304557": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Cidade_Maravilhosa.jpg/1280px-Cidade_Maravilhosa.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Cidade_Maravilhosa.jpg/500px-Cidade_Maravilhosa.jpg",
+      "autor": "Rafael Rabello de Barros",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Cidade_Maravilhosa.jpg"
+    },
+    "3304904": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Montagem_S%C3%A3o_Gon%C3%A7alo%2C_RJ_2021.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Montagem_S%C3%A3o_Gon%C3%A7alo%2C_RJ_2021.jpg/500px-Montagem_S%C3%A3o_Gon%C3%A7alo%2C_RJ_2021.jpg",
+      "autor": "RIB.ptg",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Montagem_S%C3%A3o_Gon%C3%A7alo,_RJ_2021.jpg"
+    },
+    "3305109": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Igreja_da_Matriz_de_S%C3%A3o_Jo%C3%A3o_de_Meriti.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Igreja_da_Matriz_de_S%C3%A3o_Jo%C3%A3o_de_Meriti.JPG/500px-Igreja_da_Matriz_de_S%C3%A3o_Jo%C3%A3o_de_Meriti.JPG",
+      "autor": "Junius",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Igreja_da_Matriz_de_S%C3%A3o_Jo%C3%A3o_de_Meriti.JPG"
+    },
+    "3305208": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Sao_pedro.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Sao_pedro.JPG/500px-Sao_pedro.JPG",
+      "autor": "Clara",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Sao_pedro.JPG"
+    },
+    "3305802": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Teresopolis%2CVista_da_Pedra_do_Sino.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Teresopolis%2CVista_da_Pedra_do_Sino.jpg/500px-Teresopolis%2CVista_da_Pedra_do_Sino.jpg",
+      "autor": "Carlos Rios",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Teresopolis,Vista_da_Pedra_do_Sino.jpg"
+    },
+    "3306305": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/PrefeituraDeVoltaRedonda.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/PrefeituraDeVoltaRedonda.jpg/500px-PrefeituraDeVoltaRedonda.jpg",
+      "autor": "Raphael.lorenzeto at Portuguese Wikipedia",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:PrefeituraDeVoltaRedonda.jpg"
+    },
+    "3501608": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Vista_a%C3%A9rea_de_Americana.jpg/1280px-Vista_a%C3%A9rea_de_Americana.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Vista_a%C3%A9rea_de_Americana.jpg/500px-Vista_a%C3%A9rea_de_Americana.jpg",
+      "autor": "Mário L. Cavicchiolli",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_a%C3%A9rea_de_Americana.jpg"
+    },
+    "3502804": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Montagem_ata_2.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Montagem_ata_2.jpg/500px-Montagem_ata_2.jpg",
+      "autor": "Marco Senche, Barão de Itararé e Caiocapelari",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Montagem_ata_2.jpg"
+    },
+    "3503208": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Vista_de_Araraquara.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Vista_de_Araraquara.JPG/500px-Vista_de_Araraquara.JPG",
+      "autor": "Yuri Sabino",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_de_Araraquara.JPG"
+    },
+    "3503307": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Araras_-_centro.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Araras_-_centro.JPG/500px-Araras_-_centro.JPG",
+      "autor": "Julio Cesar Paganotti",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Araras_-_centro.JPG"
+    },
+    "3504008": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Assis_-_2020.jpg/1280px-Assis_-_2020.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Assis_-_2020.jpg/500px-Assis_-_2020.jpg",
+      "autor": "Thericardo815",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Assis_-_2020.jpg"
+    },
+    "3504107": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Atibaiabourbon.JPG/1280px-Atibaiabourbon.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Atibaiabourbon.JPG/500px-Atibaiabourbon.JPG",
+      "autor": "No machine-readable author provided. Lampiao3 assumed (based on copyright claims).",
+      "licenca": "CC BY 2.5",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.5",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Atibaiabourbon.JPG"
+    },
+    "3505500": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Barretos-SP_8.jpg/1280px-Barretos-SP_8.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Barretos-SP_8.jpg/500px-Barretos-SP_8.jpg",
+      "autor": "Autor desconhecido",
+      "licenca": "CC BY-SA 2.5",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.5",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Barretos-SP_8.jpg"
+    },
+    "3505708": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Montagem_Barueri.png",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Montagem_Barueri.png/500px-Montagem_Barueri.png",
+      "autor": "Lucas gc",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Montagem_Barueri.png"
+    },
+    "3506003": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Bauru.jpg/1280px-Bauru.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Bauru.jpg/500px-Bauru.jpg",
+      "autor": "Marco Senche /  Marco Antônio",
+      "licenca": "CC BY-SA 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Bauru.jpg"
+    },
+    "3506508": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Pra%C3%A7a_Dr._Gama%2C_Birigui_SP_2014.jpg/1280px-Pra%C3%A7a_Dr._Gama%2C_Birigui_SP_2014.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Pra%C3%A7a_Dr._Gama%2C_Birigui_SP_2014.jpg/500px-Pra%C3%A7a_Dr._Gama%2C_Birigui_SP_2014.jpg",
+      "autor": "Alexandre Moreira - Governo do Estado de São Paulo",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Pra%C3%A7a_Dr._Gama,_Birigui_SP_2014.jpg"
+    },
+    "3507506": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Botucatu.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Botucatu.jpg/500px-Botucatu.jpg",
+      "autor": "Prefeitura de Botucatu",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Botucatu.jpg"
+    },
+    "3507605": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Brag1.jpg/1280px-Brag1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Brag1.jpg/500px-Brag1.jpg",
+      "autor": "EWilliams",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Brag1.jpg"
+    },
+    "3509502": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Campinas_Poster.jpg/1280px-Campinas_Poster.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Campinas_Poster.jpg/500px-Campinas_Poster.jpg",
+      "autor": "Raphael Henrique Figueira",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Campinas_Poster.jpg"
+    },
+    "3510500": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Caraguatatuba_panorama.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Caraguatatuba_panorama.JPG/500px-Caraguatatuba_panorama.JPG",
+      "autor": "Giorgione62",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Caraguatatuba_panorama.JPG"
+    },
+    "3510609": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/CarapicuibaCentro.jpg/1280px-CarapicuibaCentro.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/CarapicuibaCentro.jpg/500px-CarapicuibaCentro.jpg",
+      "autor": "Teuz Wiki",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:CarapicuibaCentro.jpg"
+    },
+    "3511102": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Centro_de_Catanduva%2C_SP.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Centro_de_Catanduva%2C_SP.jpg/500px-Centro_de_Catanduva%2C_SP.jpg",
+      "autor": "Creedence",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Centro_de_Catanduva,_SP.jpg"
+    },
+    "3513009": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Vista_de_Cotia.JPG/1280px-Vista_de_Cotia.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Vista_de_Cotia.JPG/500px-Vista_de_Cotia.JPG",
+      "autor": "Victor Lopes",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_de_Cotia.JPG"
+    },
+    "3513504": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Vista_parcial_de_Cubat%C3%A3o_SP_a_partir_da_Serra_do_Mar.jpg/1280px-Vista_parcial_de_Cubat%C3%A3o_SP_a_partir_da_Serra_do_Mar.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Vista_parcial_de_Cubat%C3%A3o_SP_a_partir_da_Serra_do_Mar.jpg/500px-Vista_parcial_de_Cubat%C3%A3o_SP_a_partir_da_Serra_do_Mar.jpg",
+      "autor": "Ulrich Peters",
+      "licenca": "CC BY-SA 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_parcial_de_Cubat%C3%A3o_SP_a_partir_da_Serra_do_Mar.jpg"
+    },
+    "3513801": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/NovaVistaDiadema.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/NovaVistaDiadema.jpg/500px-NovaVistaDiadema.jpg",
+      "autor": "UmCriadorDiferente1648",
+      "licenca": "CC BY 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:NovaVistaDiadema.jpg"
+    },
+    "3515004": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Embu-sp-br02.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Embu-sp-br02.jpg/500px-Embu-sp-br02.jpg",
+      "autor": "No machine-readable author provided. Ricadito~commonswiki assumed (based on copyright claims).",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Embu-sp-br02.jpg"
+    },
+    "3515707": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Entrada_de_ferraz.jpg",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Entrada_de_ferraz.jpg",
+      "autor": "João Paulo Chagas",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Entrada_de_ferraz.jpg"
+    },
+    "3516200": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Franca_02.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Franca_02.jpg/500px-Franca_02.jpg",
+      "autor": "Wender Henrique",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Franca_02.jpg"
+    },
+    "3516309": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Francisco_Morato.png/1280px-Francisco_Morato.png",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Francisco_Morato.png/500px-Francisco_Morato.png",
+      "autor": "Eltonnoyo",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Francisco_Morato.png"
+    },
+    "3516408": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/VIADUTO_DE_FRANCO_DA_ROCHA.jpg/1280px-VIADUTO_DE_FRANCO_DA_ROCHA.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/VIADUTO_DE_FRANCO_DA_ROCHA.jpg/500px-VIADUTO_DE_FRANCO_DA_ROCHA.jpg",
+      "autor": "Felipelima14",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:VIADUTO_DE_FRANCO_DA_ROCHA.jpg"
+    },
+    "3518404": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Estacaoguara.jpg",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/8/84/Estacaoguara.jpg",
+      "autor": "Luciano Romeiro Dinamarco",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Estacaoguara.jpg"
+    },
+    "3518701": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/At_Guaruja_2018_135.jpg/1280px-At_Guaruja_2018_135.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/At_Guaruja_2018_135.jpg/500px-At_Guaruja_2018_135.jpg",
+      "autor": "Photograph by Mike Peel (www.mikepeel.net).",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:At_Guaruja_2018_135.jpg"
+    },
+    "3518800": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Vista_da_cidade_de_Guarulhos_%28SP%29.JPG/1280px-Vista_da_cidade_de_Guarulhos_%28SP%29.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Vista_da_cidade_de_Guarulhos_%28SP%29.JPG/500px-Vista_da_cidade_de_Guarulhos_%28SP%29.JPG",
+      "autor": "Humanoo",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_da_cidade_de_Guarulhos_(SP).JPG"
+    },
+    "3519071": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Hortol%C3%A2ndia-SP.jpg/1280px-Hortol%C3%A2ndia-SP.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Hortol%C3%A2ndia-SP.jpg/500px-Hortol%C3%A2ndia-SP.jpg",
+      "autor": "LeonardoMcunha",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Hortol%C3%A2ndia-SP.jpg"
+    },
+    "3520509": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Vista_noturna_de_Indaiatuba_SP.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Vista_noturna_de_Indaiatuba_SP.jpg/500px-Vista_noturna_de_Indaiatuba_SP.jpg",
+      "autor": "Fabio Mincarelli Monfrin",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_noturna_de_Indaiatuba_SP.jpg"
+    },
+    "3522109": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/ROGERIO_CASSIMIRO-SP_Itanhaem_morro_do_paranambuco_%2840845866272%29.jpg/1280px-ROGERIO_CASSIMIRO-SP_Itanhaem_morro_do_paranambuco_%2840845866272%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/ROGERIO_CASSIMIRO-SP_Itanhaem_morro_do_paranambuco_%2840845866272%29.jpg/500px-ROGERIO_CASSIMIRO-SP_Itanhaem_morro_do_paranambuco_%2840845866272%29.jpg",
+      "autor": "MTur Destinos",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:ROGERIO_CASSIMIRO-SP_Itanhaem_morro_do_paranambuco_(40845866272).jpg"
+    },
+    "3522208": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Igreja_matriz_de_Itapecerica_da_Serra.jpg/1280px-Igreja_matriz_de_Itapecerica_da_Serra.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Igreja_matriz_de_Itapecerica_da_Serra.jpg/500px-Igreja_matriz_de_Itapecerica_da_Serra.jpg",
+      "autor": "OS2Warp",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Igreja_matriz_de_Itapecerica_da_Serra.jpg"
+    },
+    "3522307": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Itapetininga_-_Monumento_ao_Tropeiro.jpg/1280px-Itapetininga_-_Monumento_ao_Tropeiro.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Itapetininga_-_Monumento_ao_Tropeiro.jpg/500px-Itapetininga_-_Monumento_ao_Tropeiro.jpg",
+      "autor": "Knightstalker at English Wikipedia",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Itapetininga_-_Monumento_ao_Tropeiro.jpg"
+    },
+    "3522505": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/%282021.07.09%29_Panor%C3%A2micas_da_Cidade%2C_Pr%C3%A9dio_da_Prefeitura_de_Itapevi_e_arredores_%2851299927844%29.jpg/1280px-%282021.07.09%29_Panor%C3%A2micas_da_Cidade%2C_Pr%C3%A9dio_da_Prefeitura_de_Itapevi_e_arredores_%2851299927844%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/%282021.07.09%29_Panor%C3%A2micas_da_Cidade%2C_Pr%C3%A9dio_da_Prefeitura_de_Itapevi_e_arredores_%2851299927844%29.jpg/500px-%282021.07.09%29_Panor%C3%A2micas_da_Cidade%2C_Pr%C3%A9dio_da_Prefeitura_de_Itapevi_e_arredores_%2851299927844%29.jpg",
+      "autor": "Prefeitura de Itapevi from Itapevi, Brasil",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:(2021.07.09)_Panor%C3%A2micas_da_Cidade,_Pr%C3%A9dio_da_Prefeitura_de_Itapevi_e_arredores_(51299927844).jpg"
+    },
+    "3523107": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Pra%C3%A7a_Padre_Jo%C3%A3o_%C3%81lvares%2C_Itaquaquecetuba.png",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Pra%C3%A7a_Padre_Jo%C3%A3o_%C3%81lvares%2C_Itaquaquecetuba.png/500px-Pra%C3%A7a_Padre_Jo%C3%A3o_%C3%81lvares%2C_Itaquaquecetuba.png",
+      "autor": "Gustavo64151889",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Pra%C3%A7a_Padre_Jo%C3%A3o_%C3%81lvares,_Itaquaquecetuba.png"
+    },
+    "3523404": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Cidade_de_Itatiba.jpg/1280px-Cidade_de_Itatiba.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Cidade_de_Itatiba.jpg/500px-Cidade_de_Itatiba.jpg",
+      "autor": "Assessoria do deputado Edmir Chedid/Alesp",
+      "licenca": "CC BY 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Cidade_de_Itatiba.jpg"
+    },
+    "3523909": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Igreja_matriz_de_Itu.jpg/1280px-Igreja_matriz_de_Itu.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Igreja_matriz_de_Itu.jpg/500px-Igreja_matriz_de_Itu.jpg",
+      "autor": "User:OS2Warp",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Igreja_matriz_de_Itu.jpg"
+    },
+    "3524402": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Pista_Luciano_Bruni.JPG/1280px-Pista_Luciano_Bruni.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Pista_Luciano_Bruni.JPG/500px-Pista_Luciano_Bruni.JPG",
+      "autor": "Eloylaurino",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Pista_Luciano_Bruni.JPG"
+    },
+    "3525003": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Jandira.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Jandira.jpg/500px-Jandira.jpg",
+      "autor": "Cleidemarianny",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Jandira.jpg"
+    },
+    "3525300": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Ja%C3%BA_-_Vista_Parcial.jpg/1280px-Ja%C3%BA_-_Vista_Parcial.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Ja%C3%BA_-_Vista_Parcial.jpg/500px-Ja%C3%BA_-_Vista_Parcial.jpg",
+      "autor": "JoãoVictorM",
+      "licenca": "CC0",
+      "urlLicenca": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Ja%C3%BA_-_Vista_Parcial.jpg"
+    },
+    "3525904": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Jundia%C3%AD2015.jpg/1280px-Jundia%C3%AD2015.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Jundia%C3%AD2015.jpg/500px-Jundia%C3%AD2015.jpg",
+      "autor": "Daniel Pavan e Silva",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Jundia%C3%AD2015.jpg"
+    },
+    "3526902": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Mural_Limeira.png/1280px-Mural_Limeira.png",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Mural_Limeira.png/500px-Mural_Limeira.png",
+      "autor": "Nonotosko",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Mural_Limeira.png"
+    },
+    "3529005": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Mar%C3%ADlia_panorama2.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Mar%C3%ADlia_panorama2.JPG/500px-Mar%C3%ADlia_panorama2.JPG",
+      "autor": "Filipe Mesquita de Oliveira",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Mar%C3%ADlia_panorama2.JPG"
+    },
+    "3529401": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Maua_Central.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Maua_Central.jpg/500px-Maua_Central.jpg",
+      "autor": "Renato LZ",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Maua_Central.jpg"
+    },
+    "3530607": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Vista_de_Mogi_das_Cruzes_a_partir_do_Pico_do_Urubu.JPG/1280px-Vista_de_Mogi_das_Cruzes_a_partir_do_Pico_do_Urubu.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Vista_de_Mogi_das_Cruzes_a_partir_do_Pico_do_Urubu.JPG/500px-Vista_de_Mogi_das_Cruzes_a_partir_do_Pico_do_Urubu.JPG",
+      "autor": "Henrique Boney",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_de_Mogi_das_Cruzes_a_partir_do_Pico_do_Urubu.JPG"
+    },
+    "3530706": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Prefeitura_Municipal_de_Mogi_Gua%C3%A7u.jpg/1280px-Prefeitura_Municipal_de_Mogi_Gua%C3%A7u.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Prefeitura_Municipal_de_Mogi_Gua%C3%A7u.jpg/500px-Prefeitura_Municipal_de_Mogi_Gua%C3%A7u.jpg",
+      "autor": "Nativasunivesp2_J.N.Lacerda",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Prefeitura_Municipal_de_Mogi_Gua%C3%A7u.jpg"
+    },
+    "3534401": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Caio_Badner_-_Osasco.JPG/1280px-Caio_Badner_-_Osasco.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Caio_Badner_-_Osasco.JPG/500px-Caio_Badner_-_Osasco.JPG",
+      "autor": "Chadner",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Caio_Badner_-_Osasco.JPG"
+    },
+    "3534708": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Ourinhos_021206_%28b%29_REFON.jpg/1280px-Ourinhos_021206_%28b%29_REFON.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Ourinhos_021206_%28b%29_REFON.jpg/500px-Ourinhos_021206_%28b%29_REFON.jpg",
+      "autor": "Jose Reynaldo da Fonseca",
+      "licenca": "CC BY 2.5",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.5",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Ourinhos_021206_(b)_REFON.jpg"
+    },
+    "3536505": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Composi%C3%A7%C3%A3o-Paul%C3%ADnia.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Composi%C3%A7%C3%A3o-Paul%C3%ADnia.JPG/500px-Composi%C3%A7%C3%A3o-Paul%C3%ADnia.JPG",
+      "autor": "OTAVIO1981",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Composi%C3%A7%C3%A3o-Paul%C3%ADnia.JPG"
+    },
+    "3538006": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Pindamonhangaba_SP-Brazil_City_of_Aluminum_Recycling.JPG/1280px-Pindamonhangaba_SP-Brazil_City_of_Aluminum_Recycling.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Pindamonhangaba_SP-Brazil_City_of_Aluminum_Recycling.JPG/500px-Pindamonhangaba_SP-Brazil_City_of_Aluminum_Recycling.JPG",
+      "autor": "Onethatlovespeace",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Pindamonhangaba_SP-Brazil_City_of_Aluminum_Recycling.JPG"
+    },
+    "3538709": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Piracicaba_%283%29.jpg/1280px-Piracicaba_%283%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Piracicaba_%283%29.jpg/500px-Piracicaba_%283%29.jpg",
+      "autor": "Ana Paula Hirama",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Piracicaba_(3).jpg"
+    },
+    "3539806": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Vista_de_po%C3%A1.jpg/1280px-Vista_de_po%C3%A1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Vista_de_po%C3%A1.jpg/500px-Vista_de_po%C3%A1.jpg",
+      "autor": "João Paulo Chagas",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_de_po%C3%A1.jpg"
+    },
+    "3541000": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Vista_Praia_Grande_SP.jpg/1280px-Vista_Praia_Grande_SP.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Vista_Praia_Grande_SP.jpg/500px-Vista_Praia_Grande_SP.jpg",
+      "autor": "Andressa Rafaela",
+      "licenca": "CC BY-SA 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_Praia_Grande_SP.jpg"
+    },
+    "3541406": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Presidente_Prudente.JPG/1280px-Presidente_Prudente.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Presidente_Prudente.JPG/500px-Presidente_Prudente.JPG",
+      "autor": "Zekialves",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Presidente_Prudente.JPG"
+    },
+    "3543303": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/StoantonioRibeiraoPires.JPG/1280px-StoantonioRibeiraoPires.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/StoantonioRibeiraoPires.JPG/500px-StoantonioRibeiraoPires.JPG",
+      "autor": "Humberto do Lago Müller",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:StoantonioRibeiraoPires.JPG"
+    },
+    "3543402": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Pr%C3%A9dios_em_Ribeir%C3%A3o_Preto_SP.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Pr%C3%A9dios_em_Ribeir%C3%A3o_Preto_SP.jpg/500px-Pr%C3%A9dios_em_Ribeir%C3%A3o_Preto_SP.jpg",
+      "autor": "MateusZF Mateus Záccaro from Ribeirão Preto, BR",
+      "licenca": "CC BY-SA 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Pr%C3%A9dios_em_Ribeir%C3%A3o_Preto_SP.jpg"
+    },
+    "3543907": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Skyline_de_Rio_Claro_%28cropped%29.jpg/1280px-Skyline_de_Rio_Claro_%28cropped%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Skyline_de_Rio_Claro_%28cropped%29.jpg/500px-Skyline_de_Rio_Claro_%28cropped%29.jpg",
+      "autor": "JonatasAvelino",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Skyline_de_Rio_Claro_(cropped).jpg"
+    },
+    "3545209": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Igreja_Matriz_de_Salto_%28S%C3%A3o_Paulo%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Igreja_Matriz_de_Salto_%28S%C3%A3o_Paulo%29.jpg/500px-Igreja_Matriz_de_Salto_%28S%C3%A3o_Paulo%29.jpg",
+      "autor": "User:OS2Warp",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Igreja_Matriz_de_Salto_(S%C3%A3o_Paulo).jpg"
+    },
+    "3545803": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Panorama_de_Santa_B%C3%A1rbara_d%27Oeste.jpg/1280px-Panorama_de_Santa_B%C3%A1rbara_d%27Oeste.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Panorama_de_Santa_B%C3%A1rbara_d%27Oeste.jpg/500px-Panorama_de_Santa_B%C3%A1rbara_d%27Oeste.jpg",
+      "autor": "Chronus",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Panorama_de_Santa_B%C3%A1rbara_d%27Oeste.jpg"
+    },
+    "3547304": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Webysther_20190718092638_-_Santana_de_Parna%C3%ADba.jpg/1280px-Webysther_20190718092638_-_Santana_de_Parna%C3%ADba.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Webysther_20190718092638_-_Santana_de_Parna%C3%ADba.jpg/500px-Webysther_20190718092638_-_Santana_de_Parna%C3%ADba.jpg",
+      "autor": "Webysther Nunes",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Webysther_20190718092638_-_Santana_de_Parna%C3%ADba.jpg"
+    },
+    "3547809": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Pa%C3%A7o_Municipal_de_Santo_Andr%C3%A9_-_SP.jpg/1280px-Pa%C3%A7o_Municipal_de_Santo_Andr%C3%A9_-_SP.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Pa%C3%A7o_Municipal_de_Santo_Andr%C3%A9_-_SP.jpg/500px-Pa%C3%A7o_Municipal_de_Santo_Andr%C3%A9_-_SP.jpg",
+      "autor": "Ramon S. Lopes",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Pa%C3%A7o_Municipal_de_Santo_Andr%C3%A9_-_SP.jpg"
+    },
+    "3548500": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Panoramica_Santos.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Panoramica_Santos.jpg/500px-Panoramica_Santos.jpg",
+      "autor": "Diego Silvestre: https://www.flickr.com/photos/3336/",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Panoramica_Santos.jpg"
+    },
+    "3548708": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Vis%C3%A3o_Panor%C3%A2mica_de_S%C3%A3o_Bernardo_do_Campo.jpg/1280px-Vis%C3%A3o_Panor%C3%A2mica_de_S%C3%A3o_Bernardo_do_Campo.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Vis%C3%A3o_Panor%C3%A2mica_de_S%C3%A3o_Bernardo_do_Campo.jpg/500px-Vis%C3%A3o_Panor%C3%A2mica_de_S%C3%A3o_Bernardo_do_Campo.jpg",
+      "autor": "Jhlimones",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vis%C3%A3o_Panor%C3%A2mica_de_S%C3%A3o_Bernardo_do_Campo.jpg"
+    },
+    "3548807": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Montagem_S%C3%A3o_Caetano_do_Sul_%28SP%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Montagem_S%C3%A3o_Caetano_do_Sul_%28SP%29.jpg/500px-Montagem_S%C3%A3o_Caetano_do_Sul_%28SP%29.jpg",
+      "autor": "São_Caetano_do_Sul_-_verticalização.JPG: Lukaaz São_Caetano_do_Sul_-_tecidos_urbanos.JPG: Lukaaz Rio_Tamanduateí.JPG: Lukaaz São_Caetano_do_Sul_-_ciclovia_-_arborização_-_pedestres.JPG: Lukaaz derivative work: Truu (talk)",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Montagem_S%C3%A3o_Caetano_do_Sul_(SP).jpg"
+    },
+    "3548906": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/S%C3%A3o_Carlos_%28montagem%29.jpg/1280px-S%C3%A3o_Carlos_%28montagem%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/S%C3%A3o_Carlos_%28montagem%29.jpg/500px-S%C3%A3o_Carlos_%28montagem%29.jpg",
+      "autor": "Béria Lima de Rodríguez",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:S%C3%A3o_Carlos_(montagem).jpg"
+    },
+    "3549805": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Centro_de_S%C3%A3o_Jos%C3%A9_do_Rio_Preto%2C_SP.jpg/1280px-Centro_de_S%C3%A3o_Jos%C3%A9_do_Rio_Preto%2C_SP.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Centro_de_S%C3%A3o_Jos%C3%A9_do_Rio_Preto%2C_SP.jpg/500px-Centro_de_S%C3%A3o_Jos%C3%A9_do_Rio_Preto%2C_SP.jpg",
+      "autor": "Creedence",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Centro_de_S%C3%A3o_Jos%C3%A9_do_Rio_Preto,_SP.jpg"
+    },
+    "3549904": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/SJos%C3%A9Campos.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/SJos%C3%A9Campos.jpg/500px-SJos%C3%A9Campos.jpg",
+      "autor": "wtrilhas",
+      "licenca": "CC BY-SA 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:SJos%C3%A9Campos.jpg"
+    },
+    "3550308": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Sao_Paulo_Skyline_in_Brazil.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Sao_Paulo_Skyline_in_Brazil.jpg/500px-Sao_Paulo_Skyline_in_Brazil.jpg",
+      "autor": "Thomas Hobbs",
+      "licenca": "CC BY-SA 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Sao_Paulo_Skyline_in_Brazil.jpg"
+    },
+    "3551009": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Ilha_Porchat.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Ilha_Porchat.jpg/500px-Ilha_Porchat.jpg",
+      "autor": "Diego Torres Silvestre",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Ilha_Porchat.jpg"
+    },
+    "3551702": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Imagem_a%C3%A9rea_de_Sert%C3%A3ozinho.png",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Imagem_a%C3%A9rea_de_Sert%C3%A3ozinho.png/500px-Imagem_a%C3%A9rea_de_Sert%C3%A3ozinho.png",
+      "autor": "Joshuadavis1994",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Imagem_a%C3%A9rea_de_Sert%C3%A3ozinho.png"
+    },
+    "3552205": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Rio_Sorocaba_%28cropped%29.jpg/1280px-Rio_Sorocaba_%28cropped%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Rio_Sorocaba_%28cropped%29.jpg/500px-Rio_Sorocaba_%28cropped%29.jpg",
+      "autor": "RobSabino",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Rio_Sorocaba_(cropped).jpg"
+    },
+    "3552403": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/CidadeSumare.jpg/1280px-CidadeSumare.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/CidadeSumare.jpg/500px-CidadeSumare.jpg",
+      "autor": "Rafael Laurindo dos Santos",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:CidadeSumare.jpg"
+    },
+    "3552502": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Suzano_tiete.jpg/1280px-Suzano_tiete.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Suzano_tiete.jpg/500px-Suzano_tiete.jpg",
+      "autor": "João Paulo Chagas",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Suzano_tiete.jpg"
+    },
+    "3552809": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Tabo%C3%A3o_da_Serra.jpg/1280px-Tabo%C3%A3o_da_Serra.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Tabo%C3%A3o_da_Serra.jpg/500px-Tabo%C3%A3o_da_Serra.jpg",
+      "autor": "Reginaldomaia",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Tabo%C3%A3o_da_Serra.jpg"
+    },
+    "3554003": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Conservat%C3%B3rio_de_Tatu%C3%AD_%282005%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Conservat%C3%B3rio_de_Tatu%C3%AD_%282005%29.jpg/500px-Conservat%C3%B3rio_de_Tatu%C3%AD_%282005%29.jpg",
+      "autor": "Paulo Rogério",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Conservat%C3%B3rio_de_Tatu%C3%AD_(2005).jpg"
+    },
+    "3554102": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Taubateskyline.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Taubateskyline.JPG/500px-Taubateskyline.JPG",
+      "autor": "Intruso",
+      "licenca": "CC0",
+      "urlLicenca": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Taubateskyline.JPG"
+    },
+    "3556206": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Pra%C3%A7a_Brasil_500_Anos.jpg/1280px-Pra%C3%A7a_Brasil_500_Anos.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Pra%C3%A7a_Brasil_500_Anos.jpg/500px-Pra%C3%A7a_Brasil_500_Anos.jpg",
+      "autor": "David Alves Silva, o próprio usuário",
+      "licenca": "CC0",
+      "urlLicenca": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Pra%C3%A7a_Brasil_500_Anos.jpg"
+    },
+    "3556503": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/V%C3%A1rzea_Paulista.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/V%C3%A1rzea_Paulista.jpg/500px-V%C3%A1rzea_Paulista.jpg",
+      "autor": "RohCambra",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:V%C3%A1rzea_Paulista.jpg"
+    },
+    "3557006": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/CCB_-_Central_-_Votorantim_-_SP_-_panoramio.jpg/1280px-CCB_-_Central_-_Votorantim_-_SP_-_panoramio.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/CCB_-_Central_-_Votorantim_-_SP_-_panoramio.jpg/500px-CCB_-_Central_-_Votorantim_-_SP_-_panoramio.jpg",
+      "autor": "Di Sil Gabriel",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:CCB_-_Central_-_Votorantim_-_SP_-_panoramio.jpg"
+    },
+    "4100400": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Entrada_da_Cidade_de_Almirante_Tamandar%C3%A9.JPG/1280px-Entrada_da_Cidade_de_Almirante_Tamandar%C3%A9.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Entrada_da_Cidade_de_Almirante_Tamandar%C3%A9.JPG/500px-Entrada_da_Cidade_de_Almirante_Tamandar%C3%A9.JPG",
+      "autor": "Deyvid Setti e Eloy Olindo Setti",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Entrada_da_Cidade_de_Almirante_Tamandar%C3%A9.JPG"
+    },
+    "4101408": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Catedral_de_Apucarana_-_Paran%C3%A1_-_Brasil.jpg/1280px-Catedral_de_Apucarana_-_Paran%C3%A1_-_Brasil.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Catedral_de_Apucarana_-_Paran%C3%A1_-_Brasil.jpg/500px-Catedral_de_Apucarana_-_Paran%C3%A1_-_Brasil.jpg",
+      "autor": ".Lírica Aragão.",
+      "licenca": "CC BY-SA 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Catedral_de_Apucarana_-_Paran%C3%A1_-_Brasil.jpg"
+    },
+    "4101507": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Conj._Tropical%2C_Arapongas_-_PR%2C_Brazil_-_panoramio.jpg/1280px-Conj._Tropical%2C_Arapongas_-_PR%2C_Brazil_-_panoramio.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Conj._Tropical%2C_Arapongas_-_PR%2C_Brazil_-_panoramio.jpg/500px-Conj._Tropical%2C_Arapongas_-_PR%2C_Brazil_-_panoramio.jpg",
+      "autor": "LEONARDO DASILVA",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Conj._Tropical,_Arapongas_-_PR,_Brazil_-_panoramio.jpg"
+    },
+    "4101804": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Ip%C3%AA_Arauc%C3%A1ria_PR.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Ip%C3%AA_Arauc%C3%A1ria_PR.jpg/500px-Ip%C3%AA_Arauc%C3%A1ria_PR.jpg",
+      "autor": "Sapturnus",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Ip%C3%AA_Arauc%C3%A1ria_PR.jpg"
+    },
+    "4103701": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Vista_a%C3%A9rea_do_munic%C3%ADpio_de_Camb%C3%A9..jpg/1280px-Vista_a%C3%A9rea_do_munic%C3%ADpio_de_Camb%C3%A9..jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Vista_a%C3%A9rea_do_munic%C3%ADpio_de_Camb%C3%A9..jpg/500px-Vista_a%C3%A9rea_do_munic%C3%ADpio_de_Camb%C3%A9..jpg",
+      "autor": "Gean Henrique Soares",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_a%C3%A9rea_do_munic%C3%ADpio_de_Camb%C3%A9..jpg"
+    },
+    "4104204": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Campo_Largo_Igreja_Matriz.JPG/1280px-Campo_Largo_Igreja_Matriz.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Campo_Largo_Igreja_Matriz.JPG/500px-Campo_Largo_Igreja_Matriz.JPG",
+      "autor": "Deyvid Setti e Eloy Olindo Setti",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Campo_Largo_Igreja_Matriz.JPG"
+    },
+    "4104808": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Cascavel%2C_Parana.JPG/1280px-Cascavel%2C_Parana.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Cascavel%2C_Parana.JPG/500px-Cascavel%2C_Parana.JPG",
+      "autor": "Leonardo.stabile",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Cascavel,_Parana.JPG"
+    },
+    "4105805": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/IgrejaColomboParana.JPG/1280px-IgrejaColomboParana.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/IgrejaColomboParana.JPG/500px-IgrejaColomboParana.JPG",
+      "autor": "SamirNosteb",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:IgrejaColomboParana.JPG"
+    },
+    "4106902": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Curitiba_Eixos_e_densidade_78_%2824160257688%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Curitiba_Eixos_e_densidade_78_%2824160257688%29.jpg/500px-Curitiba_Eixos_e_densidade_78_%2824160257688%29.jpg",
+      "autor": "mariordo59 from Santo Domingo, Dominican Republic",
+      "licenca": "CC BY-SA 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Curitiba_Eixos_e_densidade_78_(24160257688).jpg"
+    },
+    "4107652": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/PrediosFazendaRioGrandePR.jpg/1280px-PrediosFazendaRioGrandePR.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/PrediosFazendaRioGrandePR.jpg/500px-PrediosFazendaRioGrandePR.jpg",
+      "autor": "SamirNosteb",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:PrediosFazendaRioGrandePR.jpg"
+    },
+    "4108304": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/SkylineFoz.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/SkylineFoz.JPG/500px-SkylineFoz.JPG",
+      "autor": "SamirNosteb",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:SkylineFoz.JPG"
+    },
+    "4109401": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Guarapuava_10.jpg/1280px-Guarapuava_10.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Guarapuava_10.jpg/500px-Guarapuava_10.jpg",
+      "autor": "Foto Studio Cipriano",
+      "licenca": "CC BY 2.5",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.5",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Guarapuava_10.jpg"
+    },
+    "4113700": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Montagem_Londrina_%28cropped%29.jpg/1280px-Montagem_Londrina_%28cropped%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Montagem_Londrina_%28cropped%29.jpg/500px-Montagem_Londrina_%28cropped%29.jpg",
+      "autor": "Allice Hunter",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Montagem_Londrina_(cropped).jpg"
+    },
+    "4115200": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Montagem_Maring%C3%A1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Montagem_Maring%C3%A1.jpg/500px-Montagem_Maring%C3%A1.jpg",
+      "autor": "Allice Hunter",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Montagem_Maring%C3%A1.jpg"
+    },
+    "4118204": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Ilha_da_Cotinga.jpg/1280px-Ilha_da_Cotinga.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Ilha_da_Cotinga.jpg/500px-Ilha_da_Cotinga.jpg",
+      "autor": "Derickwilli",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Ilha_da_Cotinga.jpg"
+    },
+    "4119152": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/ConurbacaoPinhaisGrandeCuritibaPR.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/ConurbacaoPinhaisGrandeCuritibaPR.jpg/500px-ConurbacaoPinhaisGrandeCuritibaPR.jpg",
+      "autor": "SamirNosteb",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:ConurbacaoPinhaisGrandeCuritibaPR.jpg"
+    },
+    "4119509": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/CentroHistoricoPiraquaraPR.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/CentroHistoricoPiraquaraPR.JPG/500px-CentroHistoricoPiraquaraPR.JPG",
+      "autor": "SamirNosteb",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:CentroHistoricoPiraquaraPR.JPG"
+    },
+    "4119905": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Ponta_Grossa%2C_Brazil.jpg/1280px-Ponta_Grossa%2C_Brazil.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Ponta_Grossa%2C_Brazil.jpg/500px-Ponta_Grossa%2C_Brazil.jpg",
+      "autor": "Jefo1234",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Ponta_Grossa,_Brazil.jpg"
+    },
+    "4125506": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Igreja_Matriz_S%C3%A3o_Jos%C3%A9_dos_Pinhais_Paran%C3%A1_Brasil.jpg/1280px-Igreja_Matriz_S%C3%A3o_Jos%C3%A9_dos_Pinhais_Paran%C3%A1_Brasil.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Igreja_Matriz_S%C3%A3o_Jos%C3%A9_dos_Pinhais_Paran%C3%A1_Brasil.jpg/500px-Igreja_Matriz_S%C3%A3o_Jos%C3%A9_dos_Pinhais_Paran%C3%A1_Brasil.jpg",
+      "autor": "Deyvid Setti e Eloy Olindo Setti",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Igreja_Matriz_S%C3%A3o_Jos%C3%A9_dos_Pinhais_Paran%C3%A1_Brasil.jpg"
+    },
+    "4126256": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Sarandi_2014-03-11_20-41.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Sarandi_2014-03-11_20-41.JPG/500px-Sarandi_2014-03-11_20-41.JPG",
+      "autor": "User:Luiz95",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Sarandi_2014-03-11_20-41.JPG"
+    },
+    "4127700": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Toledo.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Toledo.jpg/500px-Toledo.jpg",
+      "autor": "Victor Marques Caldeira",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Toledo.jpg"
+    },
+    "4128104": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Cidade_de_Umuarama.jpg/1280px-Cidade_de_Umuarama.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Cidade_de_Umuarama.jpg/500px-Cidade_de_Umuarama.jpg",
+      "autor": "Luiz Fernando Paiva",
+      "licenca": "CC0",
+      "urlLicenca": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Cidade_de_Umuarama.jpg"
+    },
+    "4202008": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Balne%C3%A1rio_Cambori%C3%BA_from_Unipraias_Park_2023-04-02.jpg/1280px-Balne%C3%A1rio_Cambori%C3%BA_from_Unipraias_Park_2023-04-02.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Balne%C3%A1rio_Cambori%C3%BA_from_Unipraias_Park_2023-04-02.jpg/500px-Balne%C3%A1rio_Cambori%C3%BA_from_Unipraias_Park_2023-04-02.jpg",
+      "autor": "Trustable",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Balne%C3%A1rio_Cambori%C3%BA_from_Unipraias_Park_2023-04-02.jpg"
+    },
+    "4202404": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Foto_a%C3%A9rea_Blumenau.jpg/1280px-Foto_a%C3%A9rea_Blumenau.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Foto_a%C3%A9rea_Blumenau.jpg/500px-Foto_a%C3%A9rea_Blumenau.jpg",
+      "autor": "charles242",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Foto_a%C3%A9rea_Blumenau.jpg"
+    },
+    "4202909": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Brusque1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Brusque1.jpg/500px-Brusque1.jpg",
+      "autor": "Relogar1",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Brusque1.jpg"
+    },
+    "4203204": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Panorama_aereo_Itajai_Balnerio_Cambriu_2006_06.jpg/1280px-Panorama_aereo_Itajai_Balnerio_Cambriu_2006_06.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Panorama_aereo_Itajai_Balnerio_Cambriu_2006_06.jpg/500px-Panorama_aereo_Itajai_Balnerio_Cambriu_2006_06.jpg",
+      "autor": "Mariordo Mario Roberto Duran Ortiz",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Panorama_aereo_Itajai_Balnerio_Cambriu_2006_06.jpg"
+    },
+    "4204202": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Chapeco01.png/1280px-Chapeco01.png",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Chapeco01.png/500px-Chapeco01.png",
+      "autor": "Ddcostella",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Chapeco01.png"
+    },
+    "4204608": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Criciumasc1.png",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Criciumasc1.png/500px-Criciumasc1.png",
+      "autor": "Webmast",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Criciumasc1.png"
+    },
+    "4205407": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Floripa_Beira_Mar_Norte.jpg/1280px-Floripa_Beira_Mar_Norte.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Floripa_Beira_Mar_Norte.jpg/500px-Floripa_Beira_Mar_Norte.jpg",
+      "autor": "Herr stahlhoefer",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Floripa_Beira_Mar_Norte.jpg"
+    },
+    "4208203": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Itaja%C3%AD_287.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Itaja%C3%AD_287.jpg/500px-Itaja%C3%AD_287.jpg",
+      "autor": "Eduardo Marquetti - http://pix.1br.net",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Itaja%C3%AD_287.jpg"
+    },
+    "4208906": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Jaragu%C3%A1_do_Sul_Landscape.jpg/1280px-Jaragu%C3%A1_do_Sul_Landscape.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Jaragu%C3%A1_do_Sul_Landscape.jpg/500px-Jaragu%C3%A1_do_Sul_Landscape.jpg",
+      "autor": "Giro720",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Jaragu%C3%A1_do_Sul_Landscape.jpg"
+    },
+    "4209102": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/01_JoinvilleCentro.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/01_JoinvilleCentro.jpg/500px-01_JoinvilleCentro.jpg",
+      "autor": "Unmoralisch",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:01_JoinvilleCentro.jpg"
+    },
+    "4209300": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Lages_-_SC.jpg/1280px-Lages_-_SC.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Lages_-_SC.jpg/500px-Lages_-_SC.jpg",
+      "autor": "leonir angelo lunard",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Lages_-_SC.jpg"
+    },
+    "4211900": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Guarda_do_embau.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Guarda_do_embau.jpg/500px-Guarda_do_embau.jpg",
+      "autor": "Tolvo",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Guarda_do_embau.jpg"
+    },
+    "4216602": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/SaoJose058.JPG/1280px-SaoJose058.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/SaoJose058.JPG/500px-SaoJose058.JPG",
+      "autor": "Madrerosa",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:SaoJose058.JPG"
+    },
+    "4218707": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Crepusculo_tubar%C3%A3o.jpg/1280px-Crepusculo_tubar%C3%A3o.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Crepusculo_tubar%C3%A3o.jpg/500px-Crepusculo_tubar%C3%A3o.jpg",
+      "autor": "Douglas Antunes",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Crepusculo_tubar%C3%A3o.jpg"
+    },
+    "4300604": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Avenida_Pres_Vargas_mun%C3%ADcipio_de_Alvorada_-_RS.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Avenida_Pres_Vargas_mun%C3%ADcipio_de_Alvorada_-_RS.jpg/500px-Avenida_Pres_Vargas_mun%C3%ADcipio_de_Alvorada_-_RS.jpg",
+      "autor": "No machine-readable author provided. GilsonRabelo assumed (based on copyright claims).",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Avenida_Pres_Vargas_mun%C3%ADcipio_de_Alvorada_-_RS.jpg"
+    },
+    "4301602": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Foto_bag%C3%A9.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Foto_bag%C3%A9.jpg/500px-Foto_bag%C3%A9.jpg",
+      "autor": "Autor desconhecido",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Foto_bag%C3%A9.jpg"
+    },
+    "4302105": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Bento_Gon%C3%A7alves_-_montage.png",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Bento_Gon%C3%A7alves_-_montage.png/500px-Bento_Gon%C3%A7alves_-_montage.png",
+      "autor": "Various, see originals",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Bento_Gon%C3%A7alves_-_montage.png"
+    },
+    "4303103": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Cesuca.JPG/1280px-Cesuca.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Cesuca.JPG/500px-Cesuca.JPG",
+      "autor": "Aluno cesuca",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Cesuca.JPG"
+    },
+    "4304606": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Aviao-1-.jpg",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/1/10/Aviao-1-.jpg",
+      "autor": "Autor desconhecido",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Aviao-1-.jpg"
+    },
+    "4305108": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Montagem_Caxias_do_Sul.jpg/1280px-Montagem_Caxias_do_Sul.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Montagem_Caxias_do_Sul.jpg/500px-Montagem_Caxias_do_Sul.jpg",
+      "autor": "Tetraktys",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Montagem_Caxias_do_Sul.jpg"
+    },
+    "4307005": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Erechim_RS.jpg/1280px-Erechim_RS.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Erechim_RS.jpg/500px-Erechim_RS.jpg",
+      "autor": "HVL",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Erechim_RS.jpg"
+    },
+    "4309209": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Pra%C3%A7a_Borges_de_Medeiros_004.JPG/1280px-Pra%C3%A7a_Borges_de_Medeiros_004.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Pra%C3%A7a_Borges_de_Medeiros_004.JPG/500px-Pra%C3%A7a_Borges_de_Medeiros_004.JPG",
+      "autor": "Paulo rsmenezes",
+      "licenca": "CC BY-SA 3.0 br",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0/br/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Pra%C3%A7a_Borges_de_Medeiros_004.JPG"
+    },
+    "4313409": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Monument_to_Shoemaker.JPG/1280px-Monument_to_Shoemaker.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Monument_to_Shoemaker.JPG/500px-Monument_to_Shoemaker.JPG",
+      "autor": "Claitonmedina",
+      "licenca": "CC0",
+      "urlLicenca": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Monument_to_Shoemaker.JPG"
+    },
+    "4314100": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Passo_Fundo.JPG/1280px-Passo_Fundo.JPG",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Passo_Fundo.JPG/500px-Passo_Fundo.JPG",
+      "autor": "Kaktus Kid",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Passo_Fundo.JPG"
+    },
+    "4314407": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/PelotasCentro.jpg/1280px-PelotasCentro.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/PelotasCentro.jpg/500px-PelotasCentro.jpg",
+      "autor": "Foto: Arquivo/Ascom",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:PelotasCentro.jpg"
+    },
+    "4314902": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Aerial_view_of_the_point_of_Porto_Alegre_extending_into_Gua%C3%ADba_Lake.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Aerial_view_of_the_point_of_Porto_Alegre_extending_into_Gua%C3%ADba_Lake.jpg/500px-Aerial_view_of_the_point_of_Porto_Alegre_extending_into_Gua%C3%ADba_Lake.jpg",
+      "autor": "TimBray",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_point_of_Porto_Alegre_extending_into_Gua%C3%ADba_Lake.jpg"
+    },
+    "4315602": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Portico_de_Rio_Grande_%28RS%29.jpg/1280px-Portico_de_Rio_Grande_%28RS%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Portico_de_Rio_Grande_%28RS%29.jpg/500px-Portico_de_Rio_Grande_%28RS%29.jpg",
+      "autor": "Artur Emilio Alarcon Vaz",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Portico_de_Rio_Grande_(RS).jpg"
+    },
+    "4316808": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/CidadeSantaCruzDoSul.jpg/1280px-CidadeSantaCruzDoSul.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/CidadeSantaCruzDoSul.jpg/500px-CidadeSantaCruzDoSul.jpg",
+      "autor": "Emanuel de Costa",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:CidadeSantaCruzDoSul.jpg"
+    },
+    "4316907": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Vista_de_Santa_Maria_%28RS%29.jpg/1280px-Vista_de_Santa_Maria_%28RS%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Vista_de_Santa_Maria_%28RS%29.jpg/500px-Vista_de_Santa_Maria_%28RS%29.jpg",
+      "autor": "CLUBE TREKKING SANTA MARIA RS BRASIL",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_de_Santa_Maria_(RS).jpg"
+    },
+    "4318705": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Sao_leopoldo.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Sao_leopoldo.jpg/500px-Sao_leopoldo.jpg",
+      "autor": "decko from Brazil",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Sao_leopoldo.jpg"
+    },
+    "4320008": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Parque_Zoologico_de_Sapucaia_do_Sul%2C_Brazil_01.jpg/1280px-Parque_Zoologico_de_Sapucaia_do_Sul%2C_Brazil_01.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Parque_Zoologico_de_Sapucaia_do_Sul%2C_Brazil_01.jpg/500px-Parque_Zoologico_de_Sapucaia_do_Sul%2C_Brazil_01.jpg",
+      "autor": "Eugenio Hansen, OFS",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Parque_Zoologico_de_Sapucaia_do_Sul,_Brazil_01.jpg"
+    },
+    "4322400": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Eu_%E2%99%A5_Uruguaiana_%E2%80%A2_mirante.jpg/1280px-Eu_%E2%99%A5_Uruguaiana_%E2%80%A2_mirante.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Eu_%E2%99%A5_Uruguaiana_%E2%80%A2_mirante.jpg/500px-Eu_%E2%99%A5_Uruguaiana_%E2%80%A2_mirante.jpg",
+      "autor": "Geogast",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Eu_%E2%99%A5_Uruguaiana_%E2%80%A2_mirante.jpg"
+    },
+    "4323002": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Viam%C3%A3o-igreja-da-concei%C3%A7%C3%A3o1.jpg/1280px-Viam%C3%A3o-igreja-da-concei%C3%A7%C3%A3o1.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Viam%C3%A3o-igreja-da-concei%C3%A7%C3%A3o1.jpg/500px-Viam%C3%A3o-igreja-da-concei%C3%A7%C3%A3o1.jpg",
+      "autor": "Ricardo André Frantz (User:Tetraktys)",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Viam%C3%A3o-igreja-da-concei%C3%A7%C3%A3o1.jpg"
+    },
+    "5002704": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Campo_Grande_Collage.png",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Campo_Grande_Collage.png/500px-Campo_Grande_Collage.png",
+      "autor": "Compilation by Heitor Carvalho Jorge",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Campo_Grande_Collage.png"
+    },
+    "5003702": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Dourados.jpg/1280px-Dourados.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Dourados.jpg/500px-Dourados.jpg",
+      "autor": "Jerônimo Freitas Rodrigues de Carvalho",
+      "licenca": "Public domain",
+      "urlLicenca": null,
+      "pagina": "https://commons.wikimedia.org/wiki/File:Dourados.jpg"
+    },
+    "5008305": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/PAISAGENS_TR%C3%8AS_LAGOAS-MS_HISTORICO_85.jpg/1280px-PAISAGENS_TR%C3%8AS_LAGOAS-MS_HISTORICO_85.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/PAISAGENS_TR%C3%8AS_LAGOAS-MS_HISTORICO_85.jpg/500px-PAISAGENS_TR%C3%8AS_LAGOAS-MS_HISTORICO_85.jpg",
+      "autor": "Rafael Deminicis",
+      "licenca": "CC BY 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:PAISAGENS_TR%C3%8AS_LAGOAS-MS_HISTORICO_85.jpg"
+    },
+    "5103403": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Cuiaba2.jpg/1280px-Cuiaba2.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Cuiaba2.jpg/500px-Cuiaba2.jpg",
+      "autor": "Mateus Hidalgo",
+      "licenca": "CC BY-SA 2.5 br",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/2.5/br/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Cuiaba2.jpg"
+    },
+    "5107602": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Rondonopolis_a_noite.jpg",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/4/48/Rondonopolis_a_noite.jpg",
+      "autor": "Autor desconhecido",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Rondonopolis_a_noite.jpg"
+    },
+    "5107909": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Trevo_Sinop.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Trevo_Sinop.jpg/500px-Trevo_Sinop.jpg",
+      "autor": "Orleanscba",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Trevo_Sinop.jpg"
+    },
+    "5107925": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Imagem_de_Sorriso_-_MT.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Imagem_de_Sorriso_-_MT.jpg/500px-Imagem_de_Sorriso_-_MT.jpg",
+      "autor": "Weriton N. R. Queiros",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Imagem_de_Sorriso_-_MT.jpg"
+    },
+    "5107958": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Tangar%C3%A1_da_Serra_-_Mato_Grosso.jpg/1280px-Tangar%C3%A1_da_Serra_-_Mato_Grosso.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Tangar%C3%A1_da_Serra_-_Mato_Grosso.jpg/500px-Tangar%C3%A1_da_Serra_-_Mato_Grosso.jpg",
+      "autor": "José Henrique Kautzmann = Panoramio user José Henrique Kautzmann",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Tangar%C3%A1_da_Serra_-_Mato_Grosso.jpg"
+    },
+    "5108402": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Imagem_A%C3%A9rea_de_V%C3%A1rzea_Grande_MT.png",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Imagem_A%C3%A9rea_de_V%C3%A1rzea_Grande_MT.png/500px-Imagem_A%C3%A9rea_de_V%C3%A1rzea_Grande_MT.png",
+      "autor": "Kililla",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Imagem_A%C3%A9rea_de_V%C3%A1rzea_Grande_MT.png"
+    },
+    "5200258": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Aguaslindas_go.jpg/1280px-Aguaslindas_go.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Aguaslindas_go.jpg/500px-Aguaslindas_go.jpg",
+      "autor": "Fabio Rodrigues Pozzebom/ABr",
+      "licenca": "CC BY 3.0 br",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0/br/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Aguaslindas_go.jpg"
+    },
+    "5201108": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Parque_Ambiental_Ipiranga_9.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Parque_Ambiental_Ipiranga_9.jpg/500px-Parque_Ambiental_Ipiranga_9.jpg",
+      "autor": "RMPalhares",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Parque_Ambiental_Ipiranga_9.jpg"
+    },
+    "5201405": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Aparecida_de_Goi%C3%A2nia_GO_Brasil_-_Paroquia_N._S._Aparecida_-_panoramio.jpg/1280px-Aparecida_de_Goi%C3%A2nia_GO_Brasil_-_Paroquia_N._S._Aparecida_-_panoramio.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Aparecida_de_Goi%C3%A2nia_GO_Brasil_-_Paroquia_N._S._Aparecida_-_panoramio.jpg/500px-Aparecida_de_Goi%C3%A2nia_GO_Brasil_-_Paroquia_N._S._Aparecida_-_panoramio.jpg",
+      "autor": "Josue Marinho",
+      "licenca": "CC BY 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Aparecida_de_Goi%C3%A2nia_GO_Brasil_-_Paroquia_N._S._Aparecida_-_panoramio.jpg"
+    },
+    "5205109": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Catal%C3%A3o_6.jpg",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Catal%C3%A3o_6.jpg",
+      "autor": "Vera L. Silva",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Catal%C3%A3o_6.jpg"
+    },
+    "5208004": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Igrejachurch_%28Formosa%2C_Goi%C3%A1s%2C_Brasil%29..jpg",
+      "miniatura": "https://upload.wikimedia.org/wikipedia/commons/1/10/Igrejachurch_%28Formosa%2C_Goi%C3%A1s%2C_Brasil%29..jpg",
+      "autor": "thejourney1972@gmail.com",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Igrejachurch_(Formosa,_Goi%C3%A1s,_Brasil)..jpg"
+    },
+    "5208707": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Goi%C3%A2nia_Collage.png",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Goi%C3%A2nia_Collage.png/500px-Goi%C3%A2nia_Collage.png",
+      "autor": "Compilation by Heitor Carvalho Jorge",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Goi%C3%A2nia_Collage.png"
+    },
+    "5211503": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Itumbiara%2C_Goi%C3%A1s%2C_Brasil.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Itumbiara%2C_Goi%C3%A1s%2C_Brasil.jpg/500px-Itumbiara%2C_Goi%C3%A1s%2C_Brasil.jpg",
+      "autor": "Luiz F. Fritz",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Itumbiara,_Goi%C3%A1s,_Brasil.jpg"
+    },
+    "5211909": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Jata%C3%AD.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Jata%C3%AD.jpg/500px-Jata%C3%AD.jpg",
+      "autor": "Jataí",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Jata%C3%AD.jpg"
+    },
+    "5212501": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Foto_panor%C3%A2mica_de_Luzi%C3%A2nia_Goi%C3%A1s.jpg/1280px-Foto_panor%C3%A2mica_de_Luzi%C3%A2nia_Goi%C3%A1s.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Foto_panor%C3%A2mica_de_Luzi%C3%A2nia_Goi%C3%A1s.jpg/500px-Foto_panor%C3%A2mica_de_Luzi%C3%A2nia_Goi%C3%A1s.jpg",
+      "autor": "Arley Cruzper",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Foto_panor%C3%A2mica_de_Luzi%C3%A2nia_Goi%C3%A1s.jpg"
+    },
+    "5215231": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Ruas_de_Novo_Gama_-_GO_33.jpg/1280px-Ruas_de_Novo_Gama_-_GO_33.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Ruas_de_Novo_Gama_-_GO_33.jpg/500px-Ruas_de_Novo_Gama_-_GO_33.jpg",
+      "autor": "Túllio F",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Ruas_de_Novo_Gama_-_GO_33.jpg"
+    },
+    "5217609": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Rampa_de_Vo%C3%B3_Livre_Vale_do_Paran%C3%A1_Formosa_Goi%C3%A1s_-_panoramio.jpg/1280px-Rampa_de_Vo%C3%B3_Livre_Vale_do_Paran%C3%A1_Formosa_Goi%C3%A1s_-_panoramio.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Rampa_de_Vo%C3%B3_Livre_Vale_do_Paran%C3%A1_Formosa_Goi%C3%A1s_-_panoramio.jpg/500px-Rampa_de_Vo%C3%B3_Livre_Vale_do_Paran%C3%A1_Formosa_Goi%C3%A1s_-_panoramio.jpg",
+      "autor": "charlen",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Rampa_de_Vo%C3%B3_Livre_Vale_do_Paran%C3%A1_Formosa_Goi%C3%A1s_-_panoramio.jpg"
+    },
+    "5218805": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Vista_da_Regi%C3%A3o_Central_de_Rio_Verde.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Vista_da_Regi%C3%A3o_Central_de_Rio_Verde.jpg/500px-Vista_da_Regi%C3%A3o_Central_de_Rio_Verde.jpg",
+      "autor": "Clailton Borges",
+      "licenca": "CC BY-SA 3.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_da_Regi%C3%A3o_Central_de_Rio_Verde.jpg"
+    },
+    "5220454": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Vista_de_Senador_Canedo%2C_2015.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Vista_de_Senador_Canedo%2C_2015.jpg/500px-Vista_de_Senador_Canedo%2C_2015.jpg",
+      "autor": "Fronteira",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Vista_de_Senador_Canedo,_2015.jpg"
+    },
+    "5221403": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Munic%C3%ADpio_de_Trindade_visto_pelo_Santu%C3%A1rio_Bas%C3%ADlica.jpg/1280px-Munic%C3%ADpio_de_Trindade_visto_pelo_Santu%C3%A1rio_Bas%C3%ADlica.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Munic%C3%ADpio_de_Trindade_visto_pelo_Santu%C3%A1rio_Bas%C3%ADlica.jpg/500px-Munic%C3%ADpio_de_Trindade_visto_pelo_Santu%C3%A1rio_Bas%C3%ADlica.jpg",
+      "autor": "diversidadedeolhar",
+      "licenca": "CC BY 2.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by/2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Munic%C3%ADpio_de_Trindade_visto_pelo_Santu%C3%A1rio_Bas%C3%ADlica.jpg"
+    },
+    "5221858": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Divisa_Distrito_Federal-Goi%C3%A1s.jpg/1280px-Divisa_Distrito_Federal-Goi%C3%A1s.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Divisa_Distrito_Federal-Goi%C3%A1s.jpg/500px-Divisa_Distrito_Federal-Goi%C3%A1s.jpg",
+      "autor": "Fábio Rodrigues Pozzebom/ABr",
+      "licenca": "CC BY 3.0 br",
+      "urlLicenca": "https://creativecommons.org/licenses/by/3.0/br/deed.en",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Divisa_Distrito_Federal-Goi%C3%A1s.jpg"
+    },
+    "5300108": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Planalto_Central_%28cropped%29.jpg/1280px-Planalto_Central_%28cropped%29.jpg",
+      "miniatura": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Planalto_Central_%28cropped%29.jpg/500px-Planalto_Central_%28cropped%29.jpg",
+      "autor": "Arturdiasr",
+      "licenca": "CC BY-SA 4.0",
+      "urlLicenca": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Planalto_Central_(cropped).jpg"
+    }
+  }
+}

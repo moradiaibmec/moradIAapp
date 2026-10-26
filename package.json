@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "base:gerar": "node --use-system-ca scripts/base/gerar.mjs",
-    "base:validar": "node scripts/base/validar.mjs"
+    "base:validar": "node scripts/base/validar.mjs",
+    "base:fotos": "node --use-system-ca scripts/base/fotos.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.2",
