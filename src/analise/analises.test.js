@@ -24,12 +24,13 @@ describe('montarAnalise', () => {
 describe('paraHistorico', () => {
     it('converte a linha do banco no formato usado pelos indicadores do Dashboard', () => {
         const linha = {
-            id: 'abc', criada_em: '2026-10-19T14:30:00+00:00',
+            id: 'abc', criada_em: '2026-10-19T14:30:00+00:00', respostas: { versao: 1 },
             resultados: [{ ibge: 1, cidade: 'Belo Horizonte, MG', match: 82 }, { ibge: 2, cidade: 'Campina Grande, PB', match: 70 }],
         };
         expect(paraHistorico(linha)).toEqual({
             id: 'abc',
             data: '2026-10-19T14:30:00+00:00',
+            respostas: { versao: 1 },
             cidades: [{ nome: 'Belo Horizonte', uf: 'MG', match: 82 }, { nome: 'Campina Grande', uf: 'PB', match: 70 }],
         });
     });

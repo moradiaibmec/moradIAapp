@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { FiArrowRight, FiAward, FiBarChart2, FiClock, FiMap, FiTrendingUp } from 'react-icons/fi';
+import { FiArrowRight, FiAward, FiBarChart2, FiChevronRight, FiClock, FiMap, FiTrendingUp } from 'react-icons/fi';
 import CabecalhoApp from '../CabecalhoApp/index.jsx';
 import { calcularIndicadores } from '../../dados/indicadores.js';
 
@@ -290,6 +290,36 @@ const Selo = styled.span`
     white-space: nowrap;
 `;
 
+const BotaoAnalise = styled.button`
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    margin: -8px;
+    padding: 8px;
+    border: none;
+    border-radius: 12px;
+    background: none;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: #F8FAFC;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--roxo-moradia);
+        outline-offset: 2px;
+    }
+
+    > svg {
+        flex-shrink: 0;
+        color: #9CA3AF;
+    }
+`;
+
 const DataAnalise = styled.p`
     display: flex;
     align-items: center;
@@ -360,7 +390,7 @@ function CartaoIndicador({ icone, rotulo, valor, detalhe, compacto, cor }) {
     );
 }
 
-function Dashboard({ usuario, onNavegar, onIniciarAnalise, analises = [] }){
+function Dashboard({ usuario, onNavegar, onIniciarAnalise, onAbrirAnalise, analises = [] }){
     const { full_name } = usuario.user_metadata ?? {};
     const primeiroNome = full_name?.split(' ')[0];
     const {
@@ -478,13 +508,16 @@ function Dashboard({ usuario, onNavegar, onIniciarAnalise, analises = [] }){
                             <Lista>
                                 {recentes.map(({ id, data, cidade, match }) => (
                                     <ItemLista key={id}>
-                                        <InfoCidade>
-                                            <NomeCidade>{cidade}</NomeCidade>
-                                            <DataAnalise>
-                                                <FiClock /> {formatoData.format(new Date(data))}
-                                            </DataAnalise>
-                                        </InfoCidade>
-                                        <SeloMatch valor={match} />
+                                        <BotaoAnalise type="button" onClick={() => onAbrirAnalise(id)} title="Ver resultados desta análise">
+                                            <InfoCidade>
+                                                <NomeCidade>{cidade}</NomeCidade>
+                                                <DataAnalise>
+                                                    <FiClock /> {formatoData.format(new Date(data))}
+                                                </DataAnalise>
+                                            </InfoCidade>
+                                            <SeloMatch valor={match} />
+                                            <FiChevronRight aria-hidden="true" />
+                                        </BotaoAnalise>
                                     </ItemLista>
                                 ))}
                             </Lista>

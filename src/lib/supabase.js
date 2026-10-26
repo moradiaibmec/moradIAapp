@@ -26,5 +26,5 @@ export function salvarAnalise(analise) {
 }
 
 export function listarAnalises() {
-    return supabase.from('analises').select('id, criada_em, resultados').order('criada_em', { ascending: false });
+    return supabase.from('analises').select('id, criada_em, respostas, resultados').order('criada_em', { ascending: false });
 }

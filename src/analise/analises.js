@@ -16,10 +16,12 @@ export function montarAnalise(respostas, resultados, versaoDados) {
 }
 
 // Formato do histórico usado pelos indicadores do Dashboard (src/dados/indicadores.js).
+// As respostas ficam guardadas para reabrir a tela de resultados da análise.
 export function paraHistorico(linha) {
     return {
         id: linha.id,
         data: linha.criada_em,
+        respostas: linha.respostas,
         cidades: linha.resultados.map(({ cidade, match }) => {
             const corte = cidade.lastIndexOf(', ');
             return { nome: cidade.slice(0, corte), uf: cidade.slice(corte + 2), match };

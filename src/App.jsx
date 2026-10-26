@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { listarAnalises, salvarAnalise, supabase } from './lib/supabase.js';
 import { montarAnalise, paraHistorico } from './analise/analises.js';
+import { calcularMatch } from './analise/match.js';
 import { carregarBase } from './dados/base.js';
 import Login from './componentes/Login/index.jsx';
 import Dashboard from './componentes/Dashboard/index.jsx';
@@ -17,7 +18,8 @@ function App(){
   const [carregando, setCarregando] = useState(true);
   const [pagina, setPagina] = useState('dashboard');
   const [analises, setAnalises] = useState([]);
-  // Análise recém-concluída: { respostas, resultados } e o estado do salvamento no histórico.
+  // Análise em exibição: { respostas, resultados } e o estado do salvamento no histórico.
+  // Ao reabrir uma análise do histórico, `resultados` fica nulo e o ranking é recalculado quando a base carregar.
   const [analiseAtual, setAnaliseAtual] = useState(null);
   // Posição no ranking da cidade em destaque nos resultados (e aberta em "Explorar").
   const [cidadeSelecionada, setCidadeSelecionada] = useState(0);
@@ -44,6 +46,11 @@ function App(){
     if (!idUsuario) return;
     carregarAnalises();
   }, [idUsuario]);
+
+  const resultados = useMemo(() => {
+    if (analiseAtual?.resultados) return analiseAtual.resultados;
+    return analiseAtual && base ? calcularMatch(analiseAtual.respostas, base.cidades) : null;
+  }, [analiseAtual, base]);
 
   async function carregarAnalises() {
     const { data, error } = await listarAnalises();
@@ -80,6 +87,16 @@ function App(){
     salvar(analise);
   }
 
+  // As notas detalhadas não são salvas: o ranking é recalculado a partir das respostas, sobre a base atual.
+  function abrirAnalise(id) {
+    const { respostas } = analises.find((analise) => analise.id === id);
+    setAnaliseAtual({ respostas, resultados: null });
+    setCidadeSelecionada(0);
+    setSalvamento(null);
+    if (!base) prepararBase();
+    navegar('resultados');
+  }
+
   if (carregando) return null;
   if (!sessao) return <Login />;
 
@@ -95,6 +112,10 @@ function App(){
     return <Processamento totalCidades={base.cidades.length} onConcluido={() => navegar('resultados')} />;
   }
 
+  if ((pagina === 'resultados' || pagina === 'explorar') && analiseAtual && !resultados) {
+    return <CarregandoBase erro={erroBase} onTentarDeNovo={prepararBase} onSair={() => navegar('dashboard')} />;
+  }
+
   if (pagina === 'resultados' && analiseAtual) {
     return (
       <Resultados
@@ -102,7 +123,7 @@ function App(){
         onNavegar={navegar}
         onNovaAnalise={iniciarAnalise}
         respostas={analiseAtual.respostas}
-        resultados={analiseAtual.resultados}
+        resultados={resultados}
         cidades={base.cidades}
         fontes={base.fontes}
         salvamento={salvamento}
@@ -115,7 +136,7 @@ function App(){
   }
 
   if (pagina === 'explorar' && analiseAtual) {
-    const resultado = analiseAtual.resultados[cidadeSelecionada];
+    const resultado = resultados[cidadeSelecionada];
     return (
       <ExplorarCidade
         usuario={sessao.user}
@@ -133,7 +154,7 @@ function App(){
 
   return pagina === 'perfil'
     ? <Perfil usuario={sessao.user} onNavegar={navegar} onNovaAnalise={iniciarAnalise} analises={analises} />
-    : <Dashboard usuario={sessao.user} onNavegar={navegar} onIniciarAnalise={iniciarAnalise} analises={analises} />;
+    : <Dashboard usuario={sessao.user} onNavegar={navegar} onIniciarAnalise={iniciarAnalise} onAbrirAnalise={abrirAnalise} analises={analises} />;
 }
 
 export default App;
