@@ -399,7 +399,7 @@ function Dashboard({ usuario, onNavegar, onIniciarAnalise, onAbrirAnalise, anali
 
     return(
         <Pagina>
-            <CabecalhoApp usuario={usuario} paginaAtiva="dashboard" onNavegar={onNavegar} onNovaAnalise={onIniciarAnalise} />
+            <CabecalhoApp usuario={usuario} paginaAtiva="dashboard" onNavegar={onNavegar} onNovaAnalise={onIniciarAnalise} comparacaoIndisponivel={analises.length === 0} />
 
             <Conteudo>
                 <Saudacao>

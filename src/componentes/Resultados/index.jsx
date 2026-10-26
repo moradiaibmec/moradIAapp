@@ -756,7 +756,7 @@ function textoStatus(resultados) {
 
 function Resultados({
     usuario, onNavegar, onNovaAnalise, respostas, resultados, cidades, fontes, salvamento, onTentarSalvar,
-    selecionada, onSelecionar, onExplorar,
+    selecionada, onSelecionar, onExplorar, onComparar,
 }) {
     const destaque = resultados[selecionada];
     const nome = nomeDaCidade(destaque.cidade);
@@ -816,7 +816,7 @@ function Resultados({
                                 <BotaoHero type="button" onClick={onExplorar} disabled={!cidade}>
                                     Explorar {nome} <LuArrowRight aria-hidden="true" />
                                 </BotaoHero>
-                                <BotaoHero type="button" $vidro disabled title="Em breve">
+                                <BotaoHero type="button" $vidro onClick={onComparar} disabled={resultados.length < 2}>
                                     <LuGitCompare aria-hidden="true" /> Comparar cidades
                                 </BotaoHero>
                             </AcoesHero>

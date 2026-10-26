@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { listarAnalises, salvarAnalise, supabase } from './lib/supabase.js';
 import { montarAnalise, paraHistorico } from './analise/analises.js';
 import { calcularMatch } from './analise/match.js';
+import { MAXIMO_COMPARADAS } from './analise/comparacao.js';
 import { carregarBase } from './dados/base.js';
 import Login from './componentes/Login/index.jsx';
 import Dashboard from './componentes/Dashboard/index.jsx';
@@ -10,6 +11,7 @@ import Onboarding from './componentes/Onboarding/index.jsx';
 import Processamento from './componentes/Processamento/index.jsx';
 import Resultados from './componentes/Resultados/index.jsx';
 import ExplorarCidade from './componentes/ExplorarCidade/index.jsx';
+import CompararCidades from './componentes/CompararCidades/index.jsx';
 import CarregandoBase from './componentes/CarregandoBase/index.jsx';
 
 
@@ -23,6 +25,10 @@ function App(){
   const [analiseAtual, setAnaliseAtual] = useState(null);
   // Posição no ranking da cidade em destaque nos resultados (e aberta em "Explorar").
   const [cidadeSelecionada, setCidadeSelecionada] = useState(0);
+  // Códigos IBGE das cidades em comparação; nulo = as primeiras do ranking.
+  const [comparadas, setComparadas] = useState(null);
+  // Tela para onde "Voltar" leva a partir de "Explorar".
+  const [origemExplorar, setOrigemExplorar] = useState('resultados');
   const [salvamento, setSalvamento] = useState(null);
   // Base de cidades: carregada só quando a pessoa começa uma análise.
   const [base, setBase] = useState(null);
@@ -58,8 +64,19 @@ function App(){
   }
 
   function navegar(novaPagina) {
+    if (novaPagina === 'comparar' && !analiseAtual) {
+      // Pelo menu, sem análise aberta: compara as cidades da análise mais recente.
+      if (analises.length) abrirAnalise(analises[0].id, 'comparar');
+      return;
+    }
     setPagina(novaPagina);
     window.scrollTo(0, 0);
+  }
+
+  function explorar(indice, origem) {
+    setCidadeSelecionada(indice);
+    setOrigemExplorar(origem);
+    navegar('explorar');
   }
 
   function prepararBase() {
@@ -83,18 +100,21 @@ function App(){
     const analise = { respostas, resultados };
     setAnaliseAtual(analise);
     setCidadeSelecionada(0);
+    setComparadas(null);
     navegar('processando');
     salvar(analise);
   }
 
   // As notas detalhadas não são salvas: o ranking é recalculado a partir das respostas, sobre a base atual.
-  function abrirAnalise(id) {
+  function abrirAnalise(id, destino = 'resultados') {
     const { respostas } = analises.find((analise) => analise.id === id);
     setAnaliseAtual({ respostas, resultados: null });
     setCidadeSelecionada(0);
+    setComparadas(null);
     setSalvamento(null);
     if (!base) prepararBase();
-    navegar('resultados');
+    setPagina(destino);
+    window.scrollTo(0, 0);
   }
 
   if (carregando) return null;
@@ -112,7 +132,7 @@ function App(){
     return <Processamento totalCidades={base.cidades.length} onConcluido={() => navegar('resultados')} />;
   }
 
-  if ((pagina === 'resultados' || pagina === 'explorar') && analiseAtual && !resultados) {
+  if (['resultados', 'explorar', 'comparar'].includes(pagina) && analiseAtual && !resultados) {
     return <CarregandoBase erro={erroBase} onTentarDeNovo={prepararBase} onSair={() => navegar('dashboard')} />;
   }
 
@@ -130,7 +150,8 @@ function App(){
         onTentarSalvar={() => salvar(analiseAtual)}
         selecionada={cidadeSelecionada}
         onSelecionar={setCidadeSelecionada}
-        onExplorar={() => navegar('explorar')}
+        onExplorar={() => explorar(cidadeSelecionada, 'resultados')}
+        onComparar={() => navegar('comparar')}
       />
     );
   }
@@ -142,12 +163,31 @@ function App(){
         usuario={sessao.user}
         onNavegar={navegar}
         onNovaAnalise={iniciarAnalise}
-        onVoltar={() => navegar('resultados')}
+        onVoltar={() => navegar(origemExplorar)}
+        rotuloVoltar={origemExplorar === 'comparar' ? 'Voltar à comparação' : 'Voltar aos resultados'}
         resultado={resultado}
         posicao={cidadeSelecionada}
         cidade={base.cidades.find(({ ibge }) => ibge === resultado.ibge)}
         respostas={analiseAtual.respostas}
         fontes={base.fontes}
+      />
+    );
+  }
+
+  if (pagina === 'comparar' && analiseAtual) {
+    return (
+      <CompararCidades
+        usuario={sessao.user}
+        onNavegar={navegar}
+        onNovaAnalise={iniciarAnalise}
+        respostas={analiseAtual.respostas}
+        resultados={resultados}
+        cidades={base.cidades}
+        fontes={base.fontes}
+        comparadas={comparadas ?? resultados.slice(0, MAXIMO_COMPARADAS).map(({ ibge }) => ibge)}
+        onAlterarComparadas={setComparadas}
+        onVerCidade={(indice) => explorar(indice, 'comparar')}
+        onVerAnalise={() => navegar('resultados')}
       />
     );
   }

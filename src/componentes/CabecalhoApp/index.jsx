@@ -168,11 +168,12 @@ const BotaoSair = styled.button`
 const linksNavegacao = [
     { rotulo: 'Dashboard', pagina: 'dashboard' },
     { rotulo: 'Minhas cidades' },
-    { rotulo: 'Comparar' },
+    { rotulo: 'Comparar', pagina: 'comparar' },
     { rotulo: 'Meu perfil', pagina: 'perfil' },
 ];
 
-function CabecalhoApp({ usuario, paginaAtiva, onNavegar, onNovaAnalise }){
+// `comparacaoIndisponivel`: a pessoa ainda não tem análise para comparar.
+function CabecalhoApp({ usuario, paginaAtiva, onNavegar, onNovaAnalise, comparacaoIndisponivel = false }){
     const [saindo, setSaindo] = useState(false);
     const { full_name, avatar_url } = usuario.user_metadata ?? {};
     const inicial = (full_name ?? usuario.email ?? '?').charAt(0).toUpperCase();
@@ -192,14 +193,15 @@ function CabecalhoApp({ usuario, paginaAtiva, onNavegar, onNovaAnalise }){
             <Navegacao>
                 {linksNavegacao.map(({ rotulo, pagina }) => {
                     const ativo = pagina !== undefined && pagina === paginaAtiva;
-                    const disponivel = Boolean(pagina && onNavegar);
+                    const bloqueada = pagina === 'comparar' && comparacaoIndisponivel;
+                    const disponivel = Boolean(pagina && onNavegar) && !bloqueada;
                     return (
                         <LinkNavegacao
                             key={rotulo}
                             $ativo={ativo}
                             $disponivel={disponivel}
                             aria-current={ativo ? 'page' : undefined}
-                            title={disponivel ? undefined : 'Em breve'}
+                            title={disponivel ? undefined : bloqueada ? 'Faça uma análise primeiro' : 'Em breve'}
                             onClick={disponivel && !ativo ? () => onNavegar(pagina) : undefined}
                         >
                             {rotulo}

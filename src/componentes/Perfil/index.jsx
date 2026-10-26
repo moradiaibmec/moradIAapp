@@ -513,7 +513,7 @@ function Perfil({ usuario, onNavegar, onNovaAnalise, analises = [], comparativos
 
     return(
         <Pagina>
-            <CabecalhoApp usuario={usuario} paginaAtiva="perfil" onNavegar={onNavegar} onNovaAnalise={onNovaAnalise} />
+            <CabecalhoApp usuario={usuario} paginaAtiva="perfil" onNavegar={onNavegar} onNovaAnalise={onNovaAnalise} comparacaoIndisponivel={analises.length === 0} />
 
             <Conteudo>
                 <BarraLateral>

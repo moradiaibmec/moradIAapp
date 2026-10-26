@@ -789,7 +789,7 @@ function ClimaDaCidade({ cidade }) {
     );
 }
 
-function ExplorarCidade({ usuario, onNavegar, onNovaAnalise, onVoltar, resultado, posicao, cidade, respostas, fontes }) {
+function ExplorarCidade({ usuario, onNavegar, onNovaAnalise, onVoltar, rotuloVoltar = 'Voltar aos resultados', resultado, posicao, cidade, respostas, fontes }) {
     const nome = nomeDaCidade(resultado.cidade);
     const fatos = fatosDaCidade(cidade);
 
@@ -799,7 +799,7 @@ function ExplorarCidade({ usuario, onNavegar, onNovaAnalise, onVoltar, resultado
 
             <Hero aria-label={`Sobre ${resultado.cidade}`} $foto={cidade.foto?.url}>
                 <TopoHero>
-                    <BotaoVidro type="button" onClick={onVoltar}><LuArrowLeft aria-hidden="true" /> Voltar aos resultados</BotaoVidro>
+                    <BotaoVidro type="button" onClick={onVoltar}><LuArrowLeft aria-hidden="true" /> {rotuloVoltar}</BotaoVidro>
                     <AcoesHero>
                         <BotaoVidro type="button" disabled title="Em breve"><LuHeart aria-hidden="true" /> Salvar</BotaoVidro>
                         <BotaoVidro type="button" disabled title="Em breve"><LuShare2 aria-hidden="true" /> Compartilhar</BotaoVidro>

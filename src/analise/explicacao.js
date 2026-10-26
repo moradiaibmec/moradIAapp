@@ -83,7 +83,7 @@ export function fraseDoPilar(pilar, { bruto, dadoIndisponivel }, respostas) {
 }
 
 export const nomeDaCidade = (cidade) => cidade.slice(0, cidade.lastIndexOf(', '));
-const nomesNoTexto = (pilares) => pilares.map((pilar) => NOMES_NO_TEXTO[pilar]);
+export const nomesNoTexto = (pilares) => pilares.map((pilar) => NOMES_NO_TEXTO[pilar]);
 
 export function lemaDaCidade({ pontosFortes }) {
     if (pontosFortes.length === 0) return 'Equilíbrio entre os critérios que você escolheu';
