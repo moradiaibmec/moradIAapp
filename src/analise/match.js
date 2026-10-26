@@ -155,13 +155,14 @@ function pesosEfetivos(respostas) {
     return Object.fromEntries(PILARES.map(({ id }) => [id, todosTantoFaz ? 1 : VALOR_PESO[pesos[id]]]));
 }
 
-export function calcularMatch(respostas, cidades) {
+// Com `filtrar: false`, avalia também as cidades eliminadas pelos filtros (para compará-las mesmo fora do ranking).
+export function calcularMatch(respostas, cidades, { filtrar = true } = {}) {
     const avaliadores = criarAvaliadores(respostas, cidades);
     const pesos = respostas.pesos ?? sugerirPesos(respostas).pesos;
     const valores = pesosEfetivos(respostas);
     const essenciais = PILARES.map(({ id }) => id).filter((id) => pesos[id] === 'essencial');
 
-    const resultados = aplicarFiltros(respostas, cidades).map((cidade) => {
+    const resultados = (filtrar ? aplicarFiltros(respostas, cidades) : cidades).map((cidade) => {
         const notas = {};
         const estimados = cidade.estimados ?? [];
         for (const { id } of PILARES) {

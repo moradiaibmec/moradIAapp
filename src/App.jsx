@@ -23,8 +23,10 @@ function App(){
   // Análise em exibição: { respostas, resultados } e o estado do salvamento no histórico.
   // Ao reabrir uma análise do histórico, `resultados` fica nulo e o ranking é recalculado quando a base carregar.
   const [analiseAtual, setAnaliseAtual] = useState(null);
-  // Posição no ranking da cidade em destaque nos resultados (e aberta em "Explorar").
+  // Posição no ranking da cidade em destaque nos resultados.
   const [cidadeSelecionada, setCidadeSelecionada] = useState(0);
+  // Código IBGE da cidade aberta em "Explorar" (pode estar fora do ranking, se veio da comparação).
+  const [cidadeExplorada, setCidadeExplorada] = useState(null);
   // Códigos IBGE das cidades em comparação; nulo = as primeiras do ranking.
   const [comparadas, setComparadas] = useState(null);
   // Tela para onde "Voltar" leva a partir de "Explorar".
@@ -58,6 +60,11 @@ function App(){
     return analiseAtual && base ? calcularMatch(analiseAtual.respostas, base.cidades) : null;
   }, [analiseAtual, base]);
 
+  // Todas as cidades da base, inclusive as eliminadas pelos filtros: a comparação pode incluir qualquer uma.
+  const avaliadas = useMemo(() => (
+    analiseAtual && base ? calcularMatch(analiseAtual.respostas, base.cidades, { filtrar: false }) : null
+  ), [analiseAtual, base]);
+
   async function carregarAnalises() {
     const { data, error } = await listarAnalises();
     if (!error) setAnalises(data.map(paraHistorico));
@@ -73,8 +80,8 @@ function App(){
     window.scrollTo(0, 0);
   }
 
-  function explorar(indice, origem) {
-    setCidadeSelecionada(indice);
+  function explorar(ibge, origem) {
+    setCidadeExplorada(ibge);
     setOrigemExplorar(origem);
     navegar('explorar');
   }
@@ -150,14 +157,15 @@ function App(){
         onTentarSalvar={() => salvar(analiseAtual)}
         selecionada={cidadeSelecionada}
         onSelecionar={setCidadeSelecionada}
-        onExplorar={() => explorar(cidadeSelecionada, 'resultados')}
+        onExplorar={() => explorar(resultados[cidadeSelecionada].ibge, 'resultados')}
         onComparar={() => navegar('comparar')}
       />
     );
   }
 
   if (pagina === 'explorar' && analiseAtual) {
-    const resultado = resultados[cidadeSelecionada];
+    const resultado = avaliadas.find(({ ibge }) => ibge === cidadeExplorada);
+    const posicao = resultados.findIndex(({ ibge }) => ibge === cidadeExplorada);
     return (
       <ExplorarCidade
         usuario={sessao.user}
@@ -166,7 +174,7 @@ function App(){
         onVoltar={() => navegar(origemExplorar)}
         rotuloVoltar={origemExplorar === 'comparar' ? 'Voltar à comparação' : 'Voltar aos resultados'}
         resultado={resultado}
-        posicao={cidadeSelecionada}
+        posicao={posicao === -1 ? null : posicao}
         cidade={base.cidades.find(({ ibge }) => ibge === resultado.ibge)}
         respostas={analiseAtual.respostas}
         fontes={base.fontes}
@@ -182,11 +190,12 @@ function App(){
         onNovaAnalise={iniciarAnalise}
         respostas={analiseAtual.respostas}
         resultados={resultados}
+        avaliadas={avaliadas}
         cidades={base.cidades}
         fontes={base.fontes}
         comparadas={comparadas ?? resultados.slice(0, MAXIMO_COMPARADAS).map(({ ibge }) => ibge)}
         onAlterarComparadas={setComparadas}
-        onVerCidade={(indice) => explorar(indice, 'comparar')}
+        onVerCidade={(ibge) => explorar(ibge, 'comparar')}
         onVerAnalise={() => navegar('resultados')}
       />
     );

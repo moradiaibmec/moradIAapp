@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { criarRespostasIniciais } from './respostas.js';
-import { aluguelDoDomicilio, aplicarFiltros, distanciaKm, filtroMaisRestritivo, porteDaCidade } from './filtros.js';
+import { aluguelDoDomicilio, aplicarFiltros, distanciaKm, filtroMaisRestritivo, filtrosReprovados, porteDaCidade } from './filtros.js';
 import { cidades as fixture } from '../dados/cidadesFixture.js';
 
 const curitiba = { nome: 'Curitiba', regiao: 'S', lat: -25.43, lon: -49.27, populacao: 1773718, litoranea: false, indicadores: { aluguel: { 1: 1800, 2: 2400, 3: 3000, 4: 3500 } } };
@@ -125,5 +125,14 @@ describe('filtroMaisRestritivo', () => {
 
     it('retorna null sem filtros ativos', () => {
         expect(filtroMaisRestritivo(criarRespostasIniciais(), cidades)).toBeNull();
+    });
+});
+
+describe('filtrosReprovados', () => {
+    it('lista os filtros ativos em que a cidade não passa', () => {
+        const respostas = respostasCom({ onde: { regioes: ['S'], praia: 'indispensavel' } });
+        expect(filtrosReprovados(respostas, salvador)).toEqual(['Regiões']);
+        expect(filtrosReprovados(respostas, curitiba)).toEqual(['Praia indispensável']);
+        expect(filtrosReprovados(respostasCom(), curitiba)).toEqual([]);
     });
 });

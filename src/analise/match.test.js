@@ -79,6 +79,14 @@ describe('calcularMatch', () => {
         expect(matches).toEqual([...matches].sort((a, b) => b - a));
     });
 
+    it('com filtrar: false, avalia todas as cidades da base com as mesmas notas do ranking', () => {
+        const r = respostasCom({ onde: { praia: 'indispensavel' } });
+        const ranking = calcularMatch(r, cidades);
+        const todas = calcularMatch(r, cidades, { filtrar: false });
+        expect(todas).toHaveLength(cidades.length);
+        for (const resultado of ranking) expect(todas).toContainEqual(resultado);
+    });
+
     it('calcula as notas sobre todas as cidades, sem depender dos filtros', () => {
         const semFiltro = resultadoDe(calcularMatch(respostasCom(), cidades), 'Curitiba');
         const soSul = resultadoDe(calcularMatch(respostasCom({ onde: { regioes: ['S'] } }), cidades), 'Curitiba');

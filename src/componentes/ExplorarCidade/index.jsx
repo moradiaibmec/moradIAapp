@@ -810,7 +810,7 @@ function ExplorarCidade({ usuario, onNavegar, onNovaAnalise, onVoltar, rotuloVol
                     <InfoCidade>
                         <SeloMatch>
                             <LuSparkles aria-hidden="true" />
-                            {resultado.match}% compatível com você · #{posicao + 1} no ranking
+                            {resultado.match}% compatível com você · {posicao === null ? 'fora do seu ranking' : `#${posicao + 1} no ranking`}
                         </SeloMatch>
                         <NomeCidade>{nome}, {nomeDoEstado(cidade.uf)}</NomeCidade>
                         <Lema>{lemaDaCidade(resultado)}.</Lema>

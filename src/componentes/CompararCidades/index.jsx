@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from "styled-components"
 import {
-    LuArrowRight, LuArrowUpRight, LuDownload, LuListChecks, LuPlus, LuScale, LuSparkles, LuTrophy, LuWallet, LuX,
+    LuArrowRight, LuArrowUpRight, LuDownload, LuListChecks, LuPlus, LuScale, LuSearch, LuSparkles, LuTrophy, LuWallet, LuX,
 } from 'react-icons/lu';
 import CabecalhoApp from '../CabecalhoApp/index.jsx';
 import { comoFoiEstimado, fraseDoPilar, nomeDaCidade } from '../../analise/explicacao.js';
 import { formatarPopulacao, formatarReais, nomeDoEstado, textoDoCredito } from '../../analise/formatacao.js';
-import { aluguelDoDomicilio } from '../../analise/filtros.js';
+import { aluguelDoDomicilio, filtrosReprovados } from '../../analise/filtros.js';
 import { pontoMedioRenda } from '../../analise/respostas.js';
 import {
-    MAXIMO_COMPARADAS, MINIMO_COMPARADAS, ROTULO_PESO, indiceDoMaior, indiceDoMenor, pilaresComparaveis, pilaresPorPeso,
-    vencedoresDoPilar, veredito, vitoriasPorCidade,
+    MAXIMO_COMPARADAS, MINIMO_COMPARADAS, ROTULO_PESO, buscarParaComparar, indiceDoMaior, indiceDoMenor, ordenarComparadas,
+    pilaresComparaveis, pilaresPorPeso, vencedoresDoPilar, veredito, vitoriasPorCidade,
 } from '../../analise/comparacao.js';
 
 // Cidades sem foto (ou enquanto ela carrega) mostram um gradiente da marca no lugar da imagem.
@@ -117,25 +117,85 @@ const Adicionar = styled.div`
     position: relative;
 `;
 
-const ListaAdicionar = styled.ul`
+const MenuAdicionar = styled.div`
     position: absolute;
     top: calc(100% + 8px);
     right: 0;
     z-index: 10;
     display: flex;
     flex-direction: column;
-    gap: 2px;
     width: 320px;
-    max-height: 360px;
-    margin: 0;
-    padding: 6px;
+    max-width: calc(100vw - 32px);
     border: 1px solid #E6E8EC;
     border-radius: 12px;
     background-color: #FFFFFF;
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    box-sizing: border-box;
+    overflow: hidden;
+`;
+
+const CampoBusca = styled.label`
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 6px;
+    padding: 0 12px;
+    border: 1px solid #E6E8EC;
+    border-radius: 8px;
+    color: #9CA3AF;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:focus-within {
+        border-color: var(--roxo-moradia);
+        box-shadow: 0 0 0 3px #EEF2FF;
+    }
+
+    svg {
+        flex-shrink: 0;
+        font-size: 16px;
+    }
+
+    input {
+        flex: 1;
+        min-width: 0;
+        padding: 10px 0;
+        border: none;
+        outline: none;
+        background: none;
+        color: #0F172A;
+        font-family: var(--fonte-moradia);
+        font-size: 14px;
+    }
+
+    input::placeholder {
+        color: #9CA3AF;
+    }
+`;
+
+const TituloLista = styled.p`
+    padding: 6px 18px 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #5B6475;
+`;
+
+const SemResultados = styled.p`
+    padding: 12px 18px 16px;
+    font-size: 13px;
+    color: #5B6475;
+`;
+
+const ListaAdicionar = styled.ul`
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 300px;
+    margin: 0;
+    padding: 0 6px 6px;
     list-style: none;
     overflow-y: auto;
-    box-sizing: border-box;
 
     button {
         display: flex;
@@ -162,7 +222,7 @@ const ListaAdicionar = styled.ul`
 
     small {
         flex-shrink: 0;
-        width: 32px;
+        width: 36px;
         font-size: 12px;
         font-weight: 600;
         color: #5B6475;
@@ -317,6 +377,21 @@ const SeloMelhor = styled.span`
     svg {
         font-size: 12px;
     }
+`;
+
+const SeloFora = styled.span`
+    padding: 5px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    background-color: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(8px);
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: help;
 `;
 
 const PilulaMatch = styled.span`
@@ -660,18 +735,35 @@ const BotaoVeredito = styled.button`
     }
 `;
 
-function BotaoAdicionar({ opcoes, onAdicionar }) {
+// Sem termo, sugere as cidades do ranking; com termo, busca em toda a base, inclusive fora dos filtros.
+function BotaoAdicionar({ ranking, avaliadas, posicoes, comparadas, onAdicionar }) {
     const [aberta, setAberta] = useState(false);
+    const [termo, setTermo] = useState('');
     const referencia = useRef(null);
-    const cheia = opcoes === null;
+    const cheia = comparadas.length >= MAXIMO_COMPARADAS;
+
+    const buscando = termo.trim() !== '';
+    const opcoes = buscando
+        ? buscarParaComparar(avaliadas, comparadas, termo)
+        : ranking.filter(({ ibge }) => !comparadas.includes(ibge));
+
+    function fechar() {
+        setAberta(false);
+        setTermo('');
+    }
+
+    function adicionar(ibge) {
+        onAdicionar(ibge);
+        fechar();
+    }
 
     useEffect(() => {
         if (!aberta) return undefined;
         const fecharFora = (evento) => {
-            if (!referencia.current.contains(evento.target)) setAberta(false);
+            if (!referencia.current.contains(evento.target)) fechar();
         };
         const fecharComEsc = (evento) => {
-            if (evento.key === 'Escape') setAberta(false);
+            if (evento.key === 'Escape') fechar();
         };
         document.addEventListener('mousedown', fecharFora);
         document.addEventListener('keydown', fecharComEsc);
@@ -685,8 +777,8 @@ function BotaoAdicionar({ opcoes, onAdicionar }) {
         <Adicionar ref={referencia}>
             <BotaoContorno
                 type="button"
-                onClick={() => setAberta(!aberta)}
-                disabled={cheia || opcoes.length === 0}
+                onClick={() => (aberta ? fechar() : setAberta(true))}
+                disabled={cheia}
                 title={cheia ? `Remova uma cidade para adicionar outra (máximo de ${MAXIMO_COMPARADAS})` : undefined}
                 aria-expanded={aberta}
                 aria-haspopup="true"
@@ -694,35 +786,65 @@ function BotaoAdicionar({ opcoes, onAdicionar }) {
                 <LuPlus aria-hidden="true" /> Adicionar cidade
             </BotaoContorno>
             {aberta && (
-                <ListaAdicionar aria-label="Cidades do seu ranking">
-                    {opcoes.map(({ resultado, indice }) => (
-                        <li key={resultado.ibge}>
-                            <button
-                                type="button"
-                                onClick={() => {
-                                    onAdicionar(resultado.ibge);
-                                    setAberta(false);
-                                }}
-                            >
-                                <small>#{indice + 1}</small>
-                                <span>{resultado.cidade}</span>
-                                <em>{resultado.match}%</em>
-                            </button>
-                        </li>
-                    ))}
-                </ListaAdicionar>
+                <MenuAdicionar>
+                    <CampoBusca>
+                        <LuSearch aria-hidden="true" />
+                        <input
+                            type="search"
+                            value={termo}
+                            onChange={(evento) => setTermo(evento.target.value)}
+                            onKeyDown={(evento) => {
+                                if (evento.key === 'Enter' && opcoes.length) adicionar(opcoes[0].ibge);
+                            }}
+                            placeholder="Pesquisar qualquer cidade"
+                            aria-label="Pesquisar cidade para comparar"
+                            autoFocus
+                        />
+                    </CampoBusca>
+                    {opcoes.length === 0 ? (
+                        <SemResultados>
+                            {buscando
+                                ? 'Nenhuma cidade encontrada. A base tem os municípios com mais de 100 mil habitantes.'
+                                : 'Todas as cidades do seu ranking já estão na comparação. Pesquise outra cidade.'}
+                        </SemResultados>
+                    ) : (
+                        <>
+                            <TituloLista>{buscando ? 'Cidades encontradas' : 'Do seu ranking'}</TituloLista>
+                            <ListaAdicionar aria-label={buscando ? 'Cidades encontradas' : 'Cidades do seu ranking'}>
+                                {opcoes.map((resultado) => {
+                                    const posicao = posicoes.get(resultado.ibge);
+                                    return (
+                                        <li key={resultado.ibge}>
+                                            <button type="button" onClick={() => adicionar(resultado.ibge)}>
+                                                <small title={posicao === undefined ? 'Fora do seu ranking: não passa nos seus filtros' : undefined}>
+                                                    {posicao === undefined ? 'Fora' : `#${posicao + 1}`}
+                                                </small>
+                                                <span>{resultado.cidade}</span>
+                                                <em>{resultado.match}%</em>
+                                            </button>
+                                        </li>
+                                    );
+                                })}
+                            </ListaAdicionar>
+                        </>
+                    )}
+                </MenuAdicionar>
             )}
         </Adicionar>
     );
 }
 
 function CompararCidades({
-    usuario, onNavegar, onNovaAnalise, respostas, resultados, cidades, fontes, comparadas, onAlterarComparadas, onVerCidade, onVerAnalise,
+    usuario, onNavegar, onNovaAnalise, respostas, resultados, avaliadas, cidades, fontes, comparadas, onAlterarComparadas, onVerCidade,
+    onVerAnalise,
 }) {
-    // As cidades comparadas seguem a ordem do ranking: a primeira é sempre a de maior match.
-    const itens = resultados
-        .map((resultado, indice) => ({ resultado, indice, cidade: cidades.find(({ ibge }) => ibge === resultado.ibge) }))
-        .filter(({ resultado }) => comparadas.includes(resultado.ibge));
+    // As cidades do ranking vêm primeiro, na ordem dele (a primeira é a de maior match); as de fora dos filtros, depois.
+    const posicoes = new Map(resultados.map(({ ibge }, indice) => [ibge, indice]));
+    const itens = ordenarComparadas(avaliadas, resultados, comparadas).map((resultado) => ({
+        resultado,
+        indice: posicoes.get(resultado.ibge) ?? null,
+        cidade: cidades.find(({ ibge }) => ibge === resultado.ibge),
+    }));
     const comparados = itens.map(({ resultado }) => resultado);
     const nomes = comparados.map(({ cidade }) => nomeDaCidade(cidade));
 
@@ -743,9 +865,6 @@ function CompararCidades({
     const subtitulo = saoOsPrimeiros
         ? `Veja lado a lado como seus ${itens.length} maiores matches se saem em cada critério que você priorizou.`
         : 'Veja lado a lado como as cidades escolhidas se saem em cada critério que você priorizou.';
-    const opcoesAdicionar = comparadas.length >= MAXIMO_COMPARADAS
-        ? null
-        : resultados.map((resultado, indice) => ({ resultado, indice })).filter(({ resultado }) => !comparadas.includes(resultado.ibge));
     const podeRemover = comparadas.length > MINIMO_COMPARADAS;
 
     const linhasDiaADia = [
@@ -766,7 +885,13 @@ function CompararCidades({
                         <p>{subtitulo}</p>
                     </TextoCabecalho>
                     <AcoesCabecalho>
-                        <BotaoAdicionar opcoes={opcoesAdicionar} onAdicionar={(ibge) => onAlterarComparadas([...comparadas, ibge])} />
+                        <BotaoAdicionar
+                            ranking={resultados}
+                            avaliadas={avaliadas}
+                            posicoes={posicoes}
+                            comparadas={comparadas}
+                            onAdicionar={(ibge) => onAlterarComparadas([...comparadas, ibge])}
+                        />
                         <BotaoContorno type="button" disabled title="Em breve"><LuDownload aria-hidden="true" /> Baixar comparação</BotaoContorno>
                     </AcoesCabecalho>
                 </Cabecalho>
@@ -796,7 +921,12 @@ function CompararCidades({
                                             title={foto ? `${textoDoCredito(foto)} (Wikimedia Commons)` : undefined}
                                         >
                                             <TopoFoto>
-                                                {melhor && <SeloMelhor><LuTrophy aria-hidden="true" /> Melhor opção</SeloMelhor>}
+                                                {melhor && indice !== null && <SeloMelhor><LuTrophy aria-hidden="true" /> Melhor opção</SeloMelhor>}
+                                                {indice === null && (
+                                                    <SeloFora title={`Não passa nos seus filtros: ${filtrosReprovados(respostas, cidade).join(', ')}`}>
+                                                        Fora do ranking
+                                                    </SeloFora>
+                                                )}
                                                 <AcoesFoto>
                                                     <PilulaMatch>{resultado.match}% match</PilulaMatch>
                                                     {podeRemover && (
@@ -821,7 +951,7 @@ function CompararCidades({
                                                 <strong>Vence em {vitorias[posicao]} de {totalCriterios}</strong>
                                                 <span>critérios</span>
                                             </Vitorias>
-                                            <BotaoVerCidade type="button" $principal={melhor} onClick={() => onVerCidade(indice)} disabled={!cidade}>
+                                            <BotaoVerCidade type="button" $principal={melhor} onClick={() => onVerCidade(resultado.ibge)} disabled={!cidade}>
                                                 Ver cidade <LuArrowUpRight aria-hidden="true" />
                                             </BotaoVerCidade>
                                         </CorpoCartao>
@@ -895,7 +1025,7 @@ function CompararCidades({
                         <p>{texto}</p>
                     </TextoVeredito>
                     <AcoesVeredito>
-                        <BotaoVeredito type="button" onClick={() => onVerCidade(itens[0].indice)} disabled={!itens[0].cidade}>
+                        <BotaoVeredito type="button" onClick={() => onVerCidade(itens[0].resultado.ibge)} disabled={!itens[0].cidade}>
                             Explorar {nomes[0]} <LuArrowRight aria-hidden="true" />
                         </BotaoVeredito>
                         <BotaoVeredito type="button" $vidro onClick={onVerAnalise}>Ver análise completa</BotaoVeredito>

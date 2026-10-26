@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { PILARES } from './opcoes.js';
 import {
-    indiceDoMaior, indiceDoMenor, pilaresComparaveis, pilaresPorPeso, vencedoresDoPilar, veredito, vitoriasPorCidade,
+    buscarParaComparar, indiceDoMaior, ordenarComparadas, indiceDoMenor, pilaresComparaveis, pilaresPorPeso, vencedoresDoPilar, veredito, vitoriasPorCidade,
 } from './comparacao.js';
 
 const PESOS = {
@@ -105,5 +105,41 @@ describe('veredito', () => {
             'Não lidera sozinha nenhum critério, mas tem o melhor equilíbrio entre eles. '
             + 'Recife é a melhor alternativa se você priorizar clima.',
         );
+    });
+});
+
+describe('ordenarComparadas', () => {
+    // Todas as cidades avaliadas, do maior para o menor match; o ranking só tem as que passam nos filtros.
+    const avaliadas = ['Santos, SP', 'Curitiba, PR', 'Recife, PE', 'Joinville, SC'].map((cidade) => ({ ibge: cidade, cidade }));
+    const ranking = [avaliadas[1], avaliadas[3]];
+
+    it('põe as cidades do ranking primeiro, na ordem dele, e depois as de fora, do maior para o menor match', () => {
+        const comparadas = ['Recife, PE', 'Joinville, SC', 'Santos, SP', 'Curitiba, PR'];
+        expect(ordenarComparadas(avaliadas, ranking, comparadas).map(({ cidade }) => cidade))
+            .toEqual(['Curitiba, PR', 'Joinville, SC', 'Santos, SP', 'Recife, PE']);
+    });
+});
+
+describe('buscarParaComparar', () => {
+    const avaliadas = [
+        { ibge: 1, cidade: 'Campinas, SP', match: 80 },
+        { ibge: 2, cidade: 'São José dos Campos, SP', match: 75 },
+        { ibge: 3, cidade: 'Campina Grande, PB', match: 70 },
+        { ibge: 4, cidade: 'Campo Grande, MS', match: 60 },
+        { ibge: 5, cidade: 'São Paulo, SP', match: 50 },
+    ];
+
+    it('ignora acentos e maiúsculas e põe quem começa com o termo antes de quem só o contém', () => {
+        expect(buscarParaComparar(avaliadas, [], 'CAMP').map(({ ibge }) => ibge)).toEqual([1, 3, 4, 2]);
+        expect(buscarParaComparar(avaliadas, [], 'sao').map(({ ibge }) => ibge)).toEqual([2, 5]);
+    });
+
+    it('não sugere cidades que já estão na comparação nem busca com termo vazio', () => {
+        expect(buscarParaComparar(avaliadas, [1, 3], 'camp').map(({ ibge }) => ibge)).toEqual([4, 2]);
+        expect(buscarParaComparar(avaliadas, [], '  ')).toEqual([]);
+    });
+
+    it('prefere o nome exato', () => {
+        expect(buscarParaComparar(avaliadas, [], 'campo grande').map(({ ibge }) => ibge)).toEqual([4]);
     });
 });

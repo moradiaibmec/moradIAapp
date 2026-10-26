@@ -1,6 +1,8 @@
-// Comparação lado a lado de 2 a 3 cidades do ranking, montada só a partir dos dados do match.
+// Comparação lado a lado de 2 a 3 cidades, montada só a partir dos dados do match.
+// Além das cidades do ranking, dá para comparar qualquer cidade da base, mesmo as eliminadas pelos filtros.
 import { PILARES } from './opcoes.js';
 import { listar, nomeDaCidade, nomesNoTexto } from './explicacao.js';
+import { normalizar } from '../componentes/BuscaCidade/busca.js';
 
 export const MINIMO_COMPARADAS = 2;
 export const MAXIMO_COMPARADAS = 3;
@@ -8,6 +10,7 @@ export const MAXIMO_COMPARADAS = 3;
 const ORDEM_PESO = { essencial: 0, importante: 1, tantoFaz: 2 };
 const MAXIMO_LIDERADOS_NO_TEXTO = 3;
 const MAXIMO_DESTAQUES_ALTERNATIVA = 2;
+const LIMITE_BUSCA = 8;
 
 export const ROTULO_PESO = { essencial: 'Peso alto', importante: 'Peso médio', tantoFaz: 'Peso baixo' };
 
@@ -97,4 +100,32 @@ export function veredito(resultados, alugueis = []) {
 
     if (alternativas.length) texto += ` ${alternativas.join('; ')}.`;
     return { titulo, texto };
+}
+
+// Cidades do ranking primeiro, na ordem dele; depois as de fora, do maior para o menor match.
+// `avaliadas` são todas as cidades da base, já ordenadas pelo match.
+export function ordenarComparadas(avaliadas, ranking, comparadas) {
+    const noRanking = new Set(ranking.map(({ ibge }) => ibge));
+    return [
+        ...ranking.filter(({ ibge }) => comparadas.includes(ibge)),
+        ...avaliadas.filter(({ ibge }) => comparadas.includes(ibge) && !noRanking.has(ibge)),
+    ];
+}
+
+// Busca por nome entre todas as cidades avaliadas que ainda não estão na comparação.
+// Ordem: nome exato, depois começa com o termo, depois só contém; em cada grupo, o maior match primeiro.
+export function buscarParaComparar(avaliadas, comparadas, termo) {
+    const busca = normalizar(termo);
+    if (!busca) return [];
+
+    const encontradas = [];
+    for (const resultado of avaliadas) {
+        if (comparadas.includes(resultado.ibge)) continue;
+        const nome = normalizar(nomeDaCidade(resultado.cidade));
+        const grupo = nome === busca ? 0 : nome.startsWith(busca) ? 1 : nome.includes(busca) ? 2 : -1;
+        if (grupo >= 0) encontradas.push({ resultado, grupo });
+    }
+
+    // `avaliadas` já vem do maior para o menor match, e a ordenação é estável.
+    return encontradas.sort((a, b) => a.grupo - b.grupo).slice(0, LIMITE_BUSCA).map(({ resultado }) => resultado);
 }

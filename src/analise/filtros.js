@@ -65,6 +65,11 @@ export function aplicarFiltros(respostas, cidades, ignorar = null) {
     return cidades.filter((cidade) => ativos.every(({ passa }) => passa(cidade, respostas)));
 }
 
+// Rótulos dos filtros ativos que eliminam a cidade do ranking.
+export function filtrosReprovados(respostas, cidade) {
+    return FILTROS.filter(({ ativo, passa }) => ativo(respostas) && !passa(cidade, respostas)).map(({ rotulo }) => rotulo);
+}
+
 // O filtro que, se removido, devolveria mais cidades. Usado para orientar quando sobram poucas.
 export function filtroMaisRestritivo(respostas, cidades) {
     const atuais = aplicarFiltros(respostas, cidades).length;
