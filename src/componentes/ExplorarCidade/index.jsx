@@ -89,13 +89,14 @@ const BotaoVidro = styled.button`
     }
 `;
 
+// Até 1420px, nomes longos como Itaquaquecetuba não caberiam inteiros ao lado dos fatos: empilha os dois.
 const BaseHero = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     gap: 32px;
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1420px) {
         flex-direction: column;
         align-items: stretch;
     }
@@ -139,6 +140,10 @@ const NomeCidade = styled.h1`
         font-size: 44px;
         letter-spacing: -1.2px;
     }
+
+    @media (max-width: 480px) {
+        font-size: 8.5vw;
+    }
 `;
 
 const Lema = styled.p`
@@ -155,8 +160,20 @@ const LateralHero = styled.div`
     gap: 12px;
     min-width: 0;
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1420px) {
         align-items: flex-start;
+    }
+`;
+
+// A largura zero com mínimo de 100% impede que um crédito longo alargue a coluna: ele acompanha os fatos e é cortado com reticências.
+const LinhaCredito = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    width: 0;
+    min-width: 100%;
+
+    @media (max-width: 1420px) {
+        justify-content: flex-start;
     }
 `;
 
@@ -827,7 +844,7 @@ function ExplorarCidade({ usuario, onNavegar, onNovaAnalise, onVoltar, rotuloVol
                                 ))}
                             </FatosRapidos>
                         )}
-                        {cidade.foto && <CreditoFoto foto={cidade.foto} />}
+                        {cidade.foto && <LinhaCredito><CreditoFoto foto={cidade.foto} /></LinhaCredito>}
                     </LateralHero>
                 </BaseHero>
             </Hero>
