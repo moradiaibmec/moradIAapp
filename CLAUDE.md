@@ -22,7 +22,7 @@ Implemented: Login, Dashboard, Meu perfil, the analysis onboarding (6 adaptive s
 ## Architecture & conventions
 
 - React 19 + Vite, plain JavaScript (`.jsx`), no TypeScript, no router.
-- `src/main.jsx` mounts `App`, which currently renders `Login` directly.
+- `src/main.jsx` mounts `App`, which picks the screen from state. The screen is mirrored in the query string (`?tela=ranking&analise=...`, logic in `src/analise/rotas.js`) so F5 and the browser's Back button work; onboarding answers survive F5 in `sessionStorage` (`src/analise/rascunho.js`). Query string, not paths: it needs no hosting rewrite, and the hash is used by Perfil's section anchors and the login redirect.
 - Pure analysis logic (answers model, weight suggestions, filters) lives in `src/analise/` with Vitest tests next to each file; UI components only read `respostas` and call `alterar(secao, valor)`.
 - Components live in `src/componentes/<Nome>/index.jsx` (folder is `componentes`, Portuguese spelling).
 - Styling uses **styled-components**, defined in the same file as the component. Transient props use the `$` prefix (e.g. `$destaque`, `$valor`) so they aren't forwarded to the DOM.

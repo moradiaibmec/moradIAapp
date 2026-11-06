@@ -458,11 +458,10 @@ function FichaDaCidade({ resultado, respostas, fontes }) {
 
 function ExplorarCidade({
     usuario, onNavegar, onNovaAnalise, onVoltar, rotuloVoltar = 'Voltar aos resultados', resultado, posicao, cidade, cidades, respostas, fontes,
-    salva, onAlternarSalva,
+    salva, onAlternarSalva, aba, onAba,
 }) {
     const nome = nomeDaCidade(resultado.cidade);
     const fatos = fatosDaCidade(cidade);
-    const [abaAtiva, setAbaAtiva] = useState('geral');
     const [salvando, setSalvando] = useState(false);
     const [erroSalvar, setErroSalvar] = useState(false);
     const simulador = useSimulador(cidade, respostas);
@@ -524,9 +523,9 @@ function ExplorarCidade({
                     <Aba
                         key={id}
                         type="button"
-                        $ativa={id === abaAtiva}
-                        aria-current={id === abaAtiva ? 'page' : undefined}
-                        onClick={() => setAbaAtiva(id)}
+                        $ativa={id === aba}
+                        aria-current={id === aba ? 'page' : undefined}
+                        onClick={() => onAba(id)}
                     >
                         {rotulo}
                     </Aba>
@@ -534,7 +533,7 @@ function ExplorarCidade({
             </Abas>
 
             <Corpo>
-                {abaAtiva === 'geral' && (
+                {aba === 'geral' && (
                     <>
                         <Coluna>
                             <FichaDaCidade resultado={resultado} respostas={respostas} fontes={fontes} />
@@ -545,20 +544,20 @@ function ExplorarCidade({
                         </Coluna>
                     </>
                 )}
-                {abaAtiva === 'custo' && (
+                {aba === 'custo' && (
                     <>
                         <Coluna><AbaCusto {...dadosDaAba} /></Coluna>
                         <Coluna $largura={420}><SimuladorCusto nome={nome} simulador={simulador} /></Coluna>
                     </>
                 )}
-                {abaAtiva === 'clima' && (
+                {aba === 'clima' && (
                     <>
                         <Coluna><AbaClima {...dadosDaAba} /></Coluna>
                         <Coluna $largura={420}><ClimaDaCidade cidade={cidade} /></Coluna>
                     </>
                 )}
-                {abaAtiva === 'trabalho' && <Coluna><AbaTrabalho {...dadosDaAba} /></Coluna>}
-                {abaAtiva === 'educacao' && <Coluna><AbaEducacaoSaude {...dadosDaAba} /></Coluna>}
+                {aba === 'trabalho' && <Coluna><AbaTrabalho {...dadosDaAba} /></Coluna>}
+                {aba === 'educacao' && <Coluna><AbaEducacaoSaude {...dadosDaAba} /></Coluna>}
             </Corpo>
         </Pagina>
     );

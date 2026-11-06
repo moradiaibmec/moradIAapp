@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from "styled-components"
 import { FiClock, FiCompass, FiX } from 'react-icons/fi';
 import { calcularMatch } from '../../analise/match.js';
 import { aplicarFiltros } from '../../analise/filtros.js';
+import { gravarRascunho, lerRascunho } from '../../analise/rascunho.js';
 import { sugerirPesos } from '../../analise/prePreenchimento.js';
 import {
     criarRespostasIniciais, etapaAnterior, etapasVisiveis, limparEtapa, limparEtapasOcultas, podeAvancar, proximaEtapa,
@@ -247,12 +248,19 @@ function isObjetoSimples(valor) {
     return valor !== null && typeof valor === 'object' && !Array.isArray(valor);
 }
 
-function Onboarding({ usuario, cidades, onSair, onConcluir }) {
-    const [respostas, setRespostas] = useState(criarRespostasIniciais);
-    const [etapaAtual, setEtapaAtual] = useState('momento');
-    const [pesosAjustados, setPesosAjustados] = useState(false);
+// A etapa fica na URL (com o App); as respostas, num rascunho que sobrevive ao F5.
+function Onboarding({ usuario, cidades, etapa, onEtapa, onSair, onConcluir }) {
+    const [rascunho] = useState(() => lerRascunho(usuario.id));
+    const [respostas, setRespostas] = useState(() => rascunho?.respostas ?? criarRespostasIniciais());
+    const [pesosAjustados, setPesosAjustados] = useState(rascunho?.pesosAjustados ?? false);
+
+    useEffect(() => {
+        gravarRascunho(usuario.id, { respostas, pesosAjustados });
+    }, [usuario.id, respostas, pesosAjustados]);
 
     const etapas = etapasVisiveis(respostas);
+    // A etapa da URL pode não existir ou não se aplicar a estas respostas.
+    const etapaAtual = etapas.includes(etapa) ? etapa : etapas[0];
     const posicao = etapas.indexOf(etapaAtual) + 1;
     const restantes = aplicarFiltros(respostas, cidades).length;
     const { titulo, Componente } = ETAPAS_INFO[etapaAtual];
@@ -275,11 +283,6 @@ function Onboarding({ usuario, cidades, onSair, onConcluir }) {
         alterar('pesos', { [pilar]: nivel });
     }
 
-    function irPara(etapa) {
-        setEtapaAtual(etapa);
-        window.scrollTo(0, 0);
-    }
-
     // Os pesos só são sugeridos enquanto a pessoa não os ajustou à mão.
     function avancar(base) {
         const limpas = limparEtapasOcultas(base);
@@ -290,12 +293,12 @@ function Onboarding({ usuario, cidades, onSair, onConcluir }) {
         }
         const sugerir = proxima === 'prioridades' && !pesosAjustados;
         setRespostas(sugerir ? { ...limpas, pesos: sugerirPesos(limpas).pesos } : limpas);
-        irPara(proxima);
+        onEtapa(proxima);
     }
 
     function voltar() {
         const anterior = etapaAnterior(etapas, etapaAtual);
-        if (anterior) irPara(anterior);
+        if (anterior) onEtapa(anterior);
         else onSair();
     }
 
