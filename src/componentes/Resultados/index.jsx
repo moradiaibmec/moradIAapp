@@ -623,14 +623,10 @@ const LinkSeta = styled.button`
     font-family: var(--fonte-moradia);
     font-size: 14px;
     font-weight: 600;
+    cursor: pointer;
 
     svg {
         font-size: 16px;
-    }
-
-    &:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
     }
 `;
 
@@ -723,6 +719,21 @@ const LemaOutra = styled.span`
     color: #5B6475;
 `;
 
+const LinkMetodologia = styled.button`
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--roxo-moradia);
+    font-family: var(--fonte-moradia);
+    font-size: inherit;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+`;
+
 const RAIO = 78;
 const ESPESSURA = 12;
 const CIRCUNFERENCIA = 2 * Math.PI * RAIO;
@@ -756,7 +767,7 @@ function textoStatus(resultados) {
 
 function Resultados({
     usuario, onNavegar, onNovaAnalise, respostas, resultados, cidades, fontes, salvamento, onTentarSalvar,
-    selecionada, onSelecionar, onExplorar, onComparar,
+    selecionada, onSelecionar, onExplorar, onComparar, onVerRanking,
 }) {
     const destaque = resultados[selecionada];
     const nome = nomeDaCidade(destaque.cidade);
@@ -837,7 +848,10 @@ function Resultados({
                         <TopoCartao>
                             <TextoTopo>
                                 <TituloCartao id="titulo-indicadores">Análise de indicadores</TituloCartao>
-                                <p>Como {nome} se sai nas prioridades que você definiu</p>
+                                <p>
+                                    Como {nome} se sai nas prioridades que você definiu.{' '}
+                                    <LinkMetodologia type="button" onClick={() => onNavegar('metodologia')}>Como calculamos?</LinkMetodologia>
+                                </p>
                             </TextoTopo>
                             {media !== null && <Media><LuTrendingUp aria-hidden="true" /> Média geral {media}%</Media>}
                         </TopoCartao>
@@ -917,7 +931,7 @@ function Resultados({
                                 <TituloCartao id="titulo-outras">Outras cidades que combinam com você</TituloCartao>
                                 <p>Alternativas com alta compatibilidade para o seu perfil</p>
                             </TextoTopo>
-                            <LinkSeta type="button" disabled title="Em breve">Ver ranking completo <LuArrowRight aria-hidden="true" /></LinkSeta>
+                            <LinkSeta type="button" onClick={onVerRanking}>Ver ranking completo <LuArrowRight aria-hidden="true" /></LinkSeta>
                         </CabecalhoOutras>
                         <GradeOutras>
                             {outras.map(({ resultado, indice }, posicao) => {

@@ -2,14 +2,14 @@
 // os rótulos só aparecem na interface.
 
 export const PILARES = [
-    { id: 'custo', rotulo: 'Custo de vida', descricao: 'Quanto da sua renda a cidade compromete com moradia e custos básicos.' },
+    { id: 'custo', rotulo: 'Custo de vida', descricao: 'Quanto da sua renda o aluguel da cidade compromete.' },
     { id: 'seguranca', rotulo: 'Segurança', descricao: 'Taxa de homicídios por 100 mil habitantes.' },
     { id: 'clima', rotulo: 'Clima', descricao: 'O quanto o clima da cidade combina com o que você prefere.' },
     { id: 'trabalho', rotulo: 'Trabalho', descricao: 'Emprego formal e oportunidades no seu setor.' },
-    { id: 'saude', rotulo: 'Saúde', descricao: 'Médicos e leitos por habitante.' },
+    { id: 'saude', rotulo: 'Saúde', descricao: 'Leitos por habitante.' },
     { id: 'educacao', rotulo: 'Educação', descricao: 'Qualidade das escolas e oferta de ensino superior.' },
-    { id: 'lazer', rotulo: 'Lazer & cultura', descricao: 'Restaurantes, bares e equipamentos culturais por habitante.' },
-    { id: 'natureza', rotulo: 'Natureza', descricao: 'Parques, áreas verdes e praia.' },
+    { id: 'lazer', rotulo: 'Lazer & cultura', descricao: 'Empregos em bares, restaurantes, hospedagem e cultura por habitante.' },
+    { id: 'natureza', rotulo: 'Natureza', descricao: 'Arborização das ruas e praia.' },
 ];
 
 export const NIVEIS_IMPORTANCIA = [

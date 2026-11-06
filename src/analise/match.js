@@ -5,17 +5,17 @@ import { aluguelDoDomicilio, aplicarFiltros } from './filtros.js';
 import { sugerirPesos } from './prePreenchimento.js';
 import { pontoMedioRenda } from './respostas.js';
 
-const VALOR_PESO = { essencial: 3, importante: 1, tantoFaz: 0 };
+export const VALOR_PESO = { essencial: 3, importante: 1, tantoFaz: 0 };
 const NOTA_NEUTRA = 50;
-const PENALIDADE_ESSENCIAL = 0.85;
-const LIMITE_ESSENCIAL_RUIM = 30;
+export const PENALIDADE_ESSENCIAL = 0.85;
+export const LIMITE_ESSENCIAL_RUIM = 30;
 const LIMITE_PONTO_FORTE = 70;
 const LIMITE_PONTO_ATENCAO = 40;
 const MAXIMO_PONTOS_FORTES = 3;
-const BONUS_PRAIA = 15;
-const PERDA_POR_GRAU = 15;
-const COMPROMETIMENTO_IDEAL = 0.25;
-const COMPROMETIMENTO_MAXIMO = 0.6;
+export const BONUS_PRAIA = 15;
+export const PERDA_POR_GRAU = 15;
+export const COMPROMETIMENTO_IDEAL = 0.25;
+export const COMPROMETIMENTO_MAXIMO = 0.6;
 
 const FAIXAS_TEMPERATURA = {
     calor: { indicador: 'tempMedia', minimo: 24, maximo: Infinity },

@@ -1,24 +1,28 @@
+import { useState } from 'react';
 import styled from "styled-components"
-import { LuArrowLeft, LuHeart, LuPencil, LuShare2, LuSlidersHorizontal, LuSnowflake, LuSparkles, LuSun } from 'react-icons/lu';
+import { LuArrowLeft, LuHeart, LuShare2, LuSparkles } from 'react-icons/lu';
 import CabecalhoApp from '../CabecalhoApp/index.jsx';
 import IconePilar from '../IconePilar/index.jsx';
 import CreditoFoto from '../CreditoFoto/index.jsx';
+import SimuladorCusto from './SimuladorCusto.jsx';
+import { AbaClima, AbaCusto, AbaEducacaoSaude, AbaTrabalho, ClimaDaCidade } from './AbasCidade.jsx';
+import { useSimulador } from './useSimulador.js';
+import {
+    Cartao, Ponto, Preenchimento, SeloEstimado, TextoTopo, TituloCartao, TopoCartao, Trilho,
+} from './estilos.js';
 import { PILARES, REGIOES } from '../../analise/opcoes.js';
 import { comoFoiEstimado, fonteDoPilar, fraseDoPilar, lemaDaCidade, nomeDaCidade, qualificarNota } from '../../analise/explicacao.js';
-import { formatarPopulacao, formatarReais, nomeDoEstado } from '../../analise/formatacao.js';
-import { aluguelDoDomicilio } from '../../analise/filtros.js';
-import { pontoMedioRenda } from '../../analise/respostas.js';
+import { formatarPopulacao, nomeDoEstado } from '../../analise/formatacao.js';
 
 const NOTA_EXCELENTE = 85;
-const INVERNO_FRIO = 15;
-const VERAO_QUENTE = 27;
-const TEMPERATURA_FRIA = 16;
 
-// Só "Visão geral" tem conteúdo por enquanto.
-const ABAS = ['Visão geral', 'Bairros', 'Custo de vida', 'Clima', 'Mercado de trabalho', 'Educação e saúde'];
-
-const COR_MORADIA = '#4F46E5';
-const COR_SALDO = '#10B981';
+const ABAS = [
+    { id: 'geral', rotulo: 'Visão geral' },
+    { id: 'custo', rotulo: 'Custo de vida' },
+    { id: 'clima', rotulo: 'Clima' },
+    { id: 'trabalho', rotulo: 'Mercado de trabalho' },
+    { id: 'educacao', rotulo: 'Educação e saúde' },
+];
 
 const Pagina = styled.div`
     min-height: 100vh;
@@ -247,7 +251,23 @@ const Aba = styled.button`
     font-family: var(--fonte-moradia);
     font-size: 14px;
     font-weight: ${({ $ativa }) => ($ativa ? 600 : 500)};
-    cursor: ${({ $ativa }) => ($ativa ? 'default' : 'not-allowed')};
+    cursor: ${({ $ativa }) => ($ativa ? 'default' : 'pointer')};
+
+    &:hover {
+        color: var(--roxo-moradia);
+    }
+`;
+
+const AvisoErro = styled.p`
+    padding: 12px 80px;
+    background-color: #FEF2F2;
+    color: #B91C1C;
+    font-size: 14px;
+    font-weight: 600;
+
+    @media (max-width: 900px) {
+        padding: 12px 16px;
+    }
 `;
 
 const Corpo = styled.main`
@@ -279,49 +299,6 @@ const Coluna = styled.div`
     }
 `;
 
-const Cartao = styled.section`
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    padding: 28px;
-    border: 1px solid #E6E8EC;
-    border-radius: 20px;
-    background-color: #FFFFFF;
-
-    @media (max-width: 600px) {
-        padding: 20px;
-    }
-`;
-
-const TopoCartao = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-`;
-
-const TextoTopo = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-
-    p {
-        font-size: 14px;
-        line-height: 1.45;
-        color: #5B6475;
-    }
-`;
-
-const TituloCartao = styled.h2`
-    margin: 0;
-    font-family: var(--fonte-titulo);
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-    color: #0F172A;
-`;
-
 const Legenda = styled.ul`
     display: flex;
     gap: 16px;
@@ -336,14 +313,6 @@ const Legenda = styled.ul`
         font-size: 12px;
         color: #5B6475;
     }
-`;
-
-const Ponto = styled.span`
-    flex-shrink: 0;
-    width: ${({ $tamanho = 8 }) => $tamanho}px;
-    height: ${({ $tamanho = 8 }) => $tamanho}px;
-    border-radius: 50%;
-    background-color: ${({ $cor }) => $cor};
 `;
 
 const GradeFicha = styled.ul`
@@ -422,223 +391,7 @@ const TextoPilar = styled.div`
     }
 `;
 
-const SeloEstimado = styled.span`
-    padding: 2px 6px;
-    border-radius: 6px;
-    background-color: #FFFBEB;
-    color: #B45309 !important;
-    font-size: 11px !important;
-    font-weight: 700;
-    cursor: help;
-`;
-
-const Trilho = styled.div`
-    height: 6px;
-    border-radius: 3px;
-    background-color: #E8EAF0;
-    overflow: hidden;
-`;
-
-const Preenchimento = styled.div`
-    width: ${({ $valor }) => $valor}%;
-    height: 100%;
-    border-radius: inherit;
-    background-color: ${({ $forte }) => ($forte ? 'var(--roxo-moradia)' : '#A5B4FC')};
-`;
-
-const CaixaRenda = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: 20px;
-    border-radius: 14px;
-    background-color: #EEF0FF;
-
-    > span {
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--roxo-moradia);
-    }
-`;
-
-const LinhaRenda = styled.div`
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 12px;
-
-    strong {
-        font-family: var(--fonte-titulo);
-        font-size: 32px;
-        font-weight: 800;
-        letter-spacing: -0.8px;
-        color: #0F172A;
-    }
-`;
-
-const BotaoEditar = styled.button`
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 0 0 6px;
-    border: none;
-    background: none;
-    color: var(--roxo-moradia);
-    font-family: var(--fonte-moradia);
-    font-size: 13px;
-    font-weight: 600;
-
-    svg {
-        font-size: 14px;
-    }
-
-    &:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-    }
-`;
-
-const Distribuicao = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-`;
-
-const BarraEmpilhada = styled.div`
-    display: flex;
-    gap: 3px;
-    height: 12px;
-`;
-
-const Segmento = styled.span`
-    flex: ${({ $peso }) => $peso};
-    border-radius: 3px;
-    background-color: ${({ $cor }) => $cor};
-`;
-
-const ListaGastos = styled.ul`
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-`;
-
-const ItemGasto = styled.li`
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: ${({ $saldo }) => ($saldo ? '14px 12px' : '12px 0')};
-    border-bottom: ${({ $saldo }) => ($saldo ? 'none' : '1px solid #E6E8EC')};
-    border-radius: ${({ $saldo }) => ($saldo ? '10px' : '0')};
-    background-color: ${({ $saldo }) => ($saldo ? '#ECFDF5' : 'transparent')};
-    color: ${({ $saldo }) => ($saldo ? '#047857' : '#0F172A')};
-    font-size: 14px;
-
-    span:nth-of-type(2) {
-        flex: 1;
-        font-weight: ${({ $saldo }) => ($saldo ? 700 : 500)};
-    }
-
-    small {
-        font-size: 13px;
-        color: ${({ $saldo }) => ($saldo ? '#047857' : '#5B6475')};
-    }
-
-    strong {
-        font-weight: 700;
-    }
-`;
-
-const BotaoPrimario = styled.button`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 12px;
-    background-color: var(--roxo-moradia);
-    color: #FFFFFF;
-    font-family: var(--fonte-moradia);
-    font-size: 15px;
-    font-weight: 600;
-
-    svg {
-        font-size: 16px;
-    }
-
-    &:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-    }
-`;
-
-const AvisoSemDado = styled.p`
-    font-size: 14px;
-    line-height: 1.5;
-    color: #5B6475;
-`;
-
-const Grafico = styled.ul`
-    display: flex;
-    align-items: flex-end;
-    gap: 16px;
-    height: 150px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-`;
-
-const ColunaGrafico = styled.li`
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 6px;
-    height: 100%;
-
-    strong {
-        font-size: 11px;
-        font-weight: 600;
-        color: #5B6475;
-    }
-
-    span {
-        font-size: 12px;
-        color: #5B6475;
-        text-align: center;
-    }
-`;
-
-const Barra = styled.div`
-    width: 100%;
-    height: ${({ $altura }) => $altura}px;
-    border-radius: 4px;
-    background-color: ${({ $fria }) => ($fria ? '#93C5FD' : '#FCD34D')};
-`;
-
-const Nota = styled.p`
-    display: flex;
-    gap: 8px;
-    padding: 14px;
-    border-radius: 12px;
-    background-color: ${({ $quente }) => ($quente ? '#FFF7E6' : '#EFF6FF')};
-    color: ${({ $quente }) => ($quente ? '#92400E' : '#1E3A8A')};
-    font-size: 13px;
-    line-height: 1.45;
-
-    svg {
-        flex-shrink: 0;
-        font-size: 16px;
-        color: ${({ $quente }) => ($quente ? '#D97706' : '#2563EB')};
-    }
-`;
-
 const graus = (valor) => `${Math.round(valor)} °C`;
-const alturaDaBarra = (temperatura) => Math.min(110, Math.max(12, (temperatura - 5) * 4.5));
 const nomeDaRegiao = (id) => REGIOES.find((regiao) => regiao.id === id)?.rotulo;
 
 function fatosDaCidade(cidade) {
@@ -703,112 +456,25 @@ function FichaDaCidade({ resultado, respostas, fontes }) {
     );
 }
 
-// Sem dados de alimentação, transporte e lazer na base, o simulador separa só aluguel e saldo livre.
-function SimuladorCusto({ nome, cidade, respostas }) {
-    const renda = pontoMedioRenda(respostas.orcamento.faixaRenda);
-    const aluguel = aluguelDoDomicilio(cidade, respostas.domicilio);
-    const saldo = renda === null || aluguel === null ? null : renda - aluguel;
-    const fatia = (valor) => Math.round((100 * valor) / renda);
-
-    return (
-        <Cartao aria-labelledby="titulo-simulador">
-            <TextoTopo>
-                <TituloCartao id="titulo-simulador">Simulador de custo mensal</TituloCartao>
-                <p>
-                    {renda === null
-                        ? `Aluguel médio em ${nome} para o tamanho do seu domicílio`
-                        : `Projeção baseada na sua renda e no aluguel médio de ${nome}`}
-                </p>
-            </TextoTopo>
-
-            <CaixaRenda>
-                <span>{renda === null ? 'Aluguel médio estimado' : 'Renda mensal prevista'}</span>
-                <LinhaRenda>
-                    <strong>{renda === null ? (aluguel === null ? '—' : formatarReais(aluguel)) : formatarReais(renda)}</strong>
-                    <BotaoEditar type="button" disabled title="Em breve"><LuPencil aria-hidden="true" /> Editar</BotaoEditar>
-                </LinhaRenda>
-            </CaixaRenda>
-
-            {aluguel === null && <AvisoSemDado>Ainda não temos dado de aluguel para {nome}.</AvisoSemDado>}
-
-            {saldo !== null && (
-                <Distribuicao>
-                    <BarraEmpilhada aria-hidden="true">
-                        <Segmento $peso={Math.min(aluguel, renda)} $cor={COR_MORADIA} />
-                        {saldo > 0 && <Segmento $peso={saldo} $cor={COR_SALDO} />}
-                    </BarraEmpilhada>
-                    <ListaGastos>
-                        <ItemGasto>
-                            <Ponto $tamanho={10} $cor={COR_MORADIA} />
-                            <span>Moradia e aluguel</span>
-                            <small>{fatia(aluguel)}%</small>
-                            <strong>{formatarReais(aluguel)}</strong>
-                        </ItemGasto>
-                        <ItemGasto $saldo>
-                            <Ponto $tamanho={10} $cor={COR_SALDO} />
-                            <span>Saldo livre</span>
-                            <small>{fatia(saldo)}%</small>
-                            <strong>{formatarReais(saldo)}</strong>
-                        </ItemGasto>
-                    </ListaGastos>
-                </Distribuicao>
-            )}
-
-            <BotaoPrimario type="button" disabled title="Em breve">
-                <LuSlidersHorizontal aria-hidden="true" /> Simular outro cenário
-            </BotaoPrimario>
-        </Cartao>
-    );
-}
-
-function ClimaDaCidade({ cidade }) {
-    const { tempMedia, tempMesFrio, tempMesQuente } = cidade.indicadores;
-    const barras = [
-        ['Mês mais frio', tempMesFrio],
-        ['Média anual', tempMedia],
-        ['Mês mais quente', tempMesQuente],
-    ].filter(([, valor]) => valor !== null && valor !== undefined);
-    if (barras.length === 0) return null;
-
-    const invernoFrio = tempMesFrio !== null && tempMesFrio !== undefined && tempMesFrio < INVERNO_FRIO;
-    const veraoQuente = tempMesQuente !== null && tempMesQuente !== undefined && tempMesQuente >= VERAO_QUENTE;
-
-    return (
-        <Cartao aria-labelledby="titulo-clima">
-            <TextoTopo>
-                <TituloCartao id="titulo-clima">Clima ao longo do ano</TituloCartao>
-                <p>Temperatura média (°C)</p>
-            </TextoTopo>
-
-            <Grafico>
-                {barras.map(([rotulo, valor]) => (
-                    <ColunaGrafico key={rotulo}>
-                        <strong>{Math.round(valor)}°</strong>
-                        <Barra $altura={alturaDaBarra(valor)} $fria={valor <= TEMPERATURA_FRIA} />
-                        <span>{rotulo}</span>
-                    </ColunaGrafico>
-                ))}
-            </Grafico>
-
-            {invernoFrio && (
-                <Nota>
-                    <LuSnowflake aria-hidden="true" />
-                    Inverno frio, com média de {graus(tempMesFrio)} no mês mais frio. Considere imóveis com boa vedação e aquecimento.
-                </Nota>
-            )}
-            {!invernoFrio && veraoQuente && (
-                <Nota $quente>
-                    <LuSun aria-hidden="true" />
-                    Verão quente, com média de {graus(tempMesQuente)} no mês mais quente. Considere imóveis com boa ventilação ou ar-condicionado.
-                </Nota>
-            )}
-        </Cartao>
-    );
-}
-
-function ExplorarCidade({ usuario, onNavegar, onNovaAnalise, onVoltar, rotuloVoltar = 'Voltar aos resultados', resultado, posicao, cidade, respostas, fontes }) {
+function ExplorarCidade({
+    usuario, onNavegar, onNovaAnalise, onVoltar, rotuloVoltar = 'Voltar aos resultados', resultado, posicao, cidade, cidades, respostas, fontes,
+    salva, onAlternarSalva,
+}) {
     const nome = nomeDaCidade(resultado.cidade);
     const fatos = fatosDaCidade(cidade);
+    const [abaAtiva, setAbaAtiva] = useState('geral');
+    const [salvando, setSalvando] = useState(false);
+    const [erroSalvar, setErroSalvar] = useState(false);
+    const simulador = useSimulador(cidade, respostas);
+    const dadosDaAba = { nome, cidade, cidades, respostas, resultado, fontes };
+
+    async function alternarSalva() {
+        setSalvando(true);
+        setErroSalvar(false);
+        const { error } = await onAlternarSalva();
+        setSalvando(false);
+        setErroSalvar(Boolean(error));
+    }
 
     return (
         <Pagina>
@@ -818,7 +484,9 @@ function ExplorarCidade({ usuario, onNavegar, onNovaAnalise, onVoltar, rotuloVol
                 <TopoHero>
                     <BotaoVidro type="button" onClick={onVoltar}><LuArrowLeft aria-hidden="true" /> {rotuloVoltar}</BotaoVidro>
                     <AcoesHero>
-                        <BotaoVidro type="button" disabled title="Em breve"><LuHeart aria-hidden="true" /> Salvar</BotaoVidro>
+                        <BotaoVidro type="button" onClick={alternarSalva} disabled={salvando} aria-pressed={salva}>
+                            <LuHeart aria-hidden="true" fill={salva ? 'currentColor' : 'none'} /> {salva ? 'Salva' : 'Salvar'}
+                        </BotaoVidro>
                         <BotaoVidro type="button" disabled title="Em breve"><LuShare2 aria-hidden="true" /> Compartilhar</BotaoVidro>
                     </AcoesHero>
                 </TopoHero>
@@ -849,29 +517,48 @@ function ExplorarCidade({ usuario, onNavegar, onNovaAnalise, onVoltar, rotuloVol
                 </BaseHero>
             </Hero>
 
+            {erroSalvar && <AvisoErro role="alert">Não foi possível atualizar suas cidades salvas. Tente novamente.</AvisoErro>}
+
             <Abas aria-label="Seções da cidade">
-                {ABAS.map((aba, indice) => (
+                {ABAS.map(({ id, rotulo }) => (
                     <Aba
-                        key={aba}
+                        key={id}
                         type="button"
-                        $ativa={indice === 0}
-                        aria-current={indice === 0 ? 'page' : undefined}
-                        disabled={indice !== 0}
-                        title={indice === 0 ? undefined : 'Em breve'}
+                        $ativa={id === abaAtiva}
+                        aria-current={id === abaAtiva ? 'page' : undefined}
+                        onClick={() => setAbaAtiva(id)}
                     >
-                        {aba}
+                        {rotulo}
                     </Aba>
                 ))}
             </Abas>
 
             <Corpo>
-                <Coluna>
-                    <FichaDaCidade resultado={resultado} respostas={respostas} fontes={fontes} />
-                </Coluna>
-                <Coluna $largura={420}>
-                    <SimuladorCusto nome={nome} cidade={cidade} respostas={respostas} />
-                    <ClimaDaCidade cidade={cidade} />
-                </Coluna>
+                {abaAtiva === 'geral' && (
+                    <>
+                        <Coluna>
+                            <FichaDaCidade resultado={resultado} respostas={respostas} fontes={fontes} />
+                        </Coluna>
+                        <Coluna $largura={420}>
+                            <SimuladorCusto nome={nome} simulador={simulador} />
+                            <ClimaDaCidade cidade={cidade} />
+                        </Coluna>
+                    </>
+                )}
+                {abaAtiva === 'custo' && (
+                    <>
+                        <Coluna><AbaCusto {...dadosDaAba} /></Coluna>
+                        <Coluna $largura={420}><SimuladorCusto nome={nome} simulador={simulador} /></Coluna>
+                    </>
+                )}
+                {abaAtiva === 'clima' && (
+                    <>
+                        <Coluna><AbaClima {...dadosDaAba} /></Coluna>
+                        <Coluna $largura={420}><ClimaDaCidade cidade={cidade} /></Coluna>
+                    </>
+                )}
+                {abaAtiva === 'trabalho' && <Coluna><AbaTrabalho {...dadosDaAba} /></Coluna>}
+                {abaAtiva === 'educacao' && <Coluna><AbaEducacaoSaude {...dadosDaAba} /></Coluna>}
             </Corpo>
         </Pagina>
     );

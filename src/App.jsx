@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
-import { listarAnalises, salvarAnalise, supabase } from './lib/supabase.js';
+import { listarAnalises, salvarAnalise, salvarCidades, supabase } from './lib/supabase.js';
 import { montarAnalise, paraHistorico } from './analise/analises.js';
 import { calcularMatch } from './analise/match.js';
 import { MAXIMO_COMPARADAS } from './analise/comparacao.js';
+import { alternarCidade } from './analise/cidadesSalvas.js';
 import { carregarBase } from './dados/base.js';
 import Login from './componentes/Login/index.jsx';
 import Dashboard from './componentes/Dashboard/index.jsx';
@@ -13,7 +14,18 @@ import Resultados from './componentes/Resultados/index.jsx';
 import ExplorarCidade from './componentes/ExplorarCidade/index.jsx';
 import CompararCidades from './componentes/CompararCidades/index.jsx';
 import CarregandoBase from './componentes/CarregandoBase/index.jsx';
+import RankingCompleto from './componentes/RankingCompleto/index.jsx';
+import MinhasCidades from './componentes/MinhasCidades/index.jsx';
+import ComoCalculamos from './componentes/ComoCalculamos/index.jsx';
 
+
+// Rótulo do "Voltar" da página da cidade, conforme a tela de onde a pessoa veio.
+const ROTULOS_VOLTAR = {
+  resultados: 'Voltar aos resultados',
+  ranking: 'Voltar ao ranking',
+  comparar: 'Voltar à comparação',
+  cidades: 'Voltar às minhas cidades',
+};
 
 function App(){
   const [sessao, setSessao] = useState(null);
@@ -36,6 +48,7 @@ function App(){
   const [base, setBase] = useState(null);
   const [erroBase, setErroBase] = useState(false);
   const idUsuario = sessao?.user?.id;
+  const cidadesSalvas = sessao?.user?.user_metadata?.perfil?.cidadesSalvas ?? [];
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
@@ -76,6 +89,12 @@ function App(){
       if (analises.length) abrirAnalise(analises[0].id, 'comparar');
       return;
     }
+    if (novaPagina === 'cidades' && !analiseAtual && analises.length) {
+      // O match das cidades salvas vem da análise mais recente.
+      abrirAnalise(analises[0].id, 'cidades');
+      return;
+    }
+    if (['cidades', 'metodologia'].includes(novaPagina) && !base) prepararBase();
     setPagina(novaPagina);
     window.scrollTo(0, 0);
   }
@@ -127,7 +146,7 @@ function App(){
   if (carregando) return null;
   if (!sessao) return <Login />;
 
-  if (pagina === 'onboarding' && !base) {
+  if (['onboarding', 'cidades', 'metodologia'].includes(pagina) && !base) {
     return <CarregandoBase erro={erroBase} onTentarDeNovo={prepararBase} onSair={() => navegar('dashboard')} />;
   }
 
@@ -139,7 +158,7 @@ function App(){
     return <Processamento totalCidades={base.cidades.length} onConcluido={() => navegar('resultados')} />;
   }
 
-  if (['resultados', 'explorar', 'comparar'].includes(pagina) && analiseAtual && !resultados) {
+  if (['resultados', 'ranking', 'explorar', 'comparar'].includes(pagina) && analiseAtual && !resultados) {
     return <CarregandoBase erro={erroBase} onTentarDeNovo={prepararBase} onSair={() => navegar('dashboard')} />;
   }
 
@@ -159,6 +178,52 @@ function App(){
         onSelecionar={setCidadeSelecionada}
         onExplorar={() => explorar(resultados[cidadeSelecionada].ibge, 'resultados')}
         onComparar={() => navegar('comparar')}
+        onVerRanking={() => navegar('ranking')}
+      />
+    );
+  }
+
+  if (pagina === 'ranking' && analiseAtual) {
+    return (
+      <RankingCompleto
+        usuario={sessao.user}
+        onNavegar={navegar}
+        onNovaAnalise={iniciarAnalise}
+        onVoltar={() => navegar('resultados')}
+        resultados={resultados}
+        cidades={base.cidades}
+        domicilio={analiseAtual.respostas.domicilio}
+        onVerCidade={(ibge) => explorar(ibge, 'ranking')}
+      />
+    );
+  }
+
+  if (pagina === 'cidades') {
+    return (
+      <MinhasCidades
+        usuario={sessao.user}
+        onNavegar={navegar}
+        onNovaAnalise={iniciarAnalise}
+        comparacaoIndisponivel={analises.length === 0}
+        cidadesSalvas={cidadesSalvas}
+        onSalvar={(lista) => salvarCidades(sessao.user, lista)}
+        cidades={base.cidades}
+        avaliadas={avaliadas}
+        ranking={resultados}
+        domicilio={analiseAtual?.respostas.domicilio ?? null}
+        onVerCidade={(ibge) => explorar(ibge, 'cidades')}
+      />
+    );
+  }
+
+  if (pagina === 'metodologia') {
+    return (
+      <ComoCalculamos
+        usuario={sessao.user}
+        onNavegar={navegar}
+        onNovaAnalise={iniciarAnalise}
+        comparacaoIndisponivel={analises.length === 0}
+        base={base}
       />
     );
   }
@@ -172,10 +237,13 @@ function App(){
         onNavegar={navegar}
         onNovaAnalise={iniciarAnalise}
         onVoltar={() => navegar(origemExplorar)}
-        rotuloVoltar={origemExplorar === 'comparar' ? 'Voltar à comparação' : 'Voltar aos resultados'}
+        rotuloVoltar={ROTULOS_VOLTAR[origemExplorar]}
         resultado={resultado}
         posicao={posicao === -1 ? null : posicao}
         cidade={base.cidades.find(({ ibge }) => ibge === resultado.ibge)}
+        cidades={base.cidades}
+        salva={cidadesSalvas.includes(resultado.cidade)}
+        onAlternarSalva={() => salvarCidades(sessao.user, alternarCidade(cidadesSalvas, resultado.cidade))}
         respostas={analiseAtual.respostas}
         fontes={base.fontes}
       />

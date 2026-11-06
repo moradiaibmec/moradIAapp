@@ -164,11 +164,11 @@ const BotaoSair = styled.button`
     }
 `;
 
-// Links sem `pagina` ainda não têm tela implementada.
 const linksNavegacao = [
     { rotulo: 'Dashboard', pagina: 'dashboard' },
-    { rotulo: 'Minhas cidades' },
+    { rotulo: 'Minhas cidades', pagina: 'cidades' },
     { rotulo: 'Comparar', pagina: 'comparar' },
+    { rotulo: 'Como calculamos', pagina: 'metodologia' },
     { rotulo: 'Meu perfil', pagina: 'perfil' },
 ];
 
@@ -201,7 +201,7 @@ function CabecalhoApp({ usuario, paginaAtiva, onNavegar, onNovaAnalise, comparac
                             $ativo={ativo}
                             $disponivel={disponivel}
                             aria-current={ativo ? 'page' : undefined}
-                            title={disponivel ? undefined : bloqueada ? 'Faça uma análise primeiro' : 'Em breve'}
+                            title={bloqueada ? 'Faça uma análise primeiro' : undefined}
                             onClick={disponivel && !ativo ? () => onNavegar(pagina) : undefined}
                         >
                             {rotulo}

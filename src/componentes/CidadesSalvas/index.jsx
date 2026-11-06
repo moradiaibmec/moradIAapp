@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import styled from "styled-components"
 import { FiMapPin, FiPlus, FiX } from 'react-icons/fi';
 import BuscaCidade from '../BuscaCidade/index.jsx';
+import { useCidadesSalvas } from './useCidadesSalvas.js';
 
 const Lista = styled.ul`
     display: grid;
@@ -108,31 +108,7 @@ function separarCidade(cidade) {
 }
 
 function CidadesSalvas({ cidades, onSalvar }) {
-    const [salvas, setSalvas] = useState(cidades);
-    const [salvando, setSalvando] = useState(false);
-    const [erroSalvar, setErroSalvar] = useState(false);
-
-    async function atualizar(novaLista) {
-        const anterior = salvas;
-        setSalvas(novaLista);
-        setSalvando(true);
-        setErroSalvar(false);
-        const { error } = await onSalvar(novaLista);
-        setSalvando(false);
-        if (error) {
-            setSalvas(anterior);
-            setErroSalvar(true);
-        }
-    }
-
-    function salvar(cidade) {
-        if (salvando || salvas.includes(cidade)) return;
-        atualizar([...salvas, cidade]);
-    }
-
-    function remover(cidade) {
-        atualizar(salvas.filter((item) => item !== cidade));
-    }
+    const { salvas, salvando, erroSalvar, salvar, remover } = useCidadesSalvas(cidades, onSalvar);
 
     return (
         <>

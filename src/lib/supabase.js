@@ -20,6 +20,12 @@ export function sair() {
     return supabase.auth.signOut();
 }
 
+// Grava a lista em user_metadata.perfil, preservando os outros campos do perfil.
+export function salvarCidades(usuario, cidadesSalvas) {
+    const perfil = usuario.user_metadata?.perfil ?? {};
+    return supabase.auth.updateUser({ data: { perfil: { ...perfil, cidadesSalvas } } });
+}
+
 // Tabela criada por supabase/migrations/20261019_analises.sql.
 export function salvarAnalise(analise) {
     return supabase.from('analises').insert(analise).select('id').single();
