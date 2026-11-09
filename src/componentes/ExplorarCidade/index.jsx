@@ -537,10 +537,10 @@ function ExplorarCidade({
                     <>
                         <Coluna>
                             <FichaDaCidade resultado={resultado} respostas={respostas} fontes={fontes} />
+                            <ClimaDaCidade cidade={cidade} />
                         </Coluna>
                         <Coluna $largura={420}>
                             <SimuladorCusto nome={nome} simulador={simulador} />
-                            <ClimaDaCidade cidade={cidade} />
                         </Coluna>
                     </>
                 )}
