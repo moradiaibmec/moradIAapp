@@ -4,7 +4,7 @@ import { baixar } from '../baixar.mjs';
 import { medianaAluguel2010 } from '../lib/aluguel.mjs';
 import { indicadoresEmprego, lazerPorMil } from '../lib/emprego.mjs';
 
-const POPULACAO_MINIMA = 100000;
+const POPULACAO_MINIMA = 50000;
 const URL_LOCALIDADES = 'https://servicodados.ibge.gov.br/api/v1/localidades/municipios?view=nivelado';
 const COORDENADAS = new URL('../../../src/dados/coordenadasMunicipios.json', import.meta.url);
 
@@ -26,6 +26,29 @@ async function sidra(caminho, arquivoCache) {
 }
 
 const localidades = (ibges) => (ibges ? `N6[${ibges.join(',')}]` : 'N6[all]');
+
+// O SIDRA responde HTTP 500 quando a lista de municípios na URL é grande demais (~650 já falha),
+// então as consultas por município vão em lotes e os resultados são juntados por categoria.
+const TAMANHO_LOTE = 250;
+
+async function sidraPorMunicipios(montarCaminho, ibges, prefixoCache) {
+    const lotes = [];
+    for (let i = 0; i < ibges.length; i += TAMANHO_LOTE) lotes.push(ibges.slice(i, i + TAMANHO_LOTE));
+    const respostas = [];
+    for (const [indice, lote] of lotes.entries()) {
+        const arquivo = lotes.length === 1 ? `${prefixoCache}-${ibges.length}.json` : `${prefixoCache}-${ibges.length}-lote${indice + 1}.json`;
+        respostas.push(await sidra(montarCaminho(`localidades=${encodeURIComponent(localidades(lote))}`), arquivo));
+    }
+    const porCategoria = new Map();
+    for (const resposta of respostas) {
+        for (const resultado of resposta[0].resultados) {
+            const chave = JSON.stringify(resultado.classificacoes);
+            if (porCategoria.has(chave)) porCategoria.get(chave).series.push(...resultado.series);
+            else porCategoria.set(chave, { ...resultado, series: [...resultado.series] });
+        }
+    }
+    return [{ ...respostas[0][0], resultados: [...porCategoria.values()] }];
+}
 
 export async function listarUniverso() {
     const municipios = JSON.parse((await baixar(URL_LOCALIDADES, { arquivoCache: 'ibge-municipios.json', fonte: 'IBGE localidades' })).toString('utf8'));
@@ -51,9 +74,10 @@ export async function listarUniverso() {
 // Mediana do aluguel em 2010 (R$ de 2010) para cada município pedido.
 export async function coletarAluguel2010(ibges) {
     const classificacao = `511[${CLASSES_ALUGUEL_2010.join(',')}]|125[0]|137[0]|65[0]|74[0]`;
-    const dados = await sidra(
-        `3511/periodos/2010/variaveis/1549?localidades=${encodeURIComponent(localidades(ibges))}&classificacao=${encodeURIComponent(classificacao)}`,
-        `ibge-aluguel-2010-${ibges.length}.json`,
+    const dados = await sidraPorMunicipios(
+        (filtro) => `3511/periodos/2010/variaveis/1549?${filtro}&classificacao=${encodeURIComponent(classificacao)}`,
+        ibges,
+        'ibge-aluguel-2010',
     );
     const contagens = new Map();
     for (const resultado of dados[0].resultados) {
@@ -70,9 +94,10 @@ export async function coletarAluguel2010(ibges) {
 
 export async function coletarEmprego(universo) {
     const classificacao = `12762[${Object.values(SECOES_CEMPRE).join(',')}]`;
-    const dados = await sidra(
-        `9510/periodos/2022|2024/variaveis/708?localidades=${encodeURIComponent(localidades(universo.map((m) => m.ibge)))}&classificacao=${encodeURIComponent(classificacao)}`,
-        `ibge-cempre-${universo.length}.json`,
+    const dados = await sidraPorMunicipios(
+        (filtro) => `9510/periodos/2022|2024/variaveis/708?${filtro}&classificacao=${encodeURIComponent(classificacao)}`,
+        universo.map((m) => m.ibge),
+        'ibge-cempre',
     );
     const letraDaCategoria = Object.fromEntries(Object.entries(SECOES_CEMPRE).map(([letra, id]) => [String(id), letra]));
     const porMunicipio = new Map();
@@ -112,9 +137,10 @@ export async function coletarEmprego(universo) {
 // Natureza: % dos domicílios com 5 ou mais árvores na face de quadra (Censo 2022, pesquisa do entorno, agregado 9585).
 export async function coletarArborizacao(universo) {
     const classificacao = '11275[91176]|14[72281]';
-    const dados = await sidra(
-        `9585/periodos/2022/variaveis/1009599?localidades=${encodeURIComponent(localidades(universo.map((m) => m.ibge)))}&classificacao=${encodeURIComponent(classificacao)}`,
-        `ibge-arborizacao-${universo.length}.json`,
+    const dados = await sidraPorMunicipios(
+        (filtro) => `9585/periodos/2022/variaveis/1009599?${filtro}&classificacao=${encodeURIComponent(classificacao)}`,
+        universo.map((m) => m.ibge),
+        'ibge-arborizacao',
     );
     const porIbge = new Map();
     for (const serie of dados[0].resultados[0].series) {

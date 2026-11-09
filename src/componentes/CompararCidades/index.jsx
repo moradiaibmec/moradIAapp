@@ -804,7 +804,7 @@ function BotaoAdicionar({ ranking, avaliadas, posicoes, comparadas, onAdicionar 
                     {opcoes.length === 0 ? (
                         <SemResultados>
                             {buscando
-                                ? 'Nenhuma cidade encontrada. A base tem os municípios com mais de 100 mil habitantes.'
+                                ? 'Nenhuma cidade encontrada. A base tem os municípios com 50 mil habitantes ou mais.'
                                 : 'Todas as cidades do seu ranking já estão na comparação. Pesquise outra cidade.'}
                         </SemResultados>
                     ) : (

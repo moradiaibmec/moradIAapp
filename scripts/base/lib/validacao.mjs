@@ -33,7 +33,7 @@ function checarCoerencia(cidades) {
     return erros;
 }
 
-export function validarBase(base, { ibgesFipezap, minimo = 290, maximo = 340 }) {
+export function validarBase(base, { ibgesFipezap, minimo = 620, maximo = 700 }) {
     const { cidades } = base;
     const erros = [];
 

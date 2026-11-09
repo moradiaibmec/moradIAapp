@@ -76,11 +76,11 @@ export const REGIOES = [
     { id: 'S', rotulo: 'Sul' },
 ];
 
-// Em ordem decrescente de população mínima (o ranking só tem cidades com mais de ~100 mil habitantes).
+// Em ordem decrescente de população mínima (o ranking só tem cidades com 50 mil habitantes ou mais).
 export const PORTES = [
     { id: 'metropole', rotulo: 'Metrópole', detalhe: 'Mais de 1 milhão', minimo: 1_000_000 },
     { id: 'grande', rotulo: 'Grande', detalhe: '500 mil a 1 milhão', minimo: 500_000 },
-    { id: 'media', rotulo: 'Média', detalhe: '100 a 500 mil', minimo: 0 },
+    { id: 'media', rotulo: 'Média', detalhe: '50 a 500 mil', minimo: 0 },
 ];
 
 export const RAIOS_KM = [100, 300, 600];

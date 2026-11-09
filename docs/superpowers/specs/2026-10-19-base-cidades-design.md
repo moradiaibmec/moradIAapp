@@ -143,3 +143,7 @@ Também há um teste automatizado (Vitest) do motor rodando sobre a base real, n
 - Encontrar a lista oficial de municípios defrontantes com o mar no IBGE. Se ela não estiver acessível de forma estável, usar a interseção do limite do município com `natural=coastline` no OpenStreetMap, e registrar a escolha.
 - Ler os formatos exatos dos arquivos do INEP, do CNES e do FipeZap (nomes de colunas e abas).
 - Mapear os nomes das abas do FipeZap para "Nome, UF". As abas trazem só o nome, e há homônimos possíveis.
+
+## Atualização (2026-11-08): corte de 50 mil habitantes
+
+O universo passou de ≥ 100 mil para **≥ 50 mil habitantes** (Censo 2022): 657 municípios. A validação agora espera entre 620 e 700 cidades. As consultas ao SIDRA por município vão em lotes de 250, porque a URL com os 657 de uma vez responde HTTP 500. Na geração, 621 cidades ficaram com aluguel estimado (36 com FipeZap), 18 sem `crescimentoEmprego` e 8 com 0 leitos cadastrados (cidades-dormitório de regiões metropolitanas).

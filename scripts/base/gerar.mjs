@@ -24,7 +24,7 @@ async function etapa(nome, tarefa) {
 
 async function gerar() {
     const { todos, universo } = await etapa('Universo (IBGE, Censo 2022)', listarUniverso);
-    log(`   ${universo.length} municípios com 100 mil habitantes ou mais`);
+    log(`   ${universo.length} municípios com 50 mil habitantes ou mais`);
 
     const fipezap = await etapa('Aluguel medido (FipeZap)', () => coletarFipezap(todos));
     const comAluguelMedido = new Set([...fipezap.porIbge.keys()]);
