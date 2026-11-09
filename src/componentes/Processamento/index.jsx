@@ -166,7 +166,7 @@ const Rodape = styled.p`
     color: #6B7280;
 `;
 
-// Tela de espera entre o fim do onboarding e os resultados. O cálculo é instantâneo;
+// Tela de espera entre o pagamento e os resultados. O cálculo é instantâneo;
 // a animação dá tempo para a análise ser salva e para a pessoa acompanhar o que está sendo feito.
 function Processamento({ totalCidades, onConcluido }) {
     const [concluidas, setConcluidas] = useState(0);

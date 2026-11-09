@@ -6,6 +6,7 @@ import urlDaBase from './cidades.json?url';
 import urlDasFotos from './fotos.json?url';
 
 let promessaBase;
+let promessaFotos;
 
 function baixarJson(url, descricao) {
     return fetch(url).then((resposta) => {
@@ -14,12 +15,19 @@ function baixarJson(url, descricao) {
     });
 }
 
+// Fotos por código IBGE. Sem elas tudo funciona do mesmo jeito: a falha vira uma lista vazia, e a próxima chamada tenta de novo.
+export function carregarFotos() {
+    promessaFotos ??= baixarJson(urlDasFotos, 'as fotos')
+        .then(({ fotos }) => fotos)
+        .catch(() => {
+            promessaFotos = undefined;
+            return {};
+        });
+    return promessaFotos;
+}
+
 export function carregarBase() {
-    promessaBase ??= Promise.all([
-        baixarJson(urlDaBase, 'as cidades'),
-        // Sem fotos a análise funciona do mesmo jeito: a falha delas não derruba a base.
-        baixarJson(urlDasFotos, 'as fotos').then(({ fotos }) => fotos).catch(() => ({})),
-    ])
+    promessaBase ??= Promise.all([baixarJson(urlDaBase, 'as cidades'), carregarFotos()])
         .then(([base, fotosPorIbge]) => ({
             ...base,
             cidades: base.cidades.map((cidade) => ({ ...cidade, foto: fotosPorIbge[cidade.ibge] ?? null })),

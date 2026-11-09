@@ -4,7 +4,8 @@ import { montarAnalise, paraHistorico } from './analise/analises.js';
 import { calcularMatch } from './analise/match.js';
 import { MAXIMO_COMPARADAS, MINIMO_COMPARADAS } from './analise/comparacao.js';
 import { alternarCidade } from './analise/cidadesSalvas.js';
-import { apagarRascunho, lerRascunho } from './analise/rascunho.js';
+import { apagarRascunho, gravarRascunho, lerRascunho } from './analise/rascunho.js';
+import { etapasVisiveis } from './analise/respostas.js';
 import { TELAS_DE_ANALISE, deveEmpilhar, lerUrl, montarUrl } from './analise/rotas.js';
 import { carregarBase } from './dados/base.js';
 import Login from './componentes/Login/index.jsx';
@@ -12,6 +13,7 @@ import Dashboard from './componentes/Dashboard/index.jsx';
 import Perfil from './componentes/Perfil/index.jsx';
 import Onboarding from './componentes/Onboarding/index.jsx';
 import Processamento from './componentes/Processamento/index.jsx';
+import Pagamento from './componentes/Pagamento/index.jsx';
 import Resultados from './componentes/Resultados/index.jsx';
 import ExplorarCidade from './componentes/ExplorarCidade/index.jsx';
 import CompararCidades from './componentes/CompararCidades/index.jsx';
@@ -27,6 +29,7 @@ const ROTULOS_VOLTAR = {
   ranking: 'Voltar ao ranking',
   comparar: 'Voltar à comparação',
   cidades: 'Voltar às minhas cidades',
+  dashboard: 'Voltar ao dashboard',
 };
 
 function App(){
@@ -39,6 +42,8 @@ function App(){
   const [analisesCarregadas, setAnalisesCarregadas] = useState(false);
   // Análise recém-concluída: { id, respostas, resultados }. O `id` só existe depois de salva.
   const [analiseNova, setAnaliseNova] = useState(null);
+  // Questionário concluído e ainda não pago: { respostas, resultados }. Fica fora de `analiseNova` para nenhuma tela mostrar o resultado antes do pagamento.
+  const [analisePendente, setAnalisePendente] = useState(null);
   // Análise do histórico pedida pela URL; nula = a recém-concluída.
   const [idAnalise, setIdAnalise] = useState(urlInicial.idAnalise);
   // Posição no ranking da cidade em destaque nos resultados.
@@ -91,6 +96,8 @@ function App(){
         return;
       }
       setPagina(url.pagina);
+      // De volta ao questionário, as respostas podem mudar: o que estava para pagar deixa de valer.
+      if (url.pagina === 'onboarding') setAnalisePendente(null);
       if (url.idAnalise) setIdAnalise(url.idAnalise);
       if (url.pagina === 'resultados') setCidadeSelecionada(url.selecionada);
       if (url.pagina === 'comparar') setComparadas(url.comparadas);
@@ -109,7 +116,7 @@ function App(){
 
   // A base é baixada na primeira tela que precisa dela, inclusive quando o F5 já abre direto nessa tela.
   useEffect(() => {
-    const precisaDaBase = ['onboarding', 'cidades', 'metodologia', ...TELAS_DE_ANALISE].includes(pagina);
+    const precisaDaBase = ['onboarding', 'pagamento', 'cidades', 'metodologia', ...TELAS_DE_ANALISE].includes(pagina);
     if (!idUsuario || !precisaDaBase || base || erroBase) return;
     carregarBase().then(setBase).catch(() => setErroBase(true));
   }, [idUsuario, pagina, base, erroBase]);
@@ -129,9 +136,24 @@ function App(){
     analiseAtual && base ? calcularMatch(analiseAtual.respostas, base.cidades, { filtrar: false }) : null
   ), [analiseAtual, base]);
 
+  // No F5 do pagamento, a análise concluída é refeita a partir do rascunho, que só é apagado depois de pagar.
+  const respostasDoRascunho = useMemo(() => {
+    if (pagina !== 'pagamento' || analisePendente || !idUsuario) return null;
+    const rascunho = lerRascunho(idUsuario);
+    return rascunho?.concluida ? rascunho.respostas : null;
+  }, [pagina, analisePendente, idUsuario]);
+
+  const analiseParaPagar = useMemo(() => {
+    if (analisePendente) return analisePendente;
+    return respostasDoRascunho && base
+      ? { respostas: respostasDoRascunho, resultados: calcularMatch(respostasDoRascunho, base.cidades) }
+      : null;
+  }, [analisePendente, respostasDoRascunho, base]);
+
   // A tela de fato exibida: uma URL pode pedir uma análise que não existe mais ou uma cidade inválida.
   let tela = pagina;
-  if (analisesCarregadas && TELAS_DE_ANALISE.includes(pagina) && !analiseAtual) tela = 'dashboard';
+  if (pagina === 'pagamento' && !analisePendente && !respostasDoRascunho) tela = 'dashboard';
+  else if (analisesCarregadas && TELAS_DE_ANALISE.includes(pagina) && !analiseAtual) tela = 'dashboard';
   else if (pagina === 'explorar' && avaliadas && !avaliadas.some(({ ibge }) => ibge === cidadeExplorada)) tela = 'resultados';
   const redirecionada = tela !== pagina;
   const idDaUrl = analiseAtual?.id ?? null;
@@ -186,12 +208,14 @@ function App(){
 
   function iniciarAnalise() {
     apagarRascunho(idUsuario);
+    setAnalisePendente(null);
     setEtapaOnboarding(null);
     navegar('onboarding');
   }
 
   function sairDaAnalise() {
     apagarRascunho(idUsuario);
+    setAnalisePendente(null);
     navegar('dashboard');
   }
 
@@ -205,14 +229,30 @@ function App(){
     carregarAnalises();
   }
 
+  // O rascunho fica até o pagamento, marcado como concluído: o F5 e o "Voltar às respostas" dependem dele.
+  // Ao reabrir o questionário, o próprio Onboarding regrava o rascunho sem essa marca.
   function concluirAnalise(respostas, resultados) {
-    const analise = { id: null, respostas, resultados };
+    gravarRascunho(idUsuario, { ...lerRascunho(idUsuario), respostas, concluida: true });
+    setAnalisePendente({ respostas, resultados });
+    navegar('pagamento');
+  }
+
+  function voltarAsRespostas() {
+    setEtapaOnboarding(etapasVisiveis(analiseParaPagar.respostas).at(-1));
+    setAnalisePendente(null);
+    navegar('onboarding');
+  }
+
+  // Só depois de pago a análise vira uma análise de verdade: entra no histórico e libera o resultado.
+  function concluirPagamento() {
+    const analise = { id: null, ...analiseParaPagar };
     apagarRascunho(idUsuario);
+    setAnalisePendente(null);
     setIdAnalise(null);
     setAnaliseNova(analise);
     setCidadeSelecionada(0);
     setComparadas(null);
-    navegar('processando');
+    setPagina('processando');
     salvar(analise);
   }
 
@@ -223,6 +263,14 @@ function App(){
     setComparadas(null);
     setSalvamento(null);
     setPagina(destino);
+  }
+
+  // A página da cidade depende de uma análise aberta: o dashboard indica qual.
+  function verCidadeDoDashboard(ibge, id) {
+    setCidadeExplorada(ibge);
+    setOrigemExplorar('dashboard');
+    setAbaCidade('geral');
+    abrirAnalise(id, 'explorar');
   }
 
   if (carregando) return null;
@@ -252,6 +300,11 @@ function App(){
     return <Processamento totalCidades={base.cidades.length} onConcluido={() => navegar('resultados')} />;
   }
 
+  if (tela === 'pagamento') {
+    if (!analiseParaPagar) return telaDeCarregamento;
+    return <Pagamento onVoltar={voltarAsRespostas} onPago={concluirPagamento} />;
+  }
+
   // A análise da URL ainda pode estar chegando.
   if (TELAS_DE_ANALISE.includes(tela) && (!analiseAtual || !resultados)) return telaDeCarregamento;
 
@@ -269,6 +322,8 @@ function App(){
         fontes={base.fontes}
         salvamento={analiseAtual === analiseNova ? salvamento : null}
         onTentarSalvar={() => salvar(analiseAtual)}
+        // Análise recém-concluída ainda sem data no histórico: é a de agora.
+        dataAnalise={analises.find(({ id }) => id === analiseAtual.id)?.data ?? new Date().toISOString()}
         selecionada={selecionada}
         onSelecionar={setCidadeSelecionada}
         onExplorar={() => explorar(resultados[selecionada].ibge, 'resultados')}
@@ -307,6 +362,10 @@ function App(){
         ranking={resultados}
         domicilio={analiseAtual?.respostas.domicilio ?? null}
         onVerCidade={(ibge) => explorar(ibge, 'cidades')}
+        onComparar={(ibges) => {
+          setComparadas(ibges);
+          navegar('comparar');
+        }}
       />
     );
   }
@@ -370,7 +429,7 @@ function App(){
 
   return tela === 'perfil'
     ? <Perfil usuario={sessao.user} onNavegar={navegar} onNovaAnalise={iniciarAnalise} analises={analises} />
-    : <Dashboard usuario={sessao.user} onNavegar={navegar} onIniciarAnalise={iniciarAnalise} onAbrirAnalise={abrirAnalise} analises={analises} />;
+    : <Dashboard usuario={sessao.user} onNavegar={navegar} onIniciarAnalise={iniciarAnalise} onAbrirAnalise={abrirAnalise} onVerCidade={verCidadeDoDashboard} analises={analises} analisesCarregadas={analisesCarregadas} />;
 }
 
 export default App;

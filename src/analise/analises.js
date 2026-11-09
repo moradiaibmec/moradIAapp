@@ -22,9 +22,9 @@ export function paraHistorico(linha) {
         id: linha.id,
         data: linha.criada_em,
         respostas: linha.respostas,
-        cidades: linha.resultados.map(({ cidade, match }) => {
+        cidades: linha.resultados.map(({ ibge, cidade, match }) => {
             const corte = cidade.lastIndexOf(', ');
-            return { nome: cidade.slice(0, corte), uf: cidade.slice(corte + 2), match };
+            return { ibge, nome: cidade.slice(0, corte), uf: cidade.slice(corte + 2), match };
         }),
     };
 }

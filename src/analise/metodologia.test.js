@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { PILARES } from './opcoes.js';
-import { PASSOS, criteriosDaMetodologia, fontesDoPilar, limitacoes, resumoDaBase } from './metodologia.js';
+import { PASSOS, criteriosDaMetodologia, exemploDeCalculo, fontesDoPilar, limitacoes, resumoDaBase } from './metodologia.js';
 
 const fontes = {
     empregoPerCapita: { nome: 'IBGE', periodo: '2024', url: 'https://ibge' },
@@ -48,6 +48,25 @@ describe('textos', () => {
     });
 
     it('usa os números da base nas limitações', () => {
-        expect(limitacoes({ totalCidades: 319, aluguelEstimado: 283, aluguelMedido: 36 })[0]).toContain('283 das 319');
+        expect(limitacoes({ totalCidades: 319, aluguelEstimado: 283, aluguelMedido: 36 })[0].texto).toContain('283 das 319');
+    });
+});
+
+describe('exemploDeCalculo', () => {
+    it('refaz a conta do quadro com os pesos e a penalidade do motor', () => {
+        const exemplo = exemploDeCalculo();
+        expect(exemplo.linhas.map(({ pontos }) => pontos)).toEqual([270, 84, 80, 0]);
+        expect(exemplo.somaPontos).toBe(434);
+        expect(exemplo.somaPesos).toBe(7);
+        expect(exemplo.media).toBe(62);
+        expect(exemplo.penalizadas.map(({ pilar }) => pilar)).toEqual(['clima']);
+        expect(exemplo.comPenalidade).toBeCloseTo(52.7);
+        expect(exemplo.match).toBe(53);
+    });
+
+    it('não penaliza nota baixa fora do Essencial', () => {
+        const exemplo = exemploDeCalculo([{ pilar: 'saude', peso: 'importante', nota: 10 }, { pilar: 'clima', peso: 'essencial', nota: 70 }]);
+        expect(exemplo.penalizadas).toEqual([]);
+        expect(exemplo.match).toBe(55);
     });
 });

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import styled from "styled-components"
 import {
     LuArrowRight, LuArrowUpRight, LuCheck, LuCircleAlert, LuCircleCheck, LuDownload, LuGitCompare, LuShare2,
@@ -12,6 +13,8 @@ import {
     qualificarNota,
 } from '../../analise/explicacao.js';
 import { nomeDoEstado, textoDoCredito } from '../../analise/formatacao.js';
+import { montarRelatorio } from '../../analise/relatorio.js';
+import { baixarRelatorio, compartilharRelatorio, prepararPdf } from '../../lib/relatorioPdf.js';
 
 const OUTRAS_CIDADES = 4;
 const MATCH_ALTO = 75;
@@ -129,14 +132,26 @@ const BotaoContorno = styled.button`
     font-size: 14px;
     font-weight: 600;
     white-space: nowrap;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
 
     svg {
         font-size: 16px;
     }
 
+    &:hover:not(:disabled) {
+        border-color: var(--roxo-moradia);
+        color: var(--roxo-moradia);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--roxo-moradia);
+        outline-offset: 2px;
+    }
+
     &:disabled {
         opacity: 0.6;
-        cursor: not-allowed;
+        cursor: wait;
     }
 `;
 
@@ -759,6 +774,13 @@ function AnelMatch({ match }) {
 const rotuloDoPilar = (id) => PILARES.find((pilar) => pilar.id === id).rotulo;
 const nomeDaRegiao = (id) => REGIOES.find((regiao) => regiao.id === id)?.rotulo;
 
+const AVISOS_RELATORIO = {
+    baixado: { texto: 'Relatório baixado.' },
+    compartilhado: { texto: 'Relatório compartilhado.' },
+    copiado: { texto: 'Resumo copiado. É só colar onde quiser enviar.' },
+    erro: { texto: 'Não foi possível concluir. Tente de novo.', erro: true },
+};
+
 function textoStatus(resultados) {
     const altos = resultados.filter(({ match }) => match >= MATCH_ALTO).length;
     if (altos === 0) return `Análise concluída · ${resultados.length} ${resultados.length === 1 ? 'cidade analisada' : 'cidades analisadas'}`;
@@ -767,8 +789,39 @@ function textoStatus(resultados) {
 
 function Resultados({
     usuario, onNavegar, onNovaAnalise, respostas, resultados, cidades, fontes, salvamento, onTentarSalvar,
-    selecionada, onSelecionar, onExplorar, onComparar, onVerRanking,
+    selecionada, onSelecionar, onExplorar, onComparar, onVerRanking, dataAnalise,
 }) {
+    const [acaoRelatorio, setAcaoRelatorio] = useState(null);
+    const [avisoRelatorio, setAvisoRelatorio] = useState(null);
+
+    useEffect(() => {
+        prepararPdf();
+    }, []);
+
+    async function acionarRelatorio(acao, executar) {
+        setAcaoRelatorio(acao);
+        setAvisoRelatorio(null);
+        try {
+            setAvisoRelatorio(await executar(montarRelatorio({ respostas, resultados, cidades, fontes, data: dataAnalise })));
+        } catch {
+            setAvisoRelatorio('erro');
+        }
+        setAcaoRelatorio(null);
+    }
+
+    function baixar() {
+        acionarRelatorio('baixar', async (relatorio) => {
+            await baixarRelatorio(relatorio);
+            return 'baixado';
+        });
+    }
+
+    function compartilhar() {
+        acionarRelatorio('compartilhar', compartilharRelatorio);
+    }
+
+    const aviso = AVISOS_RELATORIO[avisoRelatorio];
+
     const destaque = resultados[selecionada];
     const nome = nomeDaCidade(destaque.cidade);
     const fotoDe = (ibge) => cidades.find((cidade) => cidade.ibge === ibge)?.foto ?? null;
@@ -802,10 +855,15 @@ function Resultados({
                                 <button type="button" onClick={onTentarSalvar}>Tentar de novo</button>
                             </AvisoSalvamento>
                         )}
+                        {aviso && <AvisoSalvamento $erro={aviso.erro} role={aviso.erro ? 'alert' : 'status'}>{aviso.texto}</AvisoSalvamento>}
                     </TextoCabecalho>
                     <AcoesCabecalho>
-                        <BotaoContorno type="button" disabled title="Em breve"><LuShare2 aria-hidden="true" /> Compartilhar</BotaoContorno>
-                        <BotaoContorno type="button" disabled title="Em breve"><LuDownload aria-hidden="true" /> Baixar relatório</BotaoContorno>
+                        <BotaoContorno type="button" onClick={compartilhar} disabled={acaoRelatorio !== null}>
+                            <LuShare2 aria-hidden="true" /> {acaoRelatorio === 'compartilhar' ? 'Preparando…' : 'Compartilhar'}
+                        </BotaoContorno>
+                        <BotaoContorno type="button" onClick={baixar} disabled={acaoRelatorio !== null}>
+                            <LuDownload aria-hidden="true" /> {acaoRelatorio === 'baixar' ? 'Gerando…' : 'Baixar relatório'}
+                        </BotaoContorno>
                     </AcoesCabecalho>
                 </Cabecalho>
 

@@ -8,11 +8,12 @@ const Cabecalho = styled.header`
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    height: 80px;
+    height: 73px;
     padding: 0 80px;
     background-color: #FFFFFF;
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E6E8EC;
     font-family: var(--fonte-moradia);
+    box-sizing: border-box;
 
     @media (max-width: 900px) {
         padding: 0 16px;
@@ -22,14 +23,12 @@ const Cabecalho = styled.header`
 const Logo = styled.div`
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    font-family: var(--fonte-titulo);
     font-size: 20px;
-    font-weight: 700;
-    color: #111827;
-
-    span {
-        color: var(--roxo-moradia);
-    }
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    color: #0F172A;
 `;
 
 const IconeLogo = styled.div`
@@ -47,7 +46,7 @@ const IconeLogo = styled.div`
 const Navegacao = styled.nav`
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 36px;
 
     @media (max-width: 900px) {
         display: none;
@@ -60,13 +59,13 @@ const LinkNavegacao = styled.button`
     background: none;
     font-family: var(--fonte-moradia);
     font-size: 14px;
-    font-weight: ${({ $ativo }) => ($ativo ? 700 : 500)};
-    color: ${({ $ativo }) => ($ativo ? 'var(--roxo-moradia)' : '#6B7280')};
+    font-weight: ${({ $ativo }) => ($ativo ? 600 : 500)};
+    color: ${({ $ativo }) => ($ativo ? 'var(--roxo-moradia)' : '#5B6475')};
     cursor: ${({ $ativo, $disponivel }) => ($ativo ? 'default' : $disponivel ? 'pointer' : 'not-allowed')};
     transition: color 0.2s;
 
     &:hover {
-        color: ${({ $ativo, $disponivel }) => ($ativo || $disponivel ? 'var(--roxo-moradia)' : '#6B7280')};
+        color: ${({ $ativo, $disponivel }) => ($ativo || $disponivel ? 'var(--roxo-moradia)' : '#5B6475')};
     }
 `;
 
@@ -79,12 +78,12 @@ const Acoes = styled.div`
 const BotaoNovaAnalise = styled.button`
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 16px;
+    gap: 8px;
+    padding: 10px 18px;
     border: none;
-    border-radius: 8px;
-    background-color: #EEF2FF;
-    color: var(--roxo-moradia);
+    border-radius: 10px;
+    background-color: #0F172A;
+    color: #FFFFFF;
     font-family: var(--fonte-moradia);
     font-size: 14px;
     font-weight: 600;
@@ -93,7 +92,7 @@ const BotaoNovaAnalise = styled.button`
     transition: background-color 0.2s;
 
     &:hover {
-        background-color: #E0E7FF;
+        background-color: #1E293B;
     }
 
     @media (max-width: 600px) {
@@ -173,7 +172,8 @@ const linksNavegacao = [
 ];
 
 // `comparacaoIndisponivel`: a pessoa ainda não tem análise para comparar.
-function CabecalhoApp({ usuario, paginaAtiva, onNavegar, onNovaAnalise, comparacaoIndisponivel = false }){
+// `semNovaAnalise`: a própria tela já tem a chamada principal para a primeira análise.
+function CabecalhoApp({ usuario, paginaAtiva, onNavegar, onNovaAnalise, comparacaoIndisponivel = false, semNovaAnalise = false }){
     const [saindo, setSaindo] = useState(false);
     const { full_name, avatar_url } = usuario.user_metadata ?? {};
     const inicial = (full_name ?? usuario.email ?? '?').charAt(0).toUpperCase();
@@ -187,7 +187,7 @@ function CabecalhoApp({ usuario, paginaAtiva, onNavegar, onNovaAnalise, comparac
         <Cabecalho>
             <Logo>
                 <IconeLogo><FiCompass /></IconeLogo>
-                <p>Morad<span>IA</span></p>
+                <p>MoradIA</p>
             </Logo>
 
             <Navegacao>
@@ -211,9 +211,11 @@ function CabecalhoApp({ usuario, paginaAtiva, onNavegar, onNovaAnalise, comparac
             </Navegacao>
 
             <Acoes>
-                <BotaoNovaAnalise onClick={onNovaAnalise} aria-label="Nova Análise">
-                    <FiPlus /> <span>Nova Análise</span>
-                </BotaoNovaAnalise>
+                {!semNovaAnalise && (
+                    <BotaoNovaAnalise onClick={onNovaAnalise} aria-label="Nova análise">
+                        <FiPlus /> <span>Nova análise</span>
+                    </BotaoNovaAnalise>
+                )}
                 <BotaoAvatar
                     type="button"
                     onClick={onNavegar && paginaAtiva !== 'perfil' ? () => onNavegar('perfil') : undefined}

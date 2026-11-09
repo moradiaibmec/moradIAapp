@@ -47,3 +47,30 @@ describe('carregarBase', () => {
         expect(cidades).toEqual([{ ibge: 30, foto: null }]);
     });
 });
+
+describe('carregarFotos', () => {
+    beforeEach(() => vi.resetModules());
+    afterEach(() => vi.unstubAllGlobals());
+
+    it('baixa só as fotos, sem a base de cidades', async () => {
+        const foto = { url: 'https://upload.wikimedia.org/a.jpg' };
+        const fetch = vi.fn(() => Promise.resolve(resposta({ fotos: { 10: foto } })));
+        vi.stubGlobal('fetch', fetch);
+        const { carregarFotos } = await import('./base.js');
+
+        await expect(carregarFotos()).resolves.toEqual({ 10: foto });
+        expect(fetch).toHaveBeenCalledTimes(1);
+        expect(ehFotos(fetch.mock.calls[0][0])).toBe(true);
+    });
+
+    it('devolve vazio numa falha e tenta de novo na próxima chamada', async () => {
+        const fetch = vi.fn()
+            .mockRejectedValueOnce(new TypeError('Failed to fetch'))
+            .mockResolvedValueOnce(resposta({ fotos: { 10: {} } }));
+        vi.stubGlobal('fetch', fetch);
+        const { carregarFotos } = await import('./base.js');
+
+        await expect(carregarFotos()).resolves.toEqual({});
+        await expect(carregarFotos()).resolves.toEqual({ 10: {} });
+    });
+});

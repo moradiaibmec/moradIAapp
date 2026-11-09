@@ -6,8 +6,8 @@ import { MAXIMO_COMPARADAS } from './comparacao.js';
 export const TELAS_DE_ANALISE = ['resultados', 'ranking', 'explorar', 'comparar'];
 
 // "processando" fica de fora de propósito: é só uma transição, e não deve ser um destino do Voltar.
-const TELAS = ['dashboard', 'perfil', 'cidades', 'metodologia', 'onboarding', ...TELAS_DE_ANALISE];
-const ORIGENS = ['resultados', 'ranking', 'comparar', 'cidades'];
+const TELAS = ['dashboard', 'perfil', 'cidades', 'metodologia', 'onboarding', 'pagamento', ...TELAS_DE_ANALISE];
+const ORIGENS = ['resultados', 'ranking', 'comparar', 'cidades', 'dashboard'];
 const ABAS = ['geral', 'custo', 'clima', 'trabalho', 'educacao'];
 
 const inteiroPositivo = (texto) => (/^\d+$/.test(texto ?? '') ? Number(texto) : null);
@@ -53,9 +53,9 @@ export function montarUrl({ pagina, idAnalise, selecionada, cidade, origem, aba,
 }
 
 // Trocar de tela, de cidade ou de etapa cria uma entrada no histórico; ajustes dentro da mesma tela só atualizam a atual.
-// Ao concluir a análise, os resultados substituem o questionário: voltar deles não reabre um formulário já enviado.
+// Ao concluir o pagamento, os resultados substituem a tela de pagar: voltar deles não cobra de novo.
 export function deveEmpilhar(atual, nova) {
-    if (atual.pagina === 'onboarding' && nova.pagina === 'resultados') return false;
+    if (atual.pagina === 'pagamento' && nova.pagina === 'resultados') return false;
     return atual.pagina !== nova.pagina
         || (nova.pagina === 'explorar' && atual.cidade !== nova.cidade)
         || (nova.pagina === 'onboarding' && atual.etapa !== nova.etapa);

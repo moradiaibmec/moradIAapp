@@ -31,7 +31,7 @@ describe('paraHistorico', () => {
             id: 'abc',
             data: '2026-10-19T14:30:00+00:00',
             respostas: { versao: 1 },
-            cidades: [{ nome: 'Belo Horizonte', uf: 'MG', match: 82 }, { nome: 'Campina Grande', uf: 'PB', match: 70 }],
+            cidades: [{ ibge: 1, nome: 'Belo Horizonte', uf: 'MG', match: 82 }, { ibge: 2, nome: 'Campina Grande', uf: 'PB', match: 70 }],
         });
     });
 });

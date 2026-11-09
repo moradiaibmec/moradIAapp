@@ -1,5 +1,5 @@
 // Conteúdo da tela "Como calculamos". Os números vêm das constantes do motor e da base, para o texto nunca divergir do cálculo.
-import { PILARES, TOLERANCIA_TETO } from './opcoes.js';
+import { NIVEIS_IMPORTANCIA, PILARES, TOLERANCIA_TETO } from './opcoes.js';
 import {
     BONUS_PRAIA, COMPROMETIMENTO_IDEAL, COMPROMETIMENTO_MAXIMO, INDICADORES_DO_PILAR, LIMITE_ESSENCIAL_RUIM, PENALIDADE_ESSENCIAL,
     PERDA_POR_GRAU, VALOR_PESO,
@@ -92,11 +92,39 @@ export function resumoDaBase({ cidades, fontes = {} }) {
 
 export function limitacoes({ totalCidades, aluguelEstimado, aluguelMedido }) {
     return [
-        `O aluguel é estimado em ${aluguelEstimado} das ${totalCidades} cidades, a partir do Censo 2010 corrigido pelo FipeZap. As outras ${aluguelMedido} têm dado direto do FipeZap. Os valores estimados trazem o selo "Estimado".`,
-        'Custo de vida considera só o aluguel: nossa base não tem alimentação ou transporte por município. Por isso, esses gastos são informados por você no simulador.',
-        'Segurança mede apenas homicídios: roubos e furtos não têm registro padronizado entre os municípios.',
-        'Saúde usa apenas leitos: não incluímos o número de médicos por habitante nesta versão.',
-        'Lazer é medido por empregos no setor, uma aproximação da oferta de bares, restaurantes e cultura.',
-        'A base cobre os municípios com mais de 100 mil habitantes, e os indicadores têm anos diferentes, conforme a publicação de cada fonte.',
+        { titulo: 'Aluguel', texto: `O aluguel é estimado em ${aluguelEstimado} das ${totalCidades} cidades, a partir do Censo 2010 corrigido pelo FipeZap. As outras ${aluguelMedido} têm dado direto do FipeZap. Os valores estimados trazem o selo "Estimado".` },
+        { titulo: 'Custo de vida', texto: 'Considera só o aluguel: nossa base não tem alimentação ou transporte por município. Por isso, esses gastos são informados por você no simulador.' },
+        { titulo: 'Segurança', texto: 'Mede apenas homicídios: roubos e furtos não têm registro padronizado entre os municípios.' },
+        { titulo: 'Saúde', texto: 'Usa apenas leitos: não incluímos o número de médicos por habitante nesta versão.' },
+        { titulo: 'Lazer', texto: 'É medido por empregos no setor, uma aproximação da oferta de bares, restaurantes e cultura.' },
+        { titulo: 'Cobertura da base', texto: 'A base cobre os municípios com 50 mil habitantes ou mais, e os indicadores têm anos diferentes, conforme a publicação de cada fonte.' },
     ];
+}
+
+// Cidade fictícia do quadro "O cálculo em uma cidade fictícia": as notas são inventadas, mas pesos,
+// penalidade e arredondamento são os do motor, para o exemplo acompanhar qualquer mudança nas regras.
+const NOTAS_DO_EXEMPLO = [
+    { pilar: 'seguranca', peso: 'essencial', nota: 90 },
+    { pilar: 'clima', peso: 'essencial', nota: 28 },
+    { pilar: 'saude', peso: 'importante', nota: 80 },
+    { pilar: 'lazer', peso: 'tantoFaz', nota: 95 },
+];
+
+export function exemploDeCalculo(notas = NOTAS_DO_EXEMPLO) {
+    const linhas = notas.map(({ pilar, peso, nota }) => ({
+        pilar,
+        rotulo: PILARES.find(({ id }) => id === pilar).rotulo,
+        prioridade: NIVEIS_IMPORTANCIA.find(({ id }) => id === peso).rotulo,
+        nota,
+        peso: VALOR_PESO[peso],
+        pontos: VALOR_PESO[peso] * nota,
+        // Mesma regra do motor: só Essencial abaixo do limite é penalizado.
+        penalizada: peso === 'essencial' && nota < LIMITE_ESSENCIAL_RUIM,
+    }));
+    const somaPontos = linhas.reduce((total, { pontos }) => total + pontos, 0);
+    const somaPesos = linhas.reduce((total, { peso }) => total + peso, 0);
+    const media = somaPontos / somaPesos;
+    const penalizadas = linhas.filter(({ penalizada }) => penalizada);
+    const comPenalidade = media * PENALIDADE_ESSENCIAL ** penalizadas.length;
+    return { linhas, somaPontos, somaPesos, media, penalizadas, comPenalidade, match: Math.round(comPenalidade) };
 }

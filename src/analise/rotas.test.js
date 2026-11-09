@@ -61,6 +61,16 @@ describe('deveEmpilhar', () => {
         expect(deveEmpilhar(tela({ pagina: 'dashboard' }), tela({ pagina: 'perfil' }))).toBe(true);
     });
 
+    it('mantém a tela de pagamento na URL, para sobreviver ao F5', () => {
+        expect(montarUrl({ ...lerUrl(''), pagina: 'pagamento' })).toBe('?tela=pagamento');
+        expect(lerUrl('?tela=pagamento').pagina).toBe('pagamento');
+    });
+
+    it('aceita o dashboard como origem da página da cidade', () => {
+        const url = montarUrl({ pagina: 'explorar', idAnalise: 'a1', cidade: 10, origem: 'dashboard', aba: 'geral' });
+        expect(lerUrl(url).origem).toBe('dashboard');
+    });
+
     it('empilha ao trocar de cidade ou de etapa', () => {
         expect(deveEmpilhar(tela({ pagina: 'explorar', cidade: 1 }), tela({ pagina: 'explorar', cidade: 2 }))).toBe(true);
         expect(deveEmpilhar(tela({ pagina: 'onboarding', etapa: 'momento' }), tela({ pagina: 'onboarding', etapa: 'clima' }))).toBe(true);
@@ -72,7 +82,11 @@ describe('deveEmpilhar', () => {
         expect(deveEmpilhar(tela({ pagina: 'resultados' }), tela({ pagina: 'resultados', idAnalise: 'a1' }))).toBe(false);
     });
 
-    it('os resultados substituem o questionário no histórico', () => {
-        expect(deveEmpilhar(tela({ pagina: 'onboarding' }), tela({ pagina: 'resultados' }))).toBe(false);
+    it('os resultados substituem a tela de pagamento no histórico', () => {
+        expect(deveEmpilhar(tela({ pagina: 'pagamento' }), tela({ pagina: 'resultados' }))).toBe(false);
+    });
+
+    it('o pagamento entra no histórico depois do questionário', () => {
+        expect(deveEmpilhar(tela({ pagina: 'onboarding' }), tela({ pagina: 'pagamento' }))).toBe(true);
     });
 });

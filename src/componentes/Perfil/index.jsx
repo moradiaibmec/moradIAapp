@@ -609,7 +609,7 @@ function Perfil({ usuario, onNavegar, onNovaAnalise, analises = [], comparativos
                     <Cartao as="form" id="preferencias" onSubmit={preferencias.enviar}>
                         <CabecalhoSecao
                             titulo="Preferências & Estilo de Vida"
-                            descricao="Parâmetros baseados nas suas respostas do onboarding de 8 etapas"
+                            descricao="Parâmetros baseados nas suas respostas do onboarding"
                         />
                         <Campos>
                             <CampoSelecao
