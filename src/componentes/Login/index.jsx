@@ -387,7 +387,7 @@ function Login(){
         <CampoApresentacao>
         <LoginSection>
                 <NavContainer>
-                    <VoltarLink href="https://github.com/tmzhenrique" target="_blank" rel="noopener noreferrer">
+                    <VoltarLink href="https://moradia-landing-page.vercel.app/">
                         <FaChevronLeft size={12} /> Voltar ao site
                     </VoltarLink>
                 </NavContainer>
