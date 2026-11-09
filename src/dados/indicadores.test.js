@@ -17,6 +17,19 @@ describe('calcularIndicadores', () => {
         });
     });
 
+    it('no empate de vitórias, destaca a cidade que vem antes na lista (mais aparições)', () => {
+        const empate = [
+            { id: 'a', data: '2026-11-03T10:00:00Z', cidades: [curitiba(90)] },
+            { id: 'b', data: '2026-11-02T10:00:00Z', cidades: [curitiba(80), maringa(70)] },
+            { id: 'c', data: '2026-11-01T10:00:00Z', cidades: [maringa(80)] },
+            { id: 'd', data: '2026-10-01T10:00:00Z', cidades: [maringa(85)] },
+            { id: 'e', data: '2026-09-01T10:00:00Z', cidades: [{ ibge: 4113700, nome: 'Londrina', uf: 'PR', match: 85 }, maringa(60)] },
+        ];
+        const { cidadeMaisRecomendada, ranking } = calcularIndicadores(empate);
+        expect(ranking[0].cidade).toBe('Maringá, PR');
+        expect(cidadeMaisRecomendada).toEqual({ cidade: 'Maringá, PR', ibge: 4115200, vezes: 2, idAnalise: 'c' });
+    });
+
     it('conta no ranking as vitórias de cada cidade, além das aparições', () => {
         const { ranking } = calcularIndicadores(analises);
         expect(ranking[0]).toEqual({ cidade: 'Curitiba, PR', ibge: 4106902, aparicoes: 3, vitorias: 2, matchMedio: 75 });

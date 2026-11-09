@@ -7,9 +7,11 @@ function porDataDesc(a, b) {
     return b.data.localeCompare(a.data);
 }
 
-// Cidade que ficou em 1º lugar mais vezes (empate: a que venceu mais recentemente).
+// Cidade que ficou em 1º lugar mais vezes. No empate, vale a ordem da lista "Cidades que mais
+// aparecem" (mais aparições, depois maior match médio), para o destaque não contradizer a lista;
+// persistindo o empate, a que venceu mais recentemente.
 // `idAnalise` é a análise mais recente em que ela venceu, usada para abrir a página da cidade.
-function cidadeMaisRecomendada(analises) {
+function cidadeMaisRecomendada(analises, ordemDaLista) {
     const vitorias = new Map();
     for (const analise of [...analises].sort(porDataDesc)) {
         const vencedora = analise.cidades[0];
@@ -19,9 +21,13 @@ function cidadeMaisRecomendada(analises) {
         vitorias.set(chave, atual);
     }
 
+    const posicao = new Map(ordemDaLista.map(({ cidade }, indice) => [cidade, indice]));
     let campea = null;
     for (const candidata of vitorias.values()) {
-        if (!campea || candidata.vezes > campea.vezes) campea = candidata;
+        if (!campea || candidata.vezes > campea.vezes
+            || (candidata.vezes === campea.vezes && posicao.get(candidata.cidade) < posicao.get(campea.cidade))) {
+            campea = candidata;
+        }
     }
     return campea;
 }
@@ -39,7 +45,7 @@ function melhorMatch(analises) {
 }
 
 // Cidades que mais aparecem em qualquer posição do ranking, com o match médio e as vezes em 1º lugar.
-function rankingCidades(analises, limite) {
+function rankingCidades(analises) {
     const cidades = new Map();
     for (const analise of analises) {
         analise.cidades.forEach((cidade, posicao) => {
@@ -57,8 +63,7 @@ function rankingCidades(analises, limite) {
             ...cidade,
             matchMedio: Math.round(somaMatch / cidade.aparicoes),
         }))
-        .sort((a, b) => b.aparicoes - a.aparicoes || b.matchMedio - a.matchMedio)
-        .slice(0, limite);
+        .sort((a, b) => b.aparicoes - a.aparicoes || b.matchMedio - a.matchMedio);
 }
 
 function analisesRecentes(analises) {
@@ -85,12 +90,14 @@ export function calcularIndicadores(analises) {
         analises.flatMap((analise) => analise.cidades.map(chaveCidade))
     );
 
+    const ranking = rankingCidades(analises);
+
     return {
         totalAnalises: analises.length,
-        cidadeMaisRecomendada: cidadeMaisRecomendada(analises),
+        cidadeMaisRecomendada: cidadeMaisRecomendada(analises, ranking),
         melhorMatch: melhorMatch(analises),
         cidadesAvaliadas: cidadesAvaliadas.size,
-        ranking: rankingCidades(analises, 5),
+        ranking: ranking.slice(0, 5),
         recentes: analisesRecentes(analises),
     };
 }
